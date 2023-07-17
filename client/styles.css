@@ -1,0 +1,71 @@
+CSS 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f2f2f2;
+}
+
+/* Logo styles */
+.logo {
+  margin-right: 10px;
+}
+
+/* Search styles */
+.search {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+input[type="text"] {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Description styles */
+.description {
+  margin-right: 10px;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+p {
+  font-size: 14px;
+  color: #888;
+}
+
+/* Button styles */
+.buttons {
+  margin-left: auto;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  margin-right: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.signin {
+  border-radius: 5px;
+}
+
+.get-started {
+  border-radius: 50%;
+}
