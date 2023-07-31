@@ -6,6 +6,19 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: '#da373d',
+            }
+          }
+        }
+      }
+    </script>
+
     <title>Fundme</title>
 </head>
 <body>
@@ -13,11 +26,11 @@
     <div class="logo fund">
         <a href=""><span><img class="fundlogo" src="images/fundmelogo.jpg" alt=""></span></a>
     </div>
-    <div id="nav-search" class="d-none d-md-block">
-        <i class="fas fa-search"></i>
-        <input type="text" placeholder="Search" id="inp-search">
-      </div>
-       <div class="description d-none d-md-block">
+    <div id="nav-search" class="d-none d-md-block rounded-full">
+      <i class="fas fa-search justify-start"></i>
+        <input  type="text" placeholder="Search" id="inp-search">
+    </div>
+       <div class="description d-none d-md-block ">
         <h2>English  <select name="" id=""><option value=""></option></select></h2>
        </div>
   </div>
@@ -64,11 +77,11 @@
             <button class="signin">Sign In</button>
       </div>
 </nav>
-<section id="heroSection" class="container-fluid">
+<section id="heroSection" class="container-fluid max-h-screen">
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
             <div class="carousel-inner div1">
                 <div class="carousel-item active">
-                    <img src="images/bgpix.jpg" width="300px" height="400px" class="d-block w-100 h-30" alt="...">
+                    <img src="images/image0_0_watermark.jpg" width="300px" height="400px" class="d-block w-100 h-30 bg-cover bg-center" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                     <h3 class="write-up text-capitalize m-0">Raise Fund for yourself</h3>
                     <h2 class="write-up display-2 m-0 mt-2 mt-md-4 text-white font-weight-bold text-capitalize">Keep supporting the needy!</h2>
