@@ -1,33 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Fund Me</title>
-        <link rel="stylesheet" type="text/css" href="styles.css">
-    </head>
-    <body>
-      <header>
-        <div class="logo">
-          <img src="FundMe-Logo.jpg" alt="FundMe Logo">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundme</title>
+</head>
+<body>
+<nav class="container-fluid navBar" id="navBar">
+    <div class="logo fund">
+        <a href=""><span><img class="fundlogo" src="images/fundmelogo.jpg" alt=""></span></a>
+    </div>
+    <div id="nav-search" class="d-none d-md-block">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search" id="inp-search">
+      </div>
+       <div class="description d-none d-md-block">
+        <h2>English  <select name="" id=""><option value=""></option></select></h2>
+       </div>
+  </div>
+  <button class="signin" style="height: 50px;">Sign In</button>
+    </div>
+    <div class="nbt d-none d-md-block">
+        <button id="conetBtn" class="connet">
+          <span>C</span>
+          <span>o</span>
+          <span>n</span>
+          <span>n</span>
+          <span>e</span>
+          <span>c</span>
+          <span>t</span>
+          <span></span>
+          <span>W</span>
+          <span>a</span>
+          <span>l</span>
+          <span>l</span>
+          <span>e</span>
+          <span>t</span>
+        </button>
+    </div>
+    <div id="ha" class="d-block d-md-none">
+        <button id="hamburger" type="button" data-bs-toggle="dropdown" aria-expanded="false" ><i class="fa-solid fa-bars hambr"></i><span class="cancel-sign"><i class="fa-solid fa-xmark"></i></span></button>
+         <ul class="dropdown-menu dropdown-ul">
+           <button id="conetBtn" class="connet">
+              <span>C</span>
+              <span>o</span>
+              <span>n</span>
+              <span>n</span>
+              <span>e</span>
+              <span>c</span>
+              <span>t</span>
+              <span></span>
+              <span>W</span>
+              <span>a</span>
+              <span>l</span>
+              <span>l</span>
+              <span>e</span>
+              <span>t</span>
+           </button>
+            <button><h2>English <select name="" id=""><option value=""></option></select></h2></button>
+            <button class="signin">Sign In</button>
+      </div>
+</nav>
+<section id="heroSection" class="container-fluid">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+            <div class="carousel-inner div1">
+                <div class="carousel-item active">
+                    <img src="images/bgpix.jpg" width="300px" height="400px" class="d-block w-100 h-30" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h3 class="write-up text-capitalize m-0">Raise Fund for yourself</h3>
+                    <h2 class="write-up display-2 m-0 mt-2 mt-md-4 text-white font-weight-bold text-capitalize">Keep supporting the needy!</h2>
+                </div>
+            </div>
+          <div class="carousel-item div1">
+            <img src="images/picc2.jpg" width="300px" height="400px" class="d-block w-100 h-30" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="write-up text-capitalize m-0">Raise Funds for the needy</h5>
+              <p class="write-up display-2 m-0 mt-2 mt-md-4 text-white font-weight-bold text-capitalize">Don't get tired, keep supporting the poor!</p>
+            </div>
+          </div>
+          
+          <div class="carousel-item div1">
+            <img src="images/picc3.jpg" width="300px" height="400px" class="d-block w-100 h-30" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="write-up text-capitalize m-0">Support the education sector</h5>
+              <p class="write-up display-2 m-0 mt-2 mt-md-4 text-white font-weight-bold text-capitalize">Let's develop the society together!</p>
+            </div>
+          </div>
+          <div class="carousel-item div1">
+            <img src="images/picc5.jpg" width="300px" height="400px" class="d-block w-100 h-30" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="write-up text-capitalize m-0">Raise Funds for Vacation</h5>
+              <p class="write-up display-2 m-0 mt-2 mt-md-4 text-white font-weight-bold text-capitalize">Don't Give Up! you can still visit your dream country.</p>
+            </div>
+          </div>
         </div>
-        <div class="search">
-          <input type="text" placeholder="Search">
-          <i class="fas fa-search"></i>
-        </div>
-        <div class="description">
-          <h2>How FundMe Works</h2>
-          <p>Find out how our platform can help you raise funds.</p>
-        </div>
-        <div class="buttons">
-          <button class="signin">Sign In</button>
-          <button class="get-started">Get Started</button>
-        </div>
-      </header>
-      
-      <!-- Rest of the content goes here -->
-      
-    </body>
-    </html>
+    </div>
+</section>
 
+<main class="container-fluid maincont" >
+    <div class="main1 container d-none d-md-block">
+        <marquee behavior="" direction="left"><h3>Raise Funds Today!</h3></marquee>
+    </div>
     
+  
+  <!-- <div class="fund1"> -->
+    <div id="inclusiveClasses" class="d-md-flex justify-content-between">
+       <div class="card mb-2 container-fluid" style="width: 70%;">
+    <!-- <div class="fund"> -->
+          <img src="images/guyman.jpg" width="340px" height="220px" alt="">
+       <div class="card-body">
+         <h4>Raise Funds <br><span>For Yourself</span></h4>
+      </div>
+    </div>
+    <!-- <div class="fund"> -->
+        <div class="card mb-2 container-fluid" style="width: 70%;">
+          <img src="images/man.jpg"  width="340px" height="220px" alt="">
+         <div class="card-body">
+           <h4>Raise Funds <br><span>For a Friend/Family</span></h4>
+         </div>
+       </div>
+    <!-- <div class="fund"> -->
+      <div class="card mb-2 container-fluid" style="width: 70%;">
+         <img src="images/peepz.jpg"  width="340px" height="220px" alt="">
+        <div class="card-body">
+          <h4>Raise Funds <br><span>For Charity</span></h4>
+        </div>
+      </div>
+    <!-- <div class="fund"> -->
+      <div class="card mb-2 container-fluid" style="width: 70%;">
+          <img src="images/bgpix.jpg"  width="340px" height="220px" alt="">
+        <div class="card-body"></div>
+          <h4>Raise Funds <br><span>For a Project</span></h4>
+        </div>
+      </div>
+  </div>
+  <div class="footer1">
+    <h3 style="text-align: start;">Featured Projects</h3>
+  </div>
+  <div id="inclusiveClasses" class="d-md-flex justify-content-between">
+    <div class="card mb-2 container-fluid" style="width: 70%;">
+        <img src="./images/picc2.jpg" width="100px" height="230px" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p style="text-align: center; font-weight: bold;" class="card-text">Fund Bio-Gas Factory <br>67hd.....k46d <br>9 days left</p> 
+          <button  style="background-color:green; height: 2%; width: 100%;"></button>
+          <div class="d-none d-md-flex justify-content-between">
+            <p>3.5ETH</p>
+            <p>5.0ETH</p>
+          </div>
+          <h6>Raised</h6>               
+        </div>
+    </div>
+    <div class="card mb-2 container-fluid" style="width: 70%;">
+        <img src="images/picc1.jpg" width="100px" height="230px" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p style="font-weight: bold; text-align: center; " class="card-text">Help Motherless Children <br>67td.....k46d <br>28 days left </p>
+          <button  style="background-color:green; height: 2%; width: 100%;"></button>
+          <div class="d-none d-md-flex justify-content-between">
+            <p>2.8ETH</p>
+            <p>3.0ETH</p>
+          </div>
+          <h6>Raised</h6> 
+        </div>
+    </div>
+    <div class="card mb-2 container-fluid" style="width: 70%">
+        <img src="images/picc3.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p style="font-weight: bold; text-align: center; " class="card-text">Fund My Education <br>8u78.....w52h <br>9 days left </p>
+          <button  style="background-color:green; height: 2%; width: 100%;"></button>
+          <div class="d-none d-md-flex justify-content-between">
+            <p>6.2ETH</p>
+            <p>15ETH</p>
+          </div>
+          <h6>Raised</h6> 
+        </div>
+    </div>
+    <div class="card mb-2 container-fluid" style="width: 70%;">
+        <img src="./images/picc4.jpg" width="100px" height="220px" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p style="font-weight: bold; text-align: center; " class="card-text">Sponsor My Vacation <br>2y73.....w5tu <br> Completed </p>
+          <button  style="background: -webkit-linear-gradient(to left, green, #d8d8db); height: 2%; width: 100%;"></button>
+          <div class="d-none d-md-flex justify-content-between">
+            <p>4.6ETH</p>
+            <p>4.6ETH</p>
+          </div>
+          <h6>Raised</h6> 
+        </div>
+    </div>
+</div>
+
+<!-- <div class="footer2">
+
+    <form action="">
+      <h2>Create Project</h2>
+      <div id="form-inp1" class="d-none d-md-flex">
+        <div>
+          <p>Name*</p>
+          <input type="text" placeholder="Write your name">
+        </div>
+        <div>
+          <p>Project Title*</p>
+          <input type="text" placeholder="Write your Project Title">
+        </div>
+     </div>
+     <div class="div-text">
+     <textarea name="Write About Your Project" id="" cols="10" rows="10" style="border-radius: 10px;">Write About Your Project</textarea>
+    </div>
+    <div class="form-inp2">
+      <div id="inp-goal">
+        <p>Your Goal*</p>
+        <input type="text" placeholder="12ETH">
+      </div>
+      <div>
+        <p>End Data*</p>
+        <input type="datetime" name="" id="">
+      </div>
+   </div>
+  <div>
+      <textarea name="Write About Your Project" id="" cols="10" rows="10" style="border-radius: 10px;">Write About Your Project</textarea>
+    </div>
+</form>
+
+    </form>
+        
+
+
+      
+</div>
+
+
+<footer class="container-fluid footer d-md-flex justify-content-between">
+
+      
+</footer> -->
+
+<button class=" back-to-top"><a href="#" ><i class="fa fa-angle-double-up"></i></a></button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>    
+<footer>
+  <div class="footer">
+    <div class="contain">
+    <div class="col">
+      <h1>FundMe</h1>
+      <ul>
+        <li>About Us</li>
+        <li>Mission</li>
+        <li>Services</li>
+        <li>Social</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h1>Products</h1>
+      <ul>
+        <li>Projects</li>
+        <li>FAQ</li>
+        <li>Fees</li>
+        <li>News</li> 
+      </ul>
+    </div>
+    <div class="col">
+      <h1>Accounts</h1>
+      <ul>
+        <li>Sign In</li>
+        <li>Sign Up</li>
+        <li>Terms & Conditions</li>
+        <li>Privacy Policy</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h1>Support</h1>
+      <ul>
+        <li>Contact us</li>
+        <li>Web chat</li>
+        <li>Help Center</li>
+        <li>JObs</li>
+      </ul>
+    </div>
+    <div class="col social">
+      <h1>Social</h1>
+      <ul>
+        <li><img src="images/twittericon.jpg" width="32" style="width: 32px;"></li>
+        <li><img src="images/instagramicon.jpg" width="32" style="width: 32px;"></li>
+        <li><img src="images/whatsapp icon.jpg" width="32" style="width: 32px;"></li>
+        <li><img src="images/fbkicon.jpg" width="32" style="width: 32px;"></li>
+        <li><img src="images/gmailicon.jpg" width="32" style="width: 32px;"></li>
+        <li><img src="images/tgicon.jpg" width="32" style="width: 32px;"></li>
+      </ul>
+    </div>
+  <div class="clearfix"></div>
+  </div>
+</div>
+</footer>
+</body>
+</html>
+</body>
+</html>
