@@ -15,7 +15,7 @@ ___
 | 3 | Gladys | <https://github.com/202334> | <okekegladys100@gmail.com> | UIUX designer |
 | 4 | Gabriel Ameh | <https://github.com/Gabson20> |  <amehgabriel445@gmail.com> | Frontend Developer |
 | 5 | Ebuka Offor | <https://github.com/BukiOffor> | <ebuka2264@yahoo.com> | project Lead |
-| 6 | Ismail Abbas Abbas  | <https://github.com/ibnabbas> | <ibnabbas1981@gmail.com> | Frontend Developer |
+| 6 | Ismail Aminu Abbas  | <https://github.com/ibnabbas> | <ibnabbas1981@gmail.com> | Frontend Developer |
 | 7 | Chibuzor | <https://github.com/> | <yahoo.com> | Content Writer |
 
 
