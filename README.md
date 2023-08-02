@@ -10,13 +10,13 @@ ___
 <!-- Tables -->
 | S/NO | Team Mates | GitHub handle | Email | Role |
 | :---: | :---: | :---: | :---: | :---: |
-| 1 | Stephen Peter | <https://github.com/> | <nnanna.echi018@uniport.edu.ng> | Blockchain Developer |
-| 2 | Fatima Olugbenga | <https://github.com/> | @BukiOffor | Frontend Developer |
-| 3 | Gladys | <https://github.com/> | @BukiOffor | UIUX design |
-| 4 | Gabriel Ameh | <https://github.com/> | @BukiOffor | Frontend Developer |
-| 5 | Ebuka Offor | <https://github.com/BukiOffor> | @ebuka2264@yahoo.com | project Lead |
-| 6 | Abbas | <https://github.com/> | <@gmail.com> | Content Writer |
-| 7 | Chibuzor | <https://github.com/> | <ebuka2264@yahoo.com> | project Lead |
+| 1 | Stephen Peter | <https://github.com/stephenpeter666> | <Stephenp672@gmail.com> | Blockchain Developer |
+| 2 | Fatima Tolani Olugbenga | <https://github.com/Fatolani> | <fattytolani@gmail.com> | Frontend Developer |
+| 3 | Gladys | <https://github.com/> | <@gmail.com> | UIUX design |
+| 4 | Gabriel Ameh | <https://github.com/Gabson20> |  <amehgabriel445@gmail.com> | Frontend Developer |
+| 5 | Ebuka Offor | <https://github.com/BukiOffor> | <ebuka2264@yahoo.com> | project Lead |
+| 6 | Ismail Abbas Abbas  | <https://github.com/ibnabbas> | <ibnabbas1981@gmail.com> | Frontend Developer |
+| 7 | Chibuzor | <https://github.com/> | <@yahoo.com> | Content Writer |
 
 
 
@@ -25,7 +25,7 @@ ___
 
 ## An overview of what problem is being addressed
 
-The problem of centralized content streaming the platform can decide to take down a creator's content at any time. This is a problem because the content creators are not in control of their content and also the platform can decide to take down a creator's content at any time.
+To do
 
 ___
 
