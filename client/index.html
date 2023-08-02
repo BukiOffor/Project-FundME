@@ -6,18 +6,34 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: '#da373d',
+            }
+          }
+        }
+      }
+    </script>
+    <script src="script.js" type="module"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css"  rel="stylesheet" />
+
     <title>Fundme</title>
 </head>
 <body>
-<nav class="container-fluid navBar" id="navBar">
+<nav class="container-fluid navBar font-mono" id="navBar">
     <div class="logo fund">
-        <a href=""><span><img class="fundlogo" src="images/fundmelogo.jpg" alt=""></span></a>
+        <a href="base.html"><span><img class="fundlogo" src="images/fundmelogo.jpg" alt=""></span></a>
     </div>
-    <div id="nav-search" class="d-none d-md-block">
-        <i class="fas fa-search"></i>
-        <input type="text" placeholder="Search" id="inp-search">
-      </div>
-       <div class="description d-none d-md-block">
+    <div id="nav-search" class="d-none d-md-block rounded-full">
+      <i class="fas fa-search justify-start"></i>
+        <input  type="text" placeholder="Search" id="inp-search">
+    </div>
+       <div class="description d-none d-md-block ">
         <h2>English  <select name="" id=""><option value=""></option></select></h2>
        </div>
   </div>
@@ -64,132 +80,234 @@
             <button class="signin">Sign In</button>
       </div>
 </nav>
-<section id="heroSection" class="container-fluid">
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
-            <div class="carousel-inner div1">
-                <div class="carousel-item active">
-                    <img src="images/bgpix.jpg" width="300px" height="400px" class="d-block w-100 h-30" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                    <h3 class="write-up text-capitalize m-0">Raise Fund for yourself</h3>
-                    <h2 class="write-up display-2 m-0 mt-2 mt-md-4 text-white font-weight-bold text-capitalize">Keep supporting the needy!</h2>
-                </div>
-            </div>
-          <div class="carousel-item div1">
-            <img src="images/picc2.jpg" width="300px" height="400px" class="d-block w-100 h-30" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5 class="write-up text-capitalize m-0">Raise Funds for the needy</h5>
-              <p class="write-up display-2 m-0 mt-2 mt-md-4 text-white font-weight-bold text-capitalize">Don't get tired, keep supporting the poor!</p>
-            </div>
-          </div>
-          
-          <div class="carousel-item div1">
-            <img src="images/picc3.jpg" width="300px" height="400px" class="d-block w-100 h-30" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5 class="write-up text-capitalize m-0">Support the education sector</h5>
-              <p class="write-up display-2 m-0 mt-2 mt-md-4 text-white font-weight-bold text-capitalize">Let's develop the society together!</p>
-            </div>
-          </div>
-          <div class="carousel-item div1">
-            <img src="images/picc5.jpg" width="300px" height="400px" class="d-block w-100 h-30" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5 class="write-up text-capitalize m-0">Raise Funds for Vacation</h5>
-              <p class="write-up display-2 m-0 mt-2 mt-md-4 text-white font-weight-bold text-capitalize">Don't Give Up! you can still visit your dream country.</p>
-            </div>
-          </div>
+<div>
+
+
+<!-- Carousel-->
+
+<section id="heroSection" class="pt-2 container-fluid">
+  <div id="default-carousel" class="relative w-full" data-carousel="slide">
+    <!-- Carousel wrapper -->
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+         <!-- Item 1 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="images/lucas-hoang-BzU8qF6coIY-unsplash.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
-    </div>
+        <!-- Item 2 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="images/craig-manner.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
 </section>
+
+<div class="footer1 py-2">
+  <h1 style="text-align: start;" class="font-mono text-3xl font-awesome hover:font-bold text-center">CALL TO ACTION</h1> 
+</div>
 
 <main class="container-fluid maincont" >
     <div class="main1 container d-none d-md-block">
-        <marquee behavior="" direction="left"><h3>Raise Funds Today!</h3></marquee>
+        <marquee behavior="" direction="left" class="font-awesome font-mono"><h3> Do you have a problem that needs funding or do you need funds to help a loved one and family, Raise Funds Today and achieve that dream!</h3></marquee>
     </div>
     
   
-  <!-- <div class="fund1"> -->
-    <div id="inclusiveClasses" class="d-md-flex justify-content-between">
-       <div class="card mb-2 container-fluid" style="width: 70%;">
-    <!-- <div class="fund"> -->
-          <img src="images/guyman.jpg" width="340px" height="220px" alt="">
-       <div class="card-body">
-         <h4>Raise Funds <br><span>For Yourself</span></h4>
-      </div>
-    </div>
-    <!-- <div class="fund"> -->
-        <div class="card mb-2 container-fluid" style="width: 70%;">
-          <img src="images/man.jpg"  width="340px" height="220px" alt="">
-         <div class="card-body">
-           <h4>Raise Funds <br><span>For a Friend/Family</span></h4>
-         </div>
-       </div>
-    <!-- <div class="fund"> -->
-      <div class="card mb-2 container-fluid" style="width: 70%;">
-         <img src="images/peepz.jpg"  width="340px" height="220px" alt="">
-        <div class="card-body">
-          <h4>Raise Funds <br><span>For Charity</span></h4>
-        </div>
-      </div>
-    <!-- <div class="fund"> -->
-      <div class="card mb-2 container-fluid" style="width: 70%;">
-          <img src="images/bgpix.jpg"  width="340px" height="220px" alt="">
-        <div class="card-body"></div>
-          <h4>Raise Funds <br><span>For a Project</span></h4>
-        </div>
-      </div>
-  </div>
-  <div class="footer1">
-    <h3 style="text-align: start;">Featured Projects</h3>
-  </div>
-  <div id="inclusiveClasses" class="d-md-flex justify-content-between">
-    <div class="card mb-2 container-fluid" style="width: 70%;">
-        <img src="./images/picc2.jpg" width="100px" height="230px" class="card-img-top" alt="...">
-        <div class="card-body">
-          <p style="text-align: center; font-weight: bold;" class="card-text">Fund Bio-Gas Factory <br>67hd.....k46d <br>9 days left</p> 
-          <button  style="background-color:green; height: 2%; width: 100%;"></button>
-          <div class="d-none d-md-flex justify-content-between">
-            <p>3.5ETH</p>
-            <p>5.0ETH</p>
-          </div>
-          <h6>Raised</h6>               
-        </div>
-    </div>
-    <div class="card mb-2 container-fluid" style="width: 70%;">
-        <img src="images/picc1.jpg" width="100px" height="230px" class="card-img-top" alt="...">
-        <div class="card-body">
-          <p style="font-weight: bold; text-align: center; " class="card-text">Help Motherless Children <br>67td.....k46d <br>28 days left </p>
-          <button  style="background-color:green; height: 2%; width: 100%;"></button>
-          <div class="d-none d-md-flex justify-content-between">
-            <p>2.8ETH</p>
-            <p>3.0ETH</p>
-          </div>
-          <h6>Raised</h6> 
-        </div>
-    </div>
-    <div class="card mb-2 container-fluid" style="width: 70%">
-        <img src="images/picc3.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <p style="font-weight: bold; text-align: center; " class="card-text">Fund My Education <br>8u78.....w52h <br>9 days left </p>
-          <button  style="background-color:green; height: 2%; width: 100%;"></button>
-          <div class="d-none d-md-flex justify-content-between">
-            <p>6.2ETH</p>
-            <p>15ETH</p>
-          </div>
-          <h6>Raised</h6> 
-        </div>
-    </div>
-    <div class="card mb-2 container-fluid" style="width: 70%;">
-        <img src="./images/picc4.jpg" width="100px" height="220px" class="card-img-top" alt="...">
-        <div class="card-body">
-          <p style="font-weight: bold; text-align: center; " class="card-text">Sponsor My Vacation <br>2y73.....w5tu <br> Completed </p>
-          <button  style="background: -webkit-linear-gradient(to left, green, #d8d8db); height: 2%; width: 100%;"></button>
-          <div class="d-none d-md-flex justify-content-between">
-            <p>4.6ETH</p>
-            <p>4.6ETH</p>
-          </div>
-          <h6>Raised</h6> 
-        </div>
-    </div>
+  <!-- <DONATE> -->
+<div class="pt-6 lg:flex lg:space-x-2.5 sm:flex-row space-y-2.5">   
+<div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+  <a href="#">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">Raise Funds for Yourself</h5>
+  </a>
+  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Do you need help to sort out a personal emergency?, GET HELP NOW.</p>
+  <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-400 rounded-lg hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+      Fund Me
+      <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+      </svg>
+  </a>
 </div>
+
+
+<div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+  <a href="#">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">Raise Funds for a Friend</h5>
+  </a>
+  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Do you need help to sort out a friend's emergency?, GET HELP NOW.</p>
+  <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-400 rounded-lg hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-blue-300 ">
+      Fund Me
+      <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+      </svg>
+  </a>
+</div>
+
+
+<div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+  <a href="#">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">Raise Funds for a Project</h5>
+  </a>
+  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Do you need help to sort out a personal project?, GET HELP NOW.</p>
+  <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-400 rounded-lg hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-blue-300  dark:focus:ring-blue-800">
+      Fund Me
+      <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+      </svg>
+  </a>
+</div>
+
+<div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+  <a href="#">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">Raise Funds for Charity</h5>
+  </a>
+  <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">Do you need help to fund a charity of your choice?, GET HELP NOW.</p>
+  <a href="#" class="inline-flex items-center mt-3 px-3 py-2 text-sm font-medium text-center text-white bg-green-400 rounded-lg hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+      Fund Me
+      <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+      </svg>
+  </a>
+</div>
+    
+</div>
+
+
+  <div class="footer1 py-8">
+    <h1 style="text-align: start;" class="font-mono text-3xl font-awesome hover:font-bold text-center">Featured Projects</h1> 
+  </div>
+
+  <!--NEXT STEP-->
+
+<div class="py-6 lg:flex lg:space-x-6 sm:flex-row space-y-2.5 ">
+  <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ">
+    <a href="#">
+        <img class="rounded-t-lg" src="images/carmen-laezza-KwmYrgeCpZA-unsplash.jpg" alt="" />
+    </a>
+    <div class="p-5">
+        <a href="#">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Revive Our Stadium</h5>
+        </a>
+    <div>
+  
+          <div>
+            <div class="flex justify-between mb-1">
+            <span class="font-normal text-gray-400">100 days Remaining</span>
+            <span class="text-sm font-mono font-medium text-gray-400 ">25%</span>
+        </div>
+        <div class="mb-20 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+            <div class="bg-green-400 h-2.5 rounded-full" style="width: 25%"></div>
+          <div >
+            <div class="font-normal text-gray-400 mt-2" >17.8 ETH Rasied out of 285.0 ETH </div>
+          </div>
+          <p class="mb-3 font-normal text-gray-700 dark:text-black-400">Revive the Maradona ground</p>
+  
+  
+        </div>
+      </div>
+      </div>
+  
+        <button class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-400 rounded-lg hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-900 dark:focus:ring-green-900" id = "contribute">
+            Donate
+             <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+            </svg>
+          </button>
+    </div>
+  </div>
+
+
+
+<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ">
+  <a href="#">
+      <img class="rounded-t-lg" src="images/kevin-wang-IJTtUa6fvW4-unsplash.jpg" alt="" />
+  </a>
+  <div class="p-5">
+      <a href="#">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Love Not War</h5>
+      </a>
+  <div>
+
+        <div>
+          <div class="flex justify-between mb-1">
+          <span class="font-normal text-gray-400">9 days Remaining</span>
+          <span class="text-sm font-mono font-medium text-gray-400 ">97%</span>
+      </div>
+      <div class="mb-20 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+          <div class="bg-green-400 h-2.5 rounded-full" style="width: 95%"></div>
+        <div >
+          <div class="font-normal text-gray-400 mt-2" >196.5 ETH Rasied out of 200.0 ETH </div>
+        </div>
+        <p class="mb-3 font-normal text-gray-700 dark:text-black-400">End the Crisis in Taiwan</p>
+
+
+      </div>
+    </div>
+    </div>
+
+      <button class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-400 rounded-lg hover:bg-green-600  focus:ring-4 focus:outline-none focus:ring-green-900 dark:focus:ring-green-900" id = "contribute1">
+          Donate
+           <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+          </svg>
+        </button>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ">
+  <a href="#">
+      <img class="rounded-t-lg" src="images/sergey-luschik-VPnNLEATyE0-unsplash.jpg" alt="" />
+  </a>
+  <div class="p-5">
+      <a href="#">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Support War in Ukraine</h5>
+      </a>
+  <div>
+
+        <div>
+          <div class="flex justify-between mb-1">
+          <span class="font-normal text-gray-400">9 days Remaining</span>
+          <span class="text-sm font-mono font-medium text-gray-400 ">85%</span>
+      </div>
+      <div class="mb-20 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+          <div class="bg-green-400 h-2.5 rounded-full" style="width: 85%"></div>
+        <div >
+          <div class="font-normal text-gray-400 mt-2" >3.5 ETH Rasied out of 5.0 ETH </div>
+        </div>
+        <p class="mb-3 font-normal text-gray-700 dark:text-black-400">Donate to the crisis in Ukraine!!</p>
+
+
+      </div>
+    </div>
+    </div>
+
+      <button class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-400 rounded-lg hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-900 dark:focus:ring-green-900" id = "contribute2">
+          Donate
+           <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+          </svg>
+        </button>
+  </div>
+</div>
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!--END NEXT STEP-->
+
 
 <!-- <div class="footer2">
 
@@ -236,7 +354,7 @@
       
 </footer> -->
 
-<button class=" back-to-top"><a href="#" ><i class="fa fa-angle-double-up"></i></a></button>
+<button class=" back-to-top"><a href="#" ><i class=" fa fa-angle-double-up"></i></a></button>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>    
 <footer>
   <div class="footer">
@@ -292,6 +410,7 @@
   </div>
 </div>
 </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
 </body>
 </html>
 </body>
