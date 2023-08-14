@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">-->
     <link rel="stylesheet" href="style.css">
@@ -44,18 +46,19 @@
 <body>
 <nav class="container-fluid navBar font-mono" id="navBar">
     <div class="logo fund">
-        <a href="base.html"><span><img class="fundlogo" src="images/fundmelogo.jpg" alt=""></span></a>
+      <a href="base.html"><span><img class="fundlogo" src="images/fundmelogo.jpg" alt=""></span></a>
     </div>
     <div id="nav-search" class="d-none d-md-block rounded-full">
       <i class="fas fa-search justify-start"></i>
         <input  type="text" placeholder="Search" id="inp-search">
     </div>
-       <div class="description d-none d-md-block ">
-        <h2>English  <select name="" id=""><option value=""></option></select></h2>
-       </div>
-  </div>
-  <button class="signin" style="height: 50px;">Sign In</button>
+    <div class="description d-none d-md-block ">
+      <h2>English  <select name="" id=""><option value=""></option></select></h2>
     </div>
+    <div>
+      <button class="signin" style="height: 50px;">Sign In</button>
+    </div>
+    
     <div class="nbt d-none d-md-block">
         <button id="conetBtn" class="connet">
           <span>C</span>
@@ -74,9 +77,10 @@
           <span>t</span>
         </button>
     </div>
+    
     <div id="ha" class="d-block d-md-none">
         <button id="hamburger" type="button" data-bs-toggle="dropdown" aria-expanded="false" ><i class="fa-solid fa-bars hambr"></i><span class="cancel-sign"><i class="fa-solid fa-xmark"></i></span></button>
-         <ul class="dropdown-menu dropdown-ul">
+         <div class="dropdown-menu dropdown-ul">
            <button id="conetBtn" class="connet">
               <span>C</span>
               <span>o</span>
@@ -95,13 +99,13 @@
            </button>
             <button><h2>English <select name="" id=""><option value=""></option></select></h2></button>
             <button class="signin">Sign In</button>
-      </div>
+      </div> 
+    </div>
 </nav>
+
+
 <div>
-
-
 <!-- Carousel-->
-
 <section id="heroSection" class="pt-2 container-fluid">
   <div id="default-carousel" class="relative w-full" data-carousel="slide">
     <!-- Carousel wrapper -->
@@ -114,6 +118,8 @@
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
             <img src="images/craig-manner.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
+      </div>
+    </div>
 </section>
 
 <div class="footer1 py-2">
