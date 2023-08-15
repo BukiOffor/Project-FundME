@@ -54,6 +54,10 @@
       .max-w-95p {
         max-width: 90%;
       }
+      
+      .green {
+        @apply fmgreen-dark dark:fmgreen-light
+      }
     }
     </style>
     <!--END: TO BE REMOVED-->
@@ -65,18 +69,21 @@
         theme: {
           extend: {
             colors: {
-              fmGreen: {
-                light: '#17473e',
-                DEFAULT: '#449183',
-                dark: '#449183'
+              fmgreen: {
+                light: '#449183',
+                DEFAULT: '',
+                dark: '#17473e'
               }
             },
             fontFamily: {
               poppins: ['Poppins', 'sans-serif']
+            },
+            backgroundImage:{
+              heroimg1: "url('./images/heroimg1.png')"
+            }
             }
           }
         }
-      }
     </script>
     
     <!--<script src="script.js" type="module"></script>-->
@@ -181,7 +188,7 @@
   <section class="max-w-95p  md:max-w-90 mx-auto">
   <div class="flex flex-wrap items-center justify-between mx-auto py-4">
   <a href="#hero" class="text-3xl">
-    <span class="font-bold text-fmGreen">Fund</span><span class="font-light text-gray-400 border-b-4 border-solid border-fmGreen">ME</span>
+    <span class="font-bold text-fmgreen-dark dark:text-fmgreen-light">Fund</span><span class="font-light text-gray-400 border-b-4 border-solid border-fmgreen">ME</span>
   </a>
   <div class="flex items-center md:order-2">
       <button type="button" class="hidden relative flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-700" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
@@ -240,21 +247,21 @@
     </button>
   </div>
   <nav class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user" arial-label="main">
-    <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-fmGreen rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent dark:bg-black md:dark:bg-transparent dark:border-fmGreen">
+    <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-fmgreen rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent dark:bg-black md:dark:bg-transparent dark:border-fmgreen">
       <li>
-        <a href="#" class="block py-2 pl-3 pr-4 text-white bg-fmGreen rounded md:bg-transparent md:text-fmGreen md:p-0 md:dark:text-fmGreen" aria-current="page">Home</a>
+        <a href="#" class="block py-2 pl-3 pr-4 text-white bg-fmgreen rounded md:bg-transparent md:text-fmgreen md:p-0 md:dark:text-fmgreen" aria-current="page">Home</a>
       </li>
       <li>
-        <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-fmGreen md:p-0 dark:text-white md:dark:hover:text-fmGreen dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+        <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-fmgreen md:p-0 dark:text-white md:dark:hover:text-fmgreen dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
       </li>
       <li>
-        <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-fmGreen md:p-0 dark:text-white md:dark:hover:text-fmGreen dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+        <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-fmgreen md:p-0 dark:text-white md:dark:hover:text-fmgreen dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
       </li>
       <li>
-        <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-fmGreen md:p-0 dark:text-white md:dark:hover:text-fmGreen dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Pricing</a>
+        <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-fmgreen md:p-0 dark:text-white md:dark:hover:text-fmgreen dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Pricing</a>
       </li>
       <li>
-        <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-fmGreen md:p-0 dark:text-white md:dark:hover:text-fmGreen dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+        <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-fmgreen md:p-0 dark:text-white md:dark:hover:text-fmgreen dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
       </li>
     </ul>
   </nav>
@@ -266,13 +273,16 @@
 
 <main class="container-fluid maincont">
   <!-- Hero -->
-  <section id="hero" class="h-screen bg-black dark:bg-black flex items-center text-white dark:text-white">
+  <section id="hero" class="min-h-screen bg-black dark:bg-black text-white dark:text-white scroll-mt-1">
+    
+    <div class="bg-left-top md:bg-heroimg1 bg-fixed min-h-screen bg-cover flex items-center ">
+     
     <div class="max-w-95p md:max-w-90 md:grid md:grid-cols-2 mx-auto my-auto items-center justify-center">
       <div class="grid py-4 mx-auto">
         <div class="mr-auto place-self-center">
             <h1 class="mb-4 text-4xl font-extrabold tracking-tight xl:text-5xl leading-tight text-center md:text-left">Helping Each other Create Happiness</h1>
           
-          <div class="flex justify-center md: justify-start">
+          <div class="flex justify-center md:justify-start">
             <a href="#" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white border-4 border-white hover:bg-white hover:text-black focus:outline-0">
                 Create A Campaign 
             </a> 
@@ -284,6 +294,7 @@
     </div>
     <div class="hidden lg:block"></div>
    </div>
+  </div>
 </section>
     <!--<div class="main1 container d-none d-md-block">-->
     <!--    <marquee behavior="" direction="left" class="font-awesome font-mono"><h3> Do you have a problem that needs funding or do you need funds to help a loved one and family, Raise Funds Today and achieve that dream!</h3></marquee>-->
