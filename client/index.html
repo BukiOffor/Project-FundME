@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="md:scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,8 +48,11 @@
 
   <style type="text/tailwindcss">
     @layer utilities {
-      .section-min-height {
-        min-height: calc(100vh - 68px)
+      .max-w-90p {
+        max-width: 90%;
+      }
+      .max-w-95p {
+        max-width: 90%;
       }
     }
     </style>
@@ -90,7 +93,7 @@
     <title>FundMe</title>
     
 </head>
-<body class="font-poppins bg-white dark:bg-slate-800">
+<body class="font-poppins bg-white dark:bg-black">
 <!--<nav class="container-fluid navBar font-mono" id="navBar">-->
 <!--    <div class="logo fund">-->
 <!--      <a href="base.html"><span><img class="fundlogo" src="images/fundmelogo.jpg" alt=""></span></a>-->
@@ -174,11 +177,11 @@
 <!--</div>-->
 
 
-<header class="fixed w-full top-0 z-10  backdrop-blur-xl dark:backdrop-blur-xl bg-white bg-opacity-25 dark:bg-slate-900 dark:bg-opacity-25">
-  <section class="max-w-4xl mx-auto" arial-label="main">
-  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-  <a href="#" class="text-3xl">
-    <span class="font-bold text-fmGreen">Fund</span><span class="font-light text-slate-700 dark:text-slate-300 border-b-2 border-solid border-fmGreen">Me</span>
+<header class="sticky w-full top-0 z-10  backdrop-blur-xl dark:backdrop-blur-xl bg-white bg-opacity-25 dark:bg-slate-900 dark:bg-opacity-25">
+  <section class="max-w-95p  md:max-w-90 mx-auto">
+  <div class="flex flex-wrap items-center justify-between mx-auto py-4">
+  <a href="#hero" class="text-3xl">
+    <span class="font-bold text-fmGreen">Fund</span><span class="font-light text-gray-400 border-b-4 border-solid border-fmGreen">Me</span>
   </a>
   <div class="flex items-center md:order-2">
       <button type="button" class="hidden relative flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-700" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
@@ -261,19 +264,17 @@
 <main class="container-fluid maincont">
   
   <!-- Hero -->
-  <section class="h-screen scroll-mt-20 bg-white dark:bg-gray-900 flex justify-center items-center">
-    <div class="mx-w-4xl md:grid md:grid-cols-2 mx-auto my-auto items-center justify-center">
-      <div class="grid max-w-screen-xl pl-4 py-4 mx-auto">
-        <div class="mr-auto place-self-center md:col-span-7">
-            <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight md:text-4xl xl:text-5xl dark:text-white leading-9">Helping Each other Create Happiness</h1>
-            <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Be the change, rise by lifting others.</p>
-            <a href="#" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
-                Get started
-                <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-            </a>
-            <a href="#" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-                Speak to Sales
+  <section id="hero" class="h-screen bg-black dark:bg-gray-900 flex items-center text-white dark:text-white">
+    <div class="max-w-95p md:max-w-90 md:grid md:grid-cols-2 mx-auto my-auto items-center justify-center">
+      <div class="grid py-4 mx-auto">
+        <div class="mr-auto place-self-center">
+            <h1 class="mb-4 text-4xl font-extrabold tracking-tight xl:text-5xl leading-tight text-center md:text-left">Helping Each other Create Happiness</h1>
+          
+          <div class="flex justify-center md: justify-start">
+            <a href="#" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white border-4 border-White hover:bg-white focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-White dark:hover:bg-white dark:hover:text-black dark:focus:ring-gray-800">
+                Create A Campaign 
             </a> 
+          </div>
         </div>
         <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
             <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png" alt="mockup">
