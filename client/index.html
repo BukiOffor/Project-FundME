@@ -19,14 +19,14 @@
   @font-face {
     font-family: "Poppins";
     src: url("rm/poppins/Poppins-Light.ttf");
-    font-weight: 300;
+    font-weight: thin;
     font-style: normal;
   }
   
   @font-face {
     font-family: "Poppins";
     src: url("rm/poppins/Poppins-Regular.ttf");
-    font-weight: 400;
+    font-weight: normal;
     font-style: normal;
   }
   
@@ -40,7 +40,7 @@
   @font-face {
     font-family: "Poppins";
     src: url("rm/poppins/Poppins-Bold.ttf");
-    font-weight: 700;
+    font-weight: bold;
     font-style: normal;
   }
 </style>
@@ -53,6 +53,10 @@
       }
       .max-w-95p {
         max-width: 90%;
+      }
+      
+      .theme-bg-blur {
+        @apply backdrop-blur-xl dark:backdrop-blur-xl bg-white bg-opacity-25 dark:bg-slate-900 dark:bg-opacity-25
       }
     }
     </style>
@@ -176,7 +180,7 @@
 <!--</div>-->
 
 
-<header class="sticky w-full top-0 z-10  backdrop-blur-xl dark:backdrop-blur-xl bg-white bg-opacity-25 dark:bg-slate-900 dark:bg-opacity-25">
+<header class="sticky w-full top-0 z-10 theme-bg-blur">
   <section class="max-w-95p  md:max-w-90 mx-auto">
   <div class="flex flex-wrap items-center justify-between mx-auto py-4">
   <a href="#hero" class="text-3xl">
@@ -291,7 +295,7 @@
         <div class="p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="stats" role="tabpanel" aria-labelledby="stats-tab">
             <dl class="grid max-w-screen-xl grid-cols-2 gap-8 p-4 mx-auto text-gray-900 sm:grid-cols-3 xl:grid-cols-6 dark:text-white sm:p-8">
                 <div class="flex flex-col items-center justify-center">
-                    <dt class="mb-2 text-3xl font-extrabold">73M+</dt>
+                    <dt class="mb-2 text-xl font-extrabold">73M+</dt>
                     <dd class="text-gray-500 dark:text-gray-400">Developers</dd>
                 </div>
                 <div class="flex flex-col items-center justify-center">
@@ -316,6 +320,7 @@
                 </div>
             </dl>
         </div>
+    </div>
   </section>
     <!--<div class="main1 container d-none d-md-block">-->
     <!--    <marquee behavior="" direction="left" class="font-awesome font-mono"><h3> Do you have a problem that needs funding or do you need funds to help a loved one and family, Raise Funds Today and achieve that dream!</h3></marquee>-->
