@@ -58,6 +58,10 @@
       .theme-bg-blur {
         @apply backdrop-blur-xl dark:backdrop-blur-xl bg-white bg-opacity-25 dark:bg-slate-900 dark:bg-opacity-25
       }
+      
+      .how-it-works:hover svg {
+        @apply fill-white
+      }
     }
     </style>
     <!--END: TO BE REMOVED-->
@@ -288,7 +292,7 @@
             <a href="#" class="w-fit inline-flex items-center justify-center px-5 py-3 mt-4 text-base text-center text-white border-4 border-white hover:bg-white hover:text-black focus:outline-0 font-bold">
                 Start Campaign 
             </a> 
-            <a href="" class="w-fit text-white font-bold px-5 py-3">
+            <a href="" class="how-it-works w-fit text-white font-bold px-5 py-3">
               <svg class="w-6 h-6 text-white inline-flex items-center justify-center" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 16">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m2.707 14.293 5.586-5.586a1 1 0 0 0 0-1.414L2.707 1.707A1 1 0 0 0 1 2.414v11.172a1 1 0 0 0 1.707.707Z"/>
                 </svg> How it works
@@ -311,6 +315,10 @@
           <div class="p-3 flex flex-col items-center justify-center">
             <dt class="mb-2 text-4xl font-extrabold">$800M+</dt>
             <dd class="text-center">Funds Raised</dd>
+          </div>
+          <div class="p-3 flex flex-col items-center justify-center">
+            <dt class="mb-2 text-4xl font-extrabold">$200M+</dt>
+            <dd class="text-center">Donations</dd>
           </div>
          </dl>
         </div>
@@ -338,7 +346,7 @@
 
 <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
   <a href="#">
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">Raise Funds for a Friend</h5>
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">Raise Funds for a Friend</h5>
   </a>
   <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Do you need help to sort out a friend's emergency?, GET HELP NOW.</p>
   <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-400 rounded-lg hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-blue-300 ">
@@ -379,7 +387,7 @@
  
  
  <!-- Campaign --> 
-  <section id="campaign" class="pt-16 overflow-hidden">
+  <section id="campaign" class="pt-8 overflow-hidden">
     <h2 class="max-w-95p md:max-w-90p mx-auto pt-10 pb-6 font-bold text-black dark:text-white text-3xl md:text-4xl"> Campaign</h2>
     <div class="max-w-95p md:max-w-max mx-auto md:px-[5%] md:flex md:items-center md:gap-10 md:overflow-x-scroll">
       <div class="max-w-sm md:min-w-[360px] my-5 md:my-0 bg-white border border-gray-200 shadow dark:bg-grayed dark:border-gray-700">
