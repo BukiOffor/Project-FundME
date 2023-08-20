@@ -67,11 +67,11 @@
       }
       
       .category-list > div:nth-of-type(odd) {
-        @apply bg-gray-100 bg-opacity-50 
+        @apply bg-gray-100 bg-opacity-50 dark:bg-grayed dark:border-gray-700
       }
       
       .category-list > div:nth-of-type(even) {
-        @apply bg-green-100 bg-opacity-50
+        @apply bg-green-100 bg-opacity-50 dark:bg-grayed dark:border-gray-700
       }
      
       .no-scrollbar::-webkit-scrollbar {
@@ -761,60 +761,90 @@
       <div class="max-w-95p md:max-w-90 mx-auto">
         <h2 class="pt-16 pb-6 font-bold text-black dark:text-white text-3xl md:text-4xl">Category</h2>
         <div class="category-list grid grid-cols-1 xl:grid-cols-3 md:grid-cols-2 gap-10 xl:justify-between">
+          
           <div class="max-w-sm p-5 border border-gray-200 dark:bg-grayed dark:border-gray-700">
-            <i class="pb-4 fa fa-kit-medical text-5xl text-gray-500"></i>
+            <i class="pb-4 fa fa-graduation-cap text-5xl text-gray-500"></i>
             <p class="font-bold text-xl text-black dark:text-white">Education</p>
             <p class="my-3 font-normal text-gray-700 dark:text-gray-400">
               anim fugiat nulla elit sunt id fugiat do ad cupidatat aliquip est ullamco sint id deserunt qui reprehenderit incididunt excepteur
             </p>
             <div>
                <a href="#" class="pb-1 text-green-400 border-b border-transparent hover:border-green-400">
-                 <span>300+ active capaigns</span>
+                 300+ active campaigns
                </a>
             </div>
           </div>
           
           
-           <div class="max-w-sm p-5 border border-gray-200 dark:bg-grayed dark:border-gray-700">
+           <div class="max-w-sm p-5 border border-gray-200">
             <i class="pb-4 fa fa-kit-medical text-5xl text-gray-500"></i>
-            <p class="font-bold text-xl text-black dark:text-white">Education</p>
+            <p class="font-bold text-xl text-black dark:text-white">Medical</p>
             <p class="my-3 font-normal text-gray-700 dark:text-gray-400">
               anim fugiat nulla elit sunt id fugiat do ad cupidatat aliquip est ullamco sint id deserunt qui reprehenderit incididunt excepteur
             </p>
-            <div class="">
+            <div>
                <a href="#" class="pb-1 text-green-400 border-b border-transparent hover:border-green-400">
-                 <span>300+ active capaigns</span>
+                 153+ active campaigns
                </a>
             </div>
           </div>
           
           
-          <div class="max-w-sm p-5 border border-gray-200 dark:bg-grayed dark:border-gray-700">
-            <i class="pb-4 fa fa-kit-medical text-5xl text-gray-500"></i>
-            <p class="font-bold text-xl text-black dark:text-white">Education</p>
+          <div class="max-w-sm p-5 border border-gray-200">
+            <i class="pb-4 fas fa-gift text-5xl text-gray-500"></i>
+            <p class="font-bold text-xl text-black dark:text-white">Non Profit</p>
             <p class="my-3 font-normal text-gray-700 dark:text-gray-400">
               anim fugiat nulla elit sunt id fugiat do ad cupidatat aliquip est ullamco sint id deserunt qui reprehenderit incididunt excepteur
             </p>
-            <div class="">
+            <div>
                <a href="#" class="pb-1 text-green-400 border-b border-transparent hover:border-green-400">
-                 <span>300+ active capaigns</span>
+                 300+ active campaigns
                </a>
             </div>
           </div>   
           
           
-          <div class="max-w-md p-5 border border-gray-200 dark:bg-grayed dark:border-gray-700">
-            <i class="pb-4 fa fa-kit-medical text-5xl text-gray-500"></i>
-            <p class="font-bold text-xl text-black dark:text-white">Education</p>
+          <div class="max-w-sm p-5 border border-gray-200">
+            <i class="pb-4 fa fa-city text-5xl text-gray-500"></i>
+            <p class="font-bold text-xl text-black dark:text-white">Development</p>
+            <p class="my-3 font-normal text-gray-700 dark:text-gray-400">
+              anim fugiat nulla elit sunt id fugiat do ad cupidatat aliquip est ullamco sint id deserunt qui reprehenderit incididunt excepteur
+            </p>
+            <div>
+               <a href="#" class="pb-1 text-green-400 border-b border-transparent hover:border-green-400">
+                  300+ active campaigns
+               </a>
+            </div>
+          </div>
+          
+          
+           <div class="max-w-sm p-5 border border-gray-200">
+            <i class="pb-4 fa fa-exclamation-triangle text-5xl text-gray-500"></i>
+            <p class="font-bold text-xl text-black dark:text-white">Disaster</p>
             <p class="my-3 font-normal text-gray-700 dark:text-gray-400">
               anim fugiat nulla elit sunt id fugiat do ad cupidatat aliquip est ullamco sint id deserunt qui reprehenderit incididunt excepteur
             </p>
             <div class="">
                <a href="#" class="pb-1 text-green-400 border-b border-transparent hover:border-green-400">
-                 <span>300+ active capaigns</span>
+                 153+ active capaigns
                </a>
             </div>
-          </div> 
+          </div>
+          
+          
+          
+          <span class="block max-w-md p-5 border border-gray-200 dark:bg-grayed dark:border-gray-700 flex flex-col justify-center items-center text-center">
+         
+            <p class="font-bold text-3xl text-black dark:text-white">8+ Category</p>
+            <p class="my-4 font-normal text-gray-700 dark:text-gray-400">
+              Check out other categories.
+            </p>
+            <div>
+               <a href="#" class="w-fit block border-2 border-green-400 p-2 text-green-400 hover:border-green-400 hover:bg-green-400 hover:text-white dark:hover:text-black">
+                 More
+               </a>
+            </div>
+          </span> 
           
         </div>
       </div>
