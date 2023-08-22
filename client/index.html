@@ -99,7 +99,8 @@
               poppins: ['Poppins', 'sans-serif']
             },
             backgroundImage:{
-              heroimg1: "url('./images/hero2.png')"
+              heroimg1: "url('./images/hero2.png')",
+              aboutusimg: "url('./images/aboutus.png')" 
             },
             screens: {
               portrait: {
@@ -235,7 +236,7 @@
       </button>
       
       <!-- Sign In -->
-      <a href="#" class="border-2 border-black dark:border-white py-2 px-2 text-black dark:text-white hover:green-400 dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white font-bold">Sign In</a>
+      <a href="#" class="border border-black dark:border-white py-2 px-2 text-black dark:text-white hover:green-400 dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white">Sign In</a>
       
       <!-- Toggle theme mode --> 
       <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 focus:outline-none rounded-lg text-sm p-2.5">
@@ -284,7 +285,7 @@
         <a href="#category" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400  md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Category</a>
       </li>
       <li>
-        <a href="#testimony" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Testimony</a>
+        <a href="#testimonials" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Testimonials</a>
       </li>
       <li>
         <a href="#aboutus" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About Us</a>
@@ -306,13 +307,14 @@
     <div class="max-w-95p md:max-w-90 md:grid md:grid-cols-2 mx-auto my-auto items-center justify-center">
       <div class="grid py-4 mx-auto">
         <div class="mr-auto">
-            <h1 class="mb-4 text-5xl font-extrabold tracking-tight xl:text-7xl leading-tight xl:leading-normal text-center md:text-left">Helping Each other Create Happiness</h1>
+
+            <h1 class="mb-4 text-5xl font-extrabold tracking-tight xl:text-6xl leading-tight xl:leading-tight text-center md:text-left">Helping Each other Create Happiness</h1>
           
           <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:justify-start whitespace-nowrap">
-            <a href="#" class="w-fit block px-5 py-3 mt-4 text-base text-center text-white border-4 border-white hover:bg-white hover:text-black focus:outline-0 font-bold">
+            <a href="#" class="w-fit block px-5 py-3 mt-4 text-base text-center text-white border-2 border-white hover:bg-white hover:text-black focus:outline-0">
                 Start Campaign 
             </a> 
-            <a href="" class="how-it-works block w-fit text-white font-bold px-5 py-3 border-4 border-transparent md:translate-y-2">
+            <a href="" class="how-it-works block w-fit text-white px-5 py-3 border-2 border-transparent md:translate-y-2">
               <svg class="w-6 h-6 text-white inline-flex items-center justify-center" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 16">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m2.707 14.293 5.586-5.586a1 1 0 0 0 0-1.414L2.707 1.707A1 1 0 0 0 1 2.414v11.172a1 1 0 0 0 1.707.707Z"/>
                 </svg> How it works
@@ -407,26 +409,21 @@
 
  
  <!-- Campaign --> 
-  <section id="campaign" class="scroll-mt-5 pt-8 overflow-hidden">
+  <section id="campaign" class="mt-20 scroll-mt-5 pt-8 overflow-hidden ">
     <h2 class="max-w-95p md:max-w-90p mx-auto pt-10 pb-6 font-bold text-black dark:text-white text-3xl md:text-4xl"> Campaign</h2>
-    <div class="max-w-95p md:max-w-max mx-auto md:px-[5%] md:flex md:items-center md:gap-10 md:overflow-x-scroll">
+    <div class="max-w-95p md:max-w-max mx-auto md:px-[5%] md:flex md:items-center md:gap-10 md:overflow-x-scroll no-scrollbar">
       <div class="max-w-sm md:min-w-[360px] my-5 md:my-0 bg-white border border-gray-200 shadow dark:bg-grayed dark:border-gray-700">
         <a href="#">
           <img class="aspect-[3/2] object-cover object-center cursor pointer" src="/images/picc1.jpg" alt="Poor Ghanian children standing together" />
         </a>
-        <div class="p-5">
+        <div class="px-6 py-8">
           <!-- Badge -->
           <div class="mb-2">
-            <span class="bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-0.5 dark:bg-gray-700 dark:text-gray-400 border border-gray-500">Dark</span>
+            <span class="bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-2 dark:bg-gray-700 dark:text-gray-400">Nonprofit</span>
           </div>
         <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight hover:text-gray-500 hover:dark:text-gray-500 text-gray-900 dark:text-white cursor-pointer">Help feed poor children in Ghana</h5>
+            <h5 class="my-6 text-2xl font-bold tracking-tight hover:text-gray-500 hover:dark:text-gray-500 text-gray-900 dark:text-white cursor-pointer">Help feed poor children in Ghana</h5>
         </a>
-        <p class="mb-1 font-normal text-gray-700 dark:text-gray-400">commodo dolore sit irure excepteur consectetur minim adipisicing aliquip pariatur cillum quis eu occaecat fugiat excepteu eiusmod nulla voluptate exercitation ullamco.</p>
-        <div class="text-sm">
-              <div class="pb-2 text-gray-500"><span class="dark:text-white text-black font-bold">10.5567800</span> ETH Target
-              </div>
-            </div>
         
         <!-- Progress Bar -->
         <div class="pt-6">
@@ -438,18 +435,21 @@
             <div>
               90 days left
             </div>
-            <div>
-              
-              <div class="text-right text-gray-700 dark:text-white">
-               <span class="text-green-400 font-bold">5.806229</span> ETH Raised
+            
+            <div class="text-right text-gray-700 dark:text-white">
+              <div>Raised: <span class="text-green-400 font-bold">5.806229</span> ETH 
+              </div>
+              <div class="py-2">Target: <span class="dark:text-white text-black font-bold">10.5567800</span> ETH 
               </div>
             </div>
+            
           </div>
+          
             
             
           <div class="items-end flex justify-between">
             <!--Donate Button  -->
-            <a href="#" class="border-2 border-green-400 inline-flex items-center font-medium text-white dark:text-black hover:text-green-400 dark:hover:text-green-400 p-2 bg-green-400 hover:bg-transparent mt-6 mb-2 cursor-pointer">
+            <a href="#" class="border border-green-400 inline-flex items-center font-medium text-white dark:text-black hover:text-green-400 dark:hover:text-green-400 p-2 bg-green-400 hover:bg-transparent mt-6 cursor-pointer">
                 Donate
             </a>
           </div>
@@ -463,19 +463,14 @@
         <a href="#" class="cursor-pointer">
           <img class="aspect-[3/2] object-cover object-center cursor pointer" src="/images/carmen-laezza-KwmYrgeCpZA-unsplash.jpg" alt="People in Argentina protesting to save their Maradona Stadium" />
         </a>
-        <div class="p-5">
+        <div class="px-6 py-8">
           <!-- Badge -->
           <div class="mb-2">
-            <span class="bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-0.5 dark:bg-gray-700 dark:text-gray-400 border border-gray-500">Dark</span>
+            <span class="bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-2 dark:bg-gray-700 dark:text-gray-400">Protest</span>
           </div>
         <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight hover:text-gray-500 hover:dark:text-gray-500 text-gray-900 dark:text-white cursor-pointer">Revive Maradona Stadium in Argentina</h5>
+            <h5 class="my-6 text-2xl font-bold tracking-tight hover:text-gray-500 hover:dark:text-gray-500 text-gray-900 dark:text-white cursor-pointer">Revive Maradona Stadium in Argentina</h5>
         </a>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">commodo dolore sit irure excepteur consectetur minim adipisicing aliquip pariatur cillum quis eu occaecat fugiat excepteu eiusmod nulla voluptate exercitation ullamco.</p>
-        <div class="text-sm">
-          <div class="pb-2 text-gray-500"><span class="dark:text-white text-black font-bold"> 53.94853</span> ETH Target
-          </div>
-        </div>
         
         <!-- Progress Bar -->
         <div class="pt-6">
@@ -487,18 +482,20 @@
             <div>
               12 days left
             </div>
-          <div>
-              
-              <div class="text-right text-gray-700 dark:text-white">
-               <span class="text-green-400 font-bold">44.237794</span> ETH Raised 
+            
+            <div class="text-right text-gray-700 dark:text-white">
+              <div> Raised: <span class="text-green-400 font-bold">44.237794</span> ETH  
+              </div>
+              <div class="py-2">Target: <span class="dark:text-white text-black font-bold"> 53.94853</span> ETH 
               </div>
             </div>
+            
           </div>
             
             
           <div class="items-end flex justify-between">
             <!--Donate Button  -->
-            <a href="#" class="border-2 border-green-400 inline-flex items-center font-medium text-white dark:text-black hover:text-green-400 dark:hover:text-green-400 p-2 bg-green-400 hover:bg-transparent mt-6 mb-2 cursor-pointer">
+            <a href="#" class="border border-green-400 inline-flex items-center font-medium text-white dark:text-black hover:text-green-400 dark:hover:text-green-400 p-2 bg-green-400 hover:bg-transparent mt-6 cursor-pointer">
                 Donate
             </a>
           </div>
@@ -514,19 +511,15 @@
         <a href="#" class="cursor-pointer">
           <img class="aspect-[3/2] object-cover object-center cursor pointer" src="images/sergey-luschik-VPnNLEATyE0-unsplash.jpg" alt="Ukraine flag Raised up in the air" />
         </a>
-        <div class="p-5">
+        <div class="px-6 py-8">
           <!-- Badge -->
           <div class="mb-2">
-            <span class="bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-0.5 dark:bg-gray-700 dark:text-gray-400 border border-gray-500">Dark</span>
+            <span class="bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-2 dark:bg-gray-700 dark:text-gray-400">Nonprofit</span>
           </div>
         <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight hover:text-gray-500 hover:dark:text-gray-500 text-gray-900 dark:text-white cursor-pointer">Support Ukraine in the face of Russian aggression.</h5>
+            <h5 class="my-6 text-2xl font-bold tracking-tight hover:text-gray-500 hover:dark:text-gray-500 text-gray-900 dark:text-white cursor-pointer">Support Ukraine in the face of Russian aggression.</h5>
         </a>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">commodo dolore sit irure excepteur consectetur minim adipisicing aliquip pariatur cillum quis eu occaecat fugiat excepteu eiusmod nulla voluptate exercitation ullamco.</p>
-        <div class="text-sm">
-              <div class="pb-2 text-gray-500"><span class="dark:text-white text-black font-bold">27.393407</span> ETH Target
-              </div>
-            </div>
+        
         
         <!-- Progress Bar -->
         <div class="pt-6">
@@ -538,10 +531,11 @@
             <div>
               30 days left
             </div>
-            <div>
-              
-              <div class="text-right text-gray-700 dark:text-white">
-               <span class="text-green-400 font-bold">3.56114291</span> ETH Raised 
+            
+            <div class="text-right text-gray-700 dark:text-white">
+              <div> Raised: <span class="text-green-400 font-bold">3.56114291</span> ETH  
+              </div>
+              <div class="py-2">Target: <span class="dark:text-white text-black font-bold">27.393407</span> ETH 
               </div>
             </div>
           </div>
@@ -549,7 +543,7 @@
             
           <div class="items-end flex justify-between">
             <!--Donate Button  -->
-            <a href="#" class="border-2 border-green-400 inline-flex items-center font-medium text-white dark:text-black hover:text-green-400 dark:hover:text-green-400 p-2 bg-green-400 hover:bg-transparent mt-6 mb-2 cursor-pointer">
+            <a href="#" class="border border-green-400 inline-flex items-center font-medium text-white dark:text-black hover:text-green-400 dark:hover:text-green-400 p-2 bg-green-400 hover:bg-transparent mt-6 cursor-pointer">
                 Donate
             </a>
           </div>
@@ -558,8 +552,8 @@
     </div>
         
         
-    <div class="max-w-sm md:min-w-[360px] flex items-center justify-center">
-          <a href="#" class="m-auto border-2 border-green-400 inline-flex items-center font-medium text-green-400 dark:hover:text-black hover:text-white p-2 bg-transparent hover:bg-green-400 mt-6 mb-2 cursor-pointer">
+    <div class="max-w-sm md:min-w-[360px] flex items-center justify-center ">
+          <a href="#" class="m-auto border border-green-400 inline-flex items-center font-medium text-green-400 dark:hover:text-black hover:text-white p-2 bg-transparent hover:bg-green-400 mt-6 mb-2 cursor-pointer">
             View More
           </a>
     </div>
@@ -757,12 +751,12 @@
 
 
     <!-- Category --> 
-    <section id="category" class="scroll-mt-5">
+    <section id="category" class="mt-20 scroll-mt-5">
       <div class="max-w-95p md:max-w-90 mx-auto">
         <h2 class="pt-16 pb-10 md:pb-6 font-bold text-black dark:text-white text-3xl md:text-4xl ">Category</h2>
-        <div class="category-list grid grid-cols-1 xl:grid-cols-3 md:grid-cols-2 gap-10 xl:justify-between">
+        <div class="category-list grid grid-cols-1 xl:grid-cols-3 md:grid-cols-2 gap-5 md:gap-10 xl:justify-between">
           
-          <div class="max-w-sm p-5 border border-gray-200 dark:bg-grayed dark:border-gray-700">
+          <div class="max-w-sm px-6 py-8 border border-gray-200 dark:bg-grayed dark:border-gray-700">
             <i class="pb-4 fa fa-graduation-cap text-5xl text-gray-500"></i>
             <p class="font-bold text-xl text-black dark:text-white">Education</p>
             <p class="my-3 font-normal text-gray-700 dark:text-gray-400">
@@ -776,7 +770,7 @@
           </div>
           
           
-           <div class="max-w-sm p-5 border border-gray-200">
+           <div class="max-w-sm px-6 py-8 border border-gray-200">
             <i class="pb-4 fa fa-kit-medical text-5xl text-gray-500"></i>
             <p class="font-bold text-xl text-black dark:text-white">Medical</p>
             <p class="my-3 font-normal text-gray-700 dark:text-gray-400">
@@ -784,13 +778,13 @@
             </p>
             <div>
                <a href="#" class="pb-1 text-green-400 border-b border-transparent hover:border-green-400">
-                 153+ active campaigns
+                 100+ active campaigns
                </a>
             </div>
           </div>
           
           
-          <div class="max-w-sm p-5 border border-gray-200">
+          <div class="max-w-sm px-6 py-8 border border-gray-200">
             <i class="pb-4 fas fa-gift text-5xl text-gray-500"></i>
             <p class="font-bold text-xl text-black dark:text-white">Non Profit</p>
             <p class="my-3 font-normal text-gray-700 dark:text-gray-400">
@@ -798,13 +792,13 @@
             </p>
             <div>
                <a href="#" class="pb-1 text-green-400 border-b border-transparent hover:border-green-400">
-                 300+ active campaigns
+                 600+ active campaigns
                </a>
             </div>
           </div>   
           
           
-          <div class="max-w-sm p-5 border border-gray-200">
+          <div class="max-w-sm px-6 py-8 border border-gray-200">
             <i class="pb-4 fa fa-city text-5xl text-gray-500"></i>
             <p class="font-bold text-xl text-black dark:text-white">Development</p>
             <p class="my-3 font-normal text-gray-700 dark:text-gray-400">
@@ -812,13 +806,13 @@
             </p>
             <div>
                <a href="#" class="pb-1 text-green-400 border-b border-transparent hover:border-green-400">
-                  300+ active campaigns
+                  3K+ active campaigns
                </a>
             </div>
           </div>
           
           
-           <div class="max-w-sm p-5 border border-gray-200">
+           <div class="max-w-sm px-6 py-8 border border-gray-200">
             <i class="pb-4 fa fa-exclamation-triangle text-5xl text-gray-500"></i>
             <p class="font-bold text-xl text-black dark:text-white">Disaster</p>
             <p class="my-3 font-normal text-gray-700 dark:text-gray-400">
@@ -826,21 +820,21 @@
             </p>
             <div class="">
                <a href="#" class="pb-1 text-green-400 border-b border-transparent hover:border-green-400">
-                 153+ active capaigns
+                 1k+ active capaigns
                </a>
             </div>
           </div>
           
           
           
-          <span class="block max-w-md p-5 border border-gray-200 dark:bg-grayed dark:border-gray-700 flex flex-col justify-center items-center text-center">
+          <span class="block max-w-md px-6 py-8 flex flex-col justify-center items-center text-center">
          
-            <p class="font-bold text-3xl text-black dark:text-white">8+ Category</p>
+            <p class="font-bold text-2xl text-black dark:text-white">8+ Category</p>
             <p class="my-4 font-normal text-gray-700 dark:text-gray-400">
               Check out other categories.
             </p>
             <div>
-               <a href="#" class="w-fit block border-2 border-green-400 p-2 text-green-400 hover:border-green-400 hover:bg-green-400 hover:text-white dark:hover:text-black">
+               <a href="#" class="w-fit block border border-green-400 p-2 text-green-400 hover:border-green-400 hover:bg-green-400 hover:text-white dark:hover:text-black">
                  More
                </a>
             </div>
@@ -849,65 +843,117 @@
         </div>
       </div>
     </section>
+    
+    
+    
+    
+    <!-- Testimonials --> 
+    <section id="testimonials" class="mt-20 scroll-mt-5">
+        <h2 class="max-w-95p md:max-w-90 mx-auto pt-16 pb-10 md:pb-6 font-bold text-black dark:text-white text-3xl md:text-4xl">Testimonials</h2>
+        
+       <div class="max-w-95p md:max-w-max mx-auto md:px-[5%] md:flex md:items-center md:gap-10 md:overflow-x-scroll no-scrollbar">
+         
+          <div class="max-w-sm md:min-w-[360px] my-5 md:my-0 ">
+          <figure class="flex flex-col items-start px-6 py-8 bg-gray-50 border border-gray-200 dark:bg-grayed dark:border-gray-700">
+              <blockquote class="mx-auto mb-4 text-gray-500 dark:text-gray-400">
+                <p class="mb-2 break-words">amet laboris proident cupidatat excepteur non cillum ut laborum laboris sunt ullamco eiusmod anim ex eu deserunt esse ipsum Lorem consequat nostrud pariatur qui excepteur nisi aliquip commodo laborum minim enim ea anim Lorem qui velit
+                </p>
+              </blockquote>
+              <figcaption class="flex justify-center items-center space-x-3">
+                  <img class="aspect-square object-cover w-9 h-9 rounded-full" src="images/ppic-1.jpg" alt="profile picture">
+                  <div class="dark:text-white text-left font-bold">
+                      <div>Tunde Ajaji</div>
+                      <div class="text-sm font-light text-gray-500 dark:text-gray-400">Philanthropist</div>
+                  </div>
+              </figcaption> 
+           </figure>
+        </div>
+        
+        
+        <div class="max-w-sm md:min-w-[360px] my-5 md:my-0">
+          <figure class="flex flex-col items-start px-6 py-8 bg-gray-50 border border-gray-200 dark:bg-grayed dark:border-gray-700">
+              <blockquote class="mx-auto mb-4 text-gray-500 dark:text-gray-400">
+                <p class="mb-2 break-words">amet laboris proident cupidatat excepteur non cillum ut laborum laboris sunt ullamco eiusmod anim ex eu deserunt esse ipsum Lorem consequat nostrud pariatur qui excepteur nisi aliquip commodo laborum minim enim ea anim Lorem qui velit
+                </p>
+              </blockquote>
+              <figcaption class="flex justify-center items-center space-x-3">
+                  <img class="aspect-square object-cover w-9 h-9 rounded-full" src="images/ppic-1.jpg" alt="profile picture">
+                  <div class="dark:text-white text-left font-bold">
+                      <div>Sam Smith</div>
+                      <div class="text-sm font-light text-gray-500 dark:text-gray-400">Engineer</div>
+                  </div>
+              </figcaption> 
+           </figure>
+        </div>
+        
+        
+        
+        <div class="max-w-sm md:min-w-[360px] my-5 md:my-0">
+          <figure class="flex flex-col items-start px-6 py-8 bg-gray-50 border border-gray-200 dark:bg-grayed dark:border-gray-700">
+              <blockquote class="mx-auto mb-4 text-gray-500 dark:text-gray-400">
+                <p class="mb-2 break-words">amet laboris proident cupidatat excepteur non cillum ut laborum laboris sunt ullamco eiusmod anim ex eu deserunt esse ipsum Lorem consequat nostrud pariatur qui excepteur nisi aliquip commodo laborum minim enim ea anim Lorem qui velit
+                </p>
+              </blockquote>
+              <figcaption class="flex justify-center items-center space-x-3">
+                  <img class="aspect-square object-cover w-9 h-9 rounded-full" src="images/ppic-1.jpg" alt="profile picture">
+                  <div class="dark:text-white text-left font-bold">
+                      <div>Rayn Gilbert</div>
+                      <div class="text-sm font-light text-gray-500 dark:text-gray-400">Musician</div>
+                  </div>
+              </figcaption> 
+           </figure>
+        </div>
+        
+        
+        
+        <div class="hidden md:block max-w-sm md:min-w-[360px] my-5 md:my-0">
+          <figure class="flex flex-col items-start px-6 py-8 bg-gray-50 border border-gray-200 dark:bg-grayed dark:border-gray-700">
+              <blockquote class="mx-auto mb-4 text-gray-500 dark:text-gray-400">
+                <p class="mb-2 break-words">amet laboris proident cupidatat excepteur non cillum ut laborum laboris sunt ullamco eiusmod anim ex eu deserunt esse ipsum Lorem consequat nostrud pariatur qui excepteur nisi aliquip commodo laborum minim enim ea anim Lorem qui velit
+                </p>
+              </blockquote>
+              <figcaption class="flex justify-center items-center space-x-3">
+                  <img class="aspect-square object-cover w-9 h-9 rounded-full" src="images/ppic-1.jpg" alt="profile picture">
+                  <div class="dark:text-white text-left font-bold">
+                      <div>Nkechi Williams</div>
+                      <div class="text-sm font-light text-gray-500 dark:text-gray-400">Nurse</div>
+                  </div>
+              </figcaption> 
+           </figure>
+        </div>
+        
+        
+        
+         <div class="hidden md:block max-w-sm md:min-w-[360px] my-5 md:my-0">
+          <figure class="flex flex-col items-start px-6 py-8 bg-gray-50 border border-gray-200 dark:bg-grayed dark:border-gray-700">
+              <blockquote class="mx-auto mb-4 text-gray-500 dark:text-gray-400">
+                <p class="mb-2 break-words">amet laboris proident cupidatat excepteur non cillum ut laborum laboris sunt ullamco eiusmod anim ex eu deserunt esse ipsum Lorem consequat nostrud pariatur qui excepteur nisi aliquip commodo laborum minim enim ea anim Lorem qui velit
+                </p>
+              </blockquote>
+              <figcaption class="flex justify-center items-center space-x-3">
+                  <img class="aspect-square object-cover w-9 h-9 rounded-full" src="images/ppic-1.jpg" alt="profile picture">
+                  <div class="dark:text-white text-left font-bold">
+                      <div>John Johnson</div>
+                      <div class="text-sm font-light text-gray-500 dark:text-gray-400">CEO at NextApp</div>
+                  </div>
+              </figcaption> 
+           </figure>
+        </div>
+      </div>
+    </section>
 
 
-
-
-<button class=" back-to-top"><a href="#" ><i class=" fa fa-angle-double-up"></i></a></button>
+<!-- <button class=" back-to-top"><a href="#" ><i class=" fa fa-angle-double-up"></i></a></button> -->
 <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>    -->
 </main>
 
 
 
-<!-- Change Language  -->
-<div class="flex items-center md:order-2">
-      <button type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-grayed dark:hover:text-white">
-        <svg class="w-5 h-5 mr-2 rounded-full" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3900 3900"><path fill="#b22234" d="M0 0h7410v3900H0z"/><path d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0" stroke="#fff" stroke-width="300"/><path fill="#3c3b6e" d="M0 0h2964v2100H0z"/><g fill="#fff"><g id="d"><g id="c"><g id="e"><g id="b"><path id="a" d="M247 90l70.534 217.082-184.66-134.164h228.253L176.466 307.082z"/><use xlink:href="#a" y="420"/><use xlink:href="#a" y="840"/><use xlink:href="#a" y="1260"/></g><use xlink:href="#a" y="1680"/></g><use xlink:href="#b" x="247" y="210"/></g><use xlink:href="#c" x="494"/></g><use xlink:href="#d" x="988"/><use xlink:href="#c" x="1976"/><use xlink:href="#e" x="2470"/></g></svg>
-        English (US)
-      </button>
-      <!-- Dropdown -->
-      <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-grayed" id="language-dropdown-menu">
-        <ul class="py-2 font-medium" role="none">
-          <li>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
-              <div class="inline-flex items-center">
-                <svg aria-hidden="true" class="h-3.5 w-3.5 rounded-full mr-2" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-us" viewBox="0 0 512 512"><g fill-rule="evenodd"><g stroke-width="1pt"><path fill="#bd3d44" d="M0 0h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z" transform="scale(3.9385)"/><path fill="#fff" d="M0 10h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z" transform="scale(3.9385)"/></g><path fill="#192f5d" d="M0 0h98.8v70H0z" transform="scale(3.9385)"/><path fill="#fff" d="M8.2 3l1 2.8H12L9.7 7.5l.9 2.7-2.4-1.7L6 10.2l.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7L74 8.5l-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 7.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 24.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 21.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 38.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 35.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 52.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 49.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 66.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 63.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9z" transform="scale(3.9385)"/></g></svg>              
-                English (US)
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
-              <div class="inline-flex items-center">
-                <svg class="h-3.5 w-3.5 rounded-full mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-de" viewBox="0 0 512 512"><path fill="#ffce00" d="M0 341.3h512V512H0z"/><path d="M0 0h512v170.7H0z"/><path fill="#d00" d="M0 170.7h512v170.6H0z"/></svg>
-                Deutsch
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
-              <div class="inline-flex items-center">
-                <svg class="h-3.5 w-3.5 rounded-full mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-it" viewBox="0 0 512 512"><g fill-rule="evenodd" stroke-width="1pt"><path fill="#fff" d="M0 0h512v512H0z"/><path fill="#009246" d="M0 0h170.7v512H0z"/><path fill="#ce2b37" d="M341.3 0H512v512H341.3z"/></g></svg>              
-                Italiano
-              </div>
-            </a>
-          </li> 
-          <li>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
-              <div class="inline-flex items-center">
-                <svg class="h-3.5 w-3.5 rounded-full mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icon-css-cn" viewBox="0 0 512 512"><defs><path id="a" fill="#ffde00" d="M1-.3L-.7.8 0-1 .6.8-1-.3z"/></defs><path fill="#de2910" d="M0 0h512v512H0z"/><use width="30" height="20" transform="matrix(76.8 0 0 76.8 128 128)" xlink:href="#a"/><use width="30" height="20" transform="rotate(-121 142.6 -47) scale(25.5827)" xlink:href="#a"/><use width="30" height="20" transform="rotate(-98.1 198 -82) scale(25.6)" xlink:href="#a"/><use width="30" height="20" transform="rotate(-74 272.4 -114) scale(25.6137)" xlink:href="#a"/><use width="30" height="20" transform="matrix(16 -19.968 19.968 16 256 230.4)" xlink:href="#a"/></svg>
-                中文 (繁體)
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
-  </div>
   
   
   
   
-<footer>
+<!-- <footer>
   <div class="footer">
     <div class="contain">
     <div class="col">
@@ -960,7 +1006,138 @@
   <div class="clearfix"></div>
   </div>
 </div>
+</footer> -->
+
+
+  <section id="aboutus" class="mt-20 bg-gradient-to-l from-green-600 to-green-400 text-white dark:text-white relative">
+   
+    <div class="py-8 bg-center bg-aboutusimg bg-no-repeat bg-cover before:content-[''] before:absolute before:inset-0 before:bg-white dark:before:bg-black before:bg-opacity-80 dark:before:bg-opacity-80">
+      <div class="max-w-95p md:max-w-90 m-auto flex items-center">
+        <div class="md:w-1/2">
+          <h2 class="pt-16 pb-10 md:pb-6 font-bold text-black dark:text-white text-3xl md:text-4xl relative z-[2]">About Us</h2>
+          <p class="text-gray-600 dark:text-gray-400 relative z-[2]">
+            adipisicing voluptate eiusmod nisi anim adipisicing quis irure reprehenderit labore ullamco adipisicing eu in voluptate est aute sunt ad nulla aute nostrud ad pariatur est incididunt duis velit laboris adipisicing incididunt proident non ipsum quis est amet aliqua sit laboris
+          </p>
+        </div>
+        <div class="hidden md:block w-1/2">
+          hey
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<footer class="mt-20 p-4 bg-white sm:p-6 dark:bg-grayed">
+    <div class="mx-auto max-w-95 md:max-w-90">
+        <div class="flex flex-wrap gap-15 md:justify-around">
+            <div class="mb-6 md:mb-0">
+            <a href="#hero" class="text-2xl">
+            <span class="font-bold text-green-400">Fund</span><span class="font-light text-green-400 border-2 border-green-400 px-1 py-0">Me</span>
+            </a>
+            <br> <br>
+<!-- Change Language  -->
+<div class="flex items-center md:order-2">
+      <button type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-grayed dark:hover:text-white">
+        <svg class="w-5 h-5 mr-2 rounded-full" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3900 3900"><path fill="#b22234" d="M0 0h7410v3900H0z"/><path d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0" stroke="#fff" stroke-width="300"/><path fill="#3c3b6e" d="M0 0h2964v2100H0z"/><g fill="#fff"><g id="d"><g id="c"><g id="e"><g id="b"><path id="a" d="M247 90l70.534 217.082-184.66-134.164h228.253L176.466 307.082z"/><use xlink:href="#a" y="420"/><use xlink:href="#a" y="840"/><use xlink:href="#a" y="1260"/></g><use xlink:href="#a" y="1680"/></g><use xlink:href="#b" x="247" y="210"/></g><use xlink:href="#c" x="494"/></g><use xlink:href="#d" x="988"/><use xlink:href="#c" x="1976"/><use xlink:href="#e" x="2470"/></g></svg>
+        English (US)
+      </button>
+      <!-- Dropdown -->
+      <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-grayed" id="language-dropdown-menu">
+        <ul class="py-2 font-medium" role="none">
+          <li>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+              <div class="inline-flex items-center">
+                <svg aria-hidden="true" class="h-3.5 w-3.5 rounded-full mr-2" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-us" viewBox="0 0 512 512"><g fill-rule="evenodd"><g stroke-width="1pt"><path fill="#bd3d44" d="M0 0h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z" transform="scale(3.9385)"/><path fill="#fff" d="M0 10h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z" transform="scale(3.9385)"/></g><path fill="#192f5d" d="M0 0h98.8v70H0z" transform="scale(3.9385)"/><path fill="#fff" d="M8.2 3l1 2.8H12L9.7 7.5l.9 2.7-2.4-1.7L6 10.2l.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7L74 8.5l-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 7.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 24.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 21.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 38.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 35.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 52.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 49.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 66.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 63.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9z" transform="scale(3.9385)"/></g></svg>              
+                English (US)
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+              <div class="inline-flex items-center">
+                <svg class="h-3.5 w-3.5 rounded-full mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-de" viewBox="0 0 512 512"><path fill="#ffce00" d="M0 341.3h512V512H0z"/><path d="M0 0h512v170.7H0z"/><path fill="#d00" d="M0 170.7h512v170.6H0z"/></svg>
+                Deutsch
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+              <div class="inline-flex items-center">
+                <svg class="h-3.5 w-3.5 rounded-full mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-it" viewBox="0 0 512 512"><g fill-rule="evenodd" stroke-width="1pt"><path fill="#fff" d="M0 0h512v512H0z"/><path fill="#009246" d="M0 0h170.7v512H0z"/><path fill="#ce2b37" d="M341.3 0H512v512H341.3z"/></g></svg>              
+                Italiano
+              </div>
+            </a>
+          </li> 
+          <li>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+              <div class="inline-flex items-center">
+                <svg class="h-3.5 w-3.5 rounded-full mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icon-css-cn" viewBox="0 0 512 512"><defs><path id="a" fill="#ffde00" d="M1-.3L-.7.8 0-1 .6.8-1-.3z"/></defs><path fill="#de2910" d="M0 0h512v512H0z"/><use width="30" height="20" transform="matrix(76.8 0 0 76.8 128 128)" xlink:href="#a"/><use width="30" height="20" transform="rotate(-121 142.6 -47) scale(25.5827)" xlink:href="#a"/><use width="30" height="20" transform="rotate(-98.1 198 -82) scale(25.6)" xlink:href="#a"/><use width="30" height="20" transform="rotate(-74 272.4 -114) scale(25.6137)" xlink:href="#a"/><use width="30" height="20" transform="matrix(16 -19.968 19.968 16 256 230.4)" xlink:href="#a"/></svg>
+                中文 (繁體)
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+  </div>
+  
+  
+            </div>
+            
+                <div class="hidden md:block">
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+                    <ul class="text-gray-600 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="#campaign" class="hover:underline">Campaign</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#testimonials" class="hover:underline">Category</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#testimonials" class="hover:underline">Testimonials</a>
+                        </li>
+                        <li>
+                            <a href="#aboutus" class="hover:underline">About Us</a>
+                        </li>
+                    </ul>
+                </div>
+               
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Support</h2>
+                    <ul class="text-gray-600 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">F.A.Q</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">&copy; 2023 <a href="https://flowbite.com" class="hover:underline">FundMe™</a>. All Rights Reserved.
+            </span>
+            <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+                <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                </a>
+            </div>
+        </div>
+    
 </footer>
+
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>-->
 <script src="script/app.js" type="text/javascript" charset="utf-8" defer></script>
 </body>
