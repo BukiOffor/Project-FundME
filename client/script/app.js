@@ -23,7 +23,7 @@ function init() {
   const closeSignin = getDom('#close-signin')
   
   // Get close sign up container
-  const closeSignup = getDom('#close-signupr')
+  const closeSignup = getDom('#close-signup')
   
   // Get Create Campaign button
   const startCampaignBtn = getDom('#start-campaign-btn')
@@ -42,7 +42,8 @@ function init() {
   showSignin(startCampaignBtn)
   showSignin(inFormSigninLink)
   showSignup(inFormSignupLink)
-  
+  closeAcctContainer(closeSignin)
+  closeAcctContainer(closeSignup)
   
   
   function showSignin(btn) {
@@ -88,6 +89,31 @@ function init() {
       
       // Show Signup Container
       signupContainer.classList.remove('hidden')
+      
+    })
+  }
+  
+  
+  function closeAcctContainer(btn) {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault
+      // Show home header 
+      homeHeader.classList.remove('hidden')
+      
+      // Show home main 
+      homeMain.classList.remove('hidden')
+      
+      // Show home footer
+      homeFooter.classList.remove('hidden')
+      
+      // Hide Signin Container
+      signinContainer.classList.add('hidden')
+      
+      // Hide acctContainer
+      acctContainer.classList.add('hidden')
+      
+      // Hide Signup Container
+      signupContainer.classList.add('hidden')
       
     })
   }
