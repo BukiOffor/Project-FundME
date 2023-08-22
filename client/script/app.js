@@ -51,6 +51,24 @@ function init() {
     // Show Signin Container
     signinContainer.classList.remove('hidden')
   })
+  
+  createCampaignBtn.addEventListener('click', (e) => {
+    e.preventDefault
+    // Hide home header 
+    homeHeader.classList.add('hidden')
+    
+    // Hide home main 
+    homeMain.classList.add('hidden')
+    
+    // Hide home footer
+    homeFooter.classList.add('hidden')
+    
+    // Show acctContainer
+    acctContainer.classList.remove('hidden')
+    
+    // Show Signin Container
+    signinContainer.classList.remove('hidden')
+  })
 }
 
 init()
