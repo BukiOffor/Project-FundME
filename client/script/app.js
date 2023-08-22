@@ -1,6 +1,66 @@
 
+// Sign 
+function init() {
+  // Get sign in button
+  const signinBtn = getDom('#signin-btn')
+  
+  // Get sign in button
+  const signupBtn = getDom('#signup-btn')
+  
+  // Get sign up and sign in container
+  const acctContainer = getDom('#access-acct')
+  
+  // Get sign in container
+  const signinContainer = getDom('#signin-container')
+  
+  // Get sign up container
+  const signupContainer = getDom('#signup-container')
 
-// Add Click event to switch theme
+  // Get close sign in container
+  const closeSignin = getDom('#close-signin')
+  
+  // Get close sign up container
+  const closeSignup = getDom('#close-signupr')
+  
+  // Get Create Campaign button
+  const createCampaignBtn = getDom('#start-campaign-btn')
+  
+  // Home Header
+  const homeHeader = getDom('#home header')
+  
+  // Home Header
+  const homeMain = getDom('#home main')
+  
+  // Home footer
+  const homeFooter = getDom('#home footer')
+  
+  signinBtn.addEventListener('click', (e) => {
+    e.preventDefault
+    // Hide home header 
+    homeHeader.classList.add('hidden')
+    
+    // Hide home main 
+    homeMain.classList.add('hidden')
+    
+    // Hide home footer
+    homeFooter.classList.add('hidden')
+    
+    // Show acctContainer
+    acctContainer.classList.remove('hidden')
+    
+    // Show Signin Container
+    signinContainer.classList.remove('hidden')
+  })
+}
+
+init()
+
+
+
+
+
+
+// Add Click event to switch between light and dark theme
 var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
 var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
 
@@ -49,3 +109,19 @@ themeToggleBtn.addEventListener('click', function() {
     } else {
         document.documentElement.classList.remove('dark')
     }
+    
+    
+    
+ // Gets Dom from the document body
+ function getDom(selector) {
+   return document.querySelector(selector);
+ }
+ 
+ 
+ // Get inner selector from outter Selector
+ function getInnerDom(outterSelector) {
+    (innerSelector) => {
+     return outterSelector.querySelector(innerSelector)
+   }
+ }
+ 
