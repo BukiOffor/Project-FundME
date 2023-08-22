@@ -4,8 +4,11 @@ function init() {
   // Get sign in button
   const signinBtn = getDom('#signin-btn')
   
-  // Get sign in button
-  const signupBtn = getDom('#signup-btn')
+  // Get sign up link
+  const inFormSignupLink = getDom('#in-form-signup-link')
+  
+  // Get sign up link
+  const inFormSigninLink = getDom('#in-form-signin-link')
   
   // Get sign up and sign in container
   const acctContainer = getDom('#access-acct')
@@ -23,7 +26,7 @@ function init() {
   const closeSignup = getDom('#close-signupr')
   
   // Get Create Campaign button
-  const createCampaignBtn = getDom('#start-campaign-btn')
+  const startCampaignBtn = getDom('#start-campaign-btn')
   
   // Home Header
   const homeHeader = getDom('#home header')
@@ -34,41 +37,60 @@ function init() {
   // Home footer
   const homeFooter = getDom('#home footer')
   
-  signinBtn.addEventListener('click', (e) => {
-    e.preventDefault
-    // Hide home header 
-    homeHeader.classList.add('hidden')
-    
-    // Hide home main 
-    homeMain.classList.add('hidden')
-    
-    // Hide home footer
-    homeFooter.classList.add('hidden')
-    
-    // Show acctContainer
-    acctContainer.classList.remove('hidden')
-    
-    // Show Signin Container
-    signinContainer.classList.remove('hidden')
-  })
   
-  createCampaignBtn.addEventListener('click', (e) => {
-    e.preventDefault
-    // Hide home header 
-    homeHeader.classList.add('hidden')
-    
-    // Hide home main 
-    homeMain.classList.add('hidden')
-    
-    // Hide home footer
-    homeFooter.classList.add('hidden')
-    
-    // Show acctContainer
-    acctContainer.classList.remove('hidden')
-    
-    // Show Signin Container
-    signinContainer.classList.remove('hidden')
-  })
+  showSignin(signinBtn)
+  showSignin(startCampaignBtn)
+  showSignin(inFormSigninLink)
+  showSignup(inFormSignupLink)
+  
+  
+  
+  function showSignin(btn) {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault
+      // Hide home header 
+      homeHeader.classList.add('hidden')
+      
+      // Hide home main 
+      homeMain.classList.add('hidden')
+      
+      // Hide home footer
+      homeFooter.classList.add('hidden')
+      
+      // Hide Signup Container
+      signupContainer.classList.add('hidden')
+      
+      // Show acctContainer
+      acctContainer.classList.remove('hidden')
+      
+      // Show Signin Container
+      signinContainer.classList.remove('hidden')
+    })
+  }
+  
+  function showSignup(btn) {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault
+      // Hide home header 
+      homeHeader.classList.add('hidden')
+      
+      // Hide home main 
+      homeMain.classList.add('hidden')
+      
+      // Hide home footer
+      homeFooter.classList.add('hidden')
+      
+      // Hode Signin Container
+      signinContainer.classList.add('hidden')
+      
+      // Show acctContainer
+      acctContainer.classList.remove('hidden')
+      
+      // Show Signup Container
+      signupContainer.classList.remove('hidden')
+      
+    })
+  }
 }
 
 init()
