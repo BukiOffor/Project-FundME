@@ -5,15 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="script/tailwindconfig.js" type="text/javascript" charset="utf-8"></script>
-    <link rel="stylesheet" href="style/tailwindcss.css" type="text/css" media="all" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css"  rel="stylesheet" />
+    <style type="text/Tailwindcss" media="all">
+      @layer utilities {
+          .max-w-90p {
+            max-width: 90%;
+          }
+          
+          .max-w-95p {
+            max-width: 90%;
+          }
+          
+          .theme-bg-blur {
+            @apply backdrop-blur-xl dark:backdrop-blur-xl bg-white bg-opacity-25 dark:bg-slate-900 dark:bg-opacity-25
+          }
+          
+          .how-it-works:hover svg {
+            @apply fill-black dark:fill-white
+          }
+          
+          .category-list > div:nth-of-type(odd) {
+            @apply bg-gray-100 bg-opacity-50 dark:bg-grayed dark:border-gray-700
+          }
+          
+          .category-list > div:nth-of-type(even) {
+            @apply bg-green-100 bg-opacity-50 dark:bg-grayed dark:border-gray-700
+          }
+         
+          .no-scrollbar::-webkit-scrollbar {
+            display: none;
+          }
     
+          .no-scrollbar {
+            -ms-overflow-style: none; 
+            scrollbar-width: none; 
+          }
+        }
+    </style>
+ 
     
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <!--<script src="script.js" type="module"></script>-->
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css"  rel="stylesheet" />
     
     
     <!--Poppins font-family-->
