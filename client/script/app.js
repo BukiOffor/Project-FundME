@@ -122,10 +122,6 @@ function init() {
 init()
 
 
-
-
-
-
 // Add Click event to switch between light and dark theme
 var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
 var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
@@ -190,4 +186,12 @@ themeToggleBtn.addEventListener('click', function() {
      return outterSelector.querySelector(innerSelector)
    }
  }
- 
+
+//get the copyright span element
+var element = document.querySelector('.tm-current-year');
+
+// Get the current year
+var currentYear = new Date().getFullYear();
+
+// Set the text content of the element to the current year
+element.textContent = currentYear;
