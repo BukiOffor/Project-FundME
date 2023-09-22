@@ -408,3 +408,11 @@ tml,body {
         line-height: normal;
     }
 }
+
+.text-center{
+  text-align:center;
+}
+
+.round-corner-input{
+  border-radius: 1em 0 0 0;
+}
