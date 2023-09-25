@@ -71,7 +71,12 @@ function init() {
             const gender = document.getElementById("gender").value;
 
             if (name === "" || email === "" || phone_number === "" || date_of_birth === "" || gender === "") {
-                alert("Please fill in all the required fields.");
+                const errorAlert = document.querySelector('#error1');
+                errorAlert.textContent = 'Please fill in all the required fields.';
+
+                setTimeout(function() {
+                    errorAlert.textContent = ''; // Clears the text after 3 seconds
+                }, 3000); // 3000 milliseconds = 3 seconds
             }else{
                 // show step two of verificatioin
                 verificationContainer1.classList.add('hidden')
@@ -91,7 +96,13 @@ function init() {
       const permanentAddress = document.getElementById("permanent-address").value;
 
       if (country === "" || state === "" || residentialAddress === "" || permanentCountry === "" || permanentState === "" || permanentAddress === "") {
-          alert("Please fill in all the required fields.");
+        const errorAlert = document.querySelector('#error2');
+        errorAlert.textContent = 'Please fill in all the required fields.';
+
+        setTimeout(function() {
+            errorAlert.textContent = ''; // Clears the text after 3 seconds
+        }, 3000); // 3000 milliseconds = 3 seconds
+
       }else{*/
         // show step three of verificatioin
         verificationContainer2.classList.add('hidden')
@@ -99,6 +110,7 @@ function init() {
       //}
     })
   }
+  
 
   function showVerification4(btn){
     btn.addEventListener('click', (e) => {
