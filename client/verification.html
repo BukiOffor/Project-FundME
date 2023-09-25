@@ -297,7 +297,7 @@
                                 </select>
                             </div>
                         </div>
-                        
+                        <p class="text-gray-900 dark:text-white text-left" style="color:#ff5555;" id="error1"></p>
                         <button type="submit" id="continue1" class="w-full text-white bg-green-400 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium text-sm px-5 py-2.5 text-center dark:bg-green-400 dark:focus:ring-green-300" style="border-radius: 7px  7px 7px 7px;">Continue</button>
                     </form>
                 </div>
@@ -347,11 +347,9 @@
                         </div>
                         <div>
                             <label for="permanent-address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left">Home Address</label>
-                            <textarea name="permanent-address" id="permanent-address" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm focus:ring-green-400 focus:border-green-400 block w-full p-2.5 dark:bg-grayed dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-400 dark:focus:border-green-400" cols="30" rows="3" placeholder="Your residential address"  style="border-radius: 7px  7px 7px 7px;"></textarea>
+                            <textarea name="permanent-address" id="permanent-address" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm focus:ring-green-400 focus:border-green-400 block w-full p-2.5 dark:bg-grayed dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-400 dark:focus:border-green-400" cols="30" rows="3" placeholder="Your permanent address"  style="border-radius: 7px  7px 7px 7px;"></textarea>
                         </div>
-
-
-                        
+                        <p class="text-gray-900 dark:text-white text-left" style="color:#ff5555;" id="error2"></p> 
                         <button type="submit" id="continue2" class="w-full text-white bg-green-400 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium text-sm px-5 py-2.5 text-center dark:bg-green-400 dark:focus:ring-green-300" style="border-radius: 7px  7px 7px 7px;">Continue</button>
                     </form>
                 </div>
@@ -372,35 +370,46 @@
                     <br>
                     <h2 class="text-xl text-gray-900 dark:text-white text-left">KYC Verification</h2>               
                     
-                    <!--<form class="space-y-4 md:space-y-6" action="#" id="verification-form">
-                        <div>
-                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left">Full name</label>
-                            <input type="text" name="name" id="name" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm focus:ring-green-400 focus:border-green-400 block w-full p-2.5 dark:bg-grayed dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-400 dark:focus:border-green-400" placeholder="write your name" required="" style="border-radius: 7px  7px 7px 7px;">
+                    <form class="space-y-4 md:space-y-6" action="#" id="verification-form" enctype="multipart/form-data">
+                        <div style="width:48%;display:inline-block">
+                            <label for="means-of-identification" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left">Means of Identification</label>
                         </div>
-                        <div>
-                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left">Email Address</label>
-                            <input type="email" name="email" id="email" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm focus:ring-green-400 focus:border-green-400 block w-full p-2.5 dark:bg-grayed dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-400 dark:focus:border-green-400" placeholder="name@domain.com" required="" style="border-radius: 7px  7px 7px 7px;">
-                        </div>
-                        <div>                       
-                            <label for="phone_number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left">Phone Number</label>
-                            <select id="dialCodeSelect" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm focus:ring-green-400 focus:border-green-400 block w-full p-2.5 dark:bg-grayed dark:border-gray-600 dark:text-white dark:focus:ring-green-400 dark:focus:border-green-400" style="border-radius: 1em 1em 0 0;border-bottom:none;" required></select>
-
-                            <input type="tel" name="phone_number" id="phone_number" placeholder="12345678" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm focus:ring-green-400 focus:border-green-400 block w-full p-2.5 dark:bg-grayed dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-400 dark:focus:border-green-400" required="" style="border-top:none;border-radius: 0 0 1em 1em;">
-                        </div>
-                        <div style="width:49%;display:inline-block">
-                            <label for="date-of-birth" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left">Date of Birth</label>
-                            <input type="date" name="date-of-birth" id="date-of-birth" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm focus:ring-green-400 focus:border-green-400 block w-full p-2.5 dark:bg-grayed dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-400 dark:focus:border-green-400" style="border-radius: 7px  7px 7px 7px;" required="">
-                        </div>
-                        <div style="width:49%;display:inline-block">
-                            <label for="gender" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left">Gender</label>
-                            <select id="gender" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm focus:ring-green-400 focus:border-green-400 block w-full p-2.5 dark:bg-grayed dark:border-gray-600 dark:text-white dark:focus:ring-green-400 dark:focus:border-green-400" style="border-radius: 7px  7px 7px 7px;" required>
+                        <div style="width:48%;display:inline-block">
+                            <select id="means-of-identification" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm focus:ring-green-400 focus:border-green-400 block w-full p-2.5 dark:bg-grayed dark:border-gray-600 dark:text-white dark:focus:ring-green-400 dark:focus:border-green-400" style="border-radius: 7px  7px 7px 7px;" required>
                                 <option value="" selected="true">-- Select --</option>
-                                <option value="female">Female</option>
-                                <option value="male">Male</option>
+                                <option value="driving-license">Driver's License</option>
+                                <option value="id-card">ID Card</option>
+                                <option value="passport">Passport</option>
                             </select>
                         </div>
+                        <div>
+                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-center">Upload Verification Document</label>
+                        </div>
+                        <div style="width:48%;display:inline-block">
+                            <label for="front-id-card" class="text-xl text-gray-900 dark:text-white text-left" style="display:block">
+                                <i class="fas fa-id-card"></i> Front of ID Card
+                            </label>
+                            <input type="file" id="front-id-card" accept="image/*">
+                        </div>
+                        <div style="width:48%;display:inline-block">                  
+                            <label for="back-id-card" class="text-xl text-gray-900 dark:text-white text-left" style="display:block">
+                                <i class="fas fa-id-card"></i> Back of ID Card
+                            </label>
+                            <input type="file" id="back-id-card" accept="image/*">
+                        </div>
+                        <div style="width:60%;margin-left: auto;display:block">
+                            <label for="selfie" class="text-xl text-gray-900 dark:text-white text-left" style="display:block">
+                                <i class="fas fa-camera"></i> Selfie
+                            </label>
+                            <input type="file" id="selfie" accept="image/*">
+                        </div>
+
+                        <img id="front-id-card-preview" src="" alt="Front ID Card Preview">
+                        <img id="back-id-card-preview" src="" alt="Back ID Card Preview">
+                        <img id="selfie-preview" src="" alt="Selfie Preview">
+
                         <button type="submit" id="continue1" class="w-full text-white bg-green-400 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium text-sm px-5 py-2.5 text-center dark:bg-green-400 dark:focus:ring-green-300" style="border-radius: 7px  7px 7px 7px;">Submit</button>
-                    </form>-->
+                    </form>
                 </div>
             </div>
 
