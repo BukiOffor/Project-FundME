@@ -1,0 +1,30 @@
+changes
+
+1. added a br tag before the sign in button in the sign in form
+2. linked the 'how it works' button to the category section
+3. set the copyright year to automatically change according to the current year
+4. change the link for the category in footer
+
+
+//get updates
+git fetch upstream
+git add client/verification.html
+
+// push in the following order
+
+git config user.email "alphonsus4lifensoul@gmail.com"
+git config user.name "alphieke11y"
+git add client/script/verification.js
+
+git commit -m "verification"
+git push origin alphieke11y-branch
+
+
+
+
+verification.html
+verification.js
+
+
+
+# Commit the changes with a commit message
