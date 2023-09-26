@@ -39,13 +39,60 @@ fetch('CountryCodes.json')
 
 
 
+// Get the file input elements
+const frontIdCardInput = document.getElementById("front-id-card");
+const backIdCardInput = document.getElementById("back-id-card");
+const selfieInput = document.getElementById("selfie");
+
+// Get the image preview elements
+const frontIdCardPreview = document.getElementById("front-id-card-preview");
+const backIdCardPreview = document.getElementById("back-id-card-preview");
+const selfiePreview = document.getElementById("selfie-preview");
+
+// Add a change event listener to each file input element
+frontIdCardInput.addEventListener("change", function() {
+    // Display the preview of the selected image
+    displayImagePreview(frontIdCardInput, frontIdCardPreview);
+});
+
+backIdCardInput.addEventListener("change", function() {
+    // Display the preview of the selected image
+    displayImagePreview(backIdCardInput, backIdCardPreview);
+});
+
+selfieInput.addEventListener("change", function() {
+    // Display the preview of the selected image
+    displayImagePreview(selfieInput, selfiePreview);
+});
+
+// Function to display the preview of a selected image
+function displayImagePreview(fileInput, imagePreview) {
+    // Check if the selected file is an image
+    if (fileInput.files && fileInput.files[0] && fileInput.files[0].type.match("image.*")) {
+        // Create a new FileReader object
+        const reader = new FileReader();
+
+        // Add a load event listener to the FileReader object
+        reader.addEventListener("load", function() {
+        // Set the src attribute of the image preview element to the data URL of the selected image
+        imagePreview.src = reader.result;
+        });
+
+        // Read the selected image as a data URL
+        reader.readAsDataURL(fileInput.files[0]);
+    } else {
+        // Clear the image preview element
+        imagePreview.src = "";
+    }
+}
+
 //page management
 function init() {
  
     //verification btns
     const continueBtn1 = getDom('#continue1')
     const continueBtn2 = getDom('#continue2')
-    const finishBtn = getDom('#finish')
+    const continueBtn3 = getDom('#continue3')
 
     // Get verification containers
     const verificationContainer1 = getDom('#verification-container1')
@@ -53,13 +100,12 @@ function init() {
     const verificationContainer3 = getDom('#verification-container3')
     const verificationContainer4 = getDom('#verification-container4')
 
-
     verificationContainer1.classList.remove('hidden');
     
     //get nav btns
     showVerification2(continueBtn1)
     showVerification3(continueBtn2)
-    showVerification4(finishBtn)
+    showVerification4(continueBtn3)
 
     function showVerification2(btn){
         btn.addEventListener('click', (e) => {
@@ -85,42 +131,40 @@ function init() {
         })
     }
 
-  function showVerification3(btn){
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      /*const country = document.getElementById("country").value;
-      const state = document.getElementById("state").value;
-      const residentialAddress = document.getElementById("residential-address").value;
-      const permanentCountry = document.getElementById("permanent-country").value;
-      const permanentState = document.getElementById("permanent-state").value;
-      const permanentAddress = document.getElementById("permanent-address").value;
+    function showVerification3(btn){
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            /*const country = document.getElementById("country").value;
+            const state = document.getElementById("state").value;
+            const residentialAddress = document.getElementById("residential-address").value;
+            const permanentCountry = document.getElementById("permanent-country").value;
+            const permanentState = document.getElementById("permanent-state").value;
+            const permanentAddress = document.getElementById("permanent-address").value;
 
-      if (country === "" || state === "" || residentialAddress === "" || permanentCountry === "" || permanentState === "" || permanentAddress === "") {
-        const errorAlert = document.querySelector('#error2');
-        errorAlert.textContent = 'Please fill in all the required fields.';
+            if (country === "" || state === "" || residentialAddress === "" || permanentCountry === "" || permanentState === "" || permanentAddress === "") {
+                const errorAlert = document.querySelector('#error2');
+                errorAlert.textContent = 'Please fill in all the required fields.';
 
-        setTimeout(function() {
-            errorAlert.textContent = ''; // Clears the text after 3 seconds
-        }, 3000); // 3000 milliseconds = 3 seconds
+                setTimeout(function() {
+                    errorAlert.textContent = ''; // Clears the text after 3 seconds
+                }, 3000); // 3000 milliseconds = 3 seconds
 
-      }else{*/
-        // show step three of verificatioin
-        verificationContainer2.classList.add('hidden')
-        verificationContainer3.classList.remove('hidden')
-      //}
-    })
-  }
-  
+            }else{*/
+                // show step three of verificatioin
+                verificationContainer2.classList.add('hidden')
+                verificationContainer3.classList.remove('hidden')
+            //}
+        })
+    }
 
-  function showVerification4(btn){
-    btn.addEventListener('click', (e) => {
-      e.preventDefault
-      // show step two of verificatioin
-      verificationContainer3.classList.add('hidden')
-      verificationContainer4.classList.remove('hidden')
-    })
-  }
-
+    function showVerification4(btn){
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // show success 
+            verificationContainer3.classList.add('hidden')
+            verificationContainer4.classList.remove('hidden')
+        })
+    }
 }
 
 init()
