@@ -385,79 +385,41 @@
                         <div>
                             <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-center">Upload Verification Document</label>
                         </div>
-                        <div style="width:48%;display:inline-block">
-                            <label for="front-id-card" class="text-xl text-gray-900 dark:text-white text-left" style="display:block">
-                                <i class="fas fa-id-card"></i> Front of ID Card
+                        <div style="display:block">
+                            <label for="front-id-card" class="text-xl text-gray-900 dark:text-white text-left" style="display:block;text-align: center;font-size: 40pt;">
+                                <i class="fas fa-id-card"></i> <br><span style="font-size:14pt">Front of ID Card</span>
                             </label>
-                            <input type="file" id="front-id-card" accept="image/*">
+                            <input type="file" id="front-id-card" accept="image/*" class="text-gray-900 dark:text-white text-left">
+                            <img id="front-id-card-preview" src="" alt="" width="450" style="margin-top: 20px;margin-bottom:20px;">
                         </div>
-                        <div style="width:48%;display:inline-block">                  
-                            <label for="back-id-card" class="text-xl text-gray-900 dark:text-white text-left" style="display:block">
-                                <i class="fas fa-id-card"></i> Back of ID Card
+                        <div style="display:block">                  
+                            <label for="back-id-card" class="text-xl text-gray-900 dark:text-white text-left" style="display:block;font-size: large;text-align: center;font-size: 40pt;">
+                                <i class="fas fa-id-card"></i> <br><span style="font-size:14pt">Back of ID Card</span>
                             </label>
-                            <input type="file" id="back-id-card" accept="image/*">
+                            <input type="file" id="back-id-card" accept="image/*" class="text-gray-900 dark:text-white text-left">
+                            <img id="back-id-card-preview" src="" alt="" width="450" style="margin-top: 20px;margin-bottom:20px;">
                         </div>
-                        <div style="width:60%;margin-left: auto;display:block">
-                            <label for="selfie" class="text-xl text-gray-900 dark:text-white text-left" style="display:block">
-                                <i class="fas fa-camera"></i> Selfie
+                        <div style="display:block">
+                            <label for="selfie" class="text-xl text-gray-900 dark:text-white text-left" style="display:block;font-size: large;text-align: center;font-size: 40pt;">
+                                <i class="fas fa-camera"></i> <br><span style="font-size:14pt">Selfie</span>
                             </label>
-                            <input type="file" id="selfie" accept="image/*">
+                            <input type="file" id="selfie" accept="image/*" class="text-gray-900 dark:text-white text-left">
+                            <img id="selfie-preview" src="" alt="" width="450" style="margin-top: 20px;margin-bottom:20px;">
                         </div>
-
-                        <img id="front-id-card-preview" src="" alt="Front ID Card Preview">
-                        <img id="back-id-card-preview" src="" alt="Back ID Card Preview">
-                        <img id="selfie-preview" src="" alt="Selfie Preview">
-
-                        <button type="submit" id="continue1" class="w-full text-white bg-green-400 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium text-sm px-5 py-2.5 text-center dark:bg-green-400 dark:focus:ring-green-300" style="border-radius: 7px  7px 7px 7px;">Submit</button>
+                        <button type="submit" id="continue3" class="w-full text-white bg-green-400 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium text-sm px-5 py-2.5 text-center dark:bg-green-400 dark:focus:ring-green-300" style="border-radius: 7px  7px 7px 7px;">Submit</button>
                     </form>
                 </div>
             </div>
 
-            <!-- Sign in -->
+            <!-- verification success -->
             <div id="verification-container4" class="hidden min-w-[240px] md:min-w-[400px] bg-white shadow dark:border dark:bg-grayed m-auto dark:border-gray-700 relative">
+                <button id="close-verification" class="text-red-500 dark:text-red-400 hover:text-red-400 dark:hover:text-red-500 absolute top-1 right-3 text-4xl p-2">&times;</button>
                 <div class="p-6 space-y-4">
-                    <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white text-center">
-                        Let's Verify your Identity
+                    <img src="images/ok.png" alt="" width="350">
+                    <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white" style="text-align: center;">
+                        Documents Upload <br>Successful
                     </h1>
-                    
-                    <div class="flex flex-col gap-5">
-                        <div class="flex justify-center items-center">
-                            <img src="" alt="progress bar">
-                        </div>
-                    </div>
-                    <br>
-                    <h2 class="text-xl">Personal Data</h2>    
-                    <p><small><em>Enter the following information to verify your identity</em></small></p>            
-                    
-                    <form class="space-y-4 md:space-y-6" action="#" id="verification-form">
-                        <div>
-                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left">Full name</label>
-                            <input type="text" name="name" id="name" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm focus:ring-green-400 focus:border-green-400 block w-full p-2.5 dark:bg-grayed dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-400 dark:focus:border-green-400" placeholder="write your name" required="" style="border-radius: 7px  7px 7px 7px;">
-                        </div>
-                        <div>
-                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left">Email Address</label>
-                            <input type="email" name="email" id="email" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm focus:ring-green-400 focus:border-green-400 block w-full p-2.5 dark:bg-grayed dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-400 dark:focus:border-green-400" placeholder="name@domain.com" required="" style="border-radius: 7px  7px 7px 7px;">
-                        </div>
-                        <div>                       
-                            <label for="phone_number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left">Phone Number</label>
-                            <select id="dialCodeSelect" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm focus:ring-green-400 focus:border-green-400 block w-full p-2.5 dark:bg-grayed dark:border-gray-600 dark:text-white dark:focus:ring-green-400 dark:focus:border-green-400" style="border-radius: 1em 1em 0 0;border-bottom:none;" required></select>
-
-                            <input type="tel" name="phone_number" id="phone_number" placeholder="12345678" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm focus:ring-green-400 focus:border-green-400 block w-full p-2.5 dark:bg-grayed dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-400 dark:focus:border-green-400" required="" style="border-top:none;border-radius: 0 0 1em 1em;">
-                        </div>
-                        <div style="width:49%;display:inline-block">
-                            <label for="date-of-birth" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left">Date of Birth</label>
-                            <input type="date" name="date-of-birth" id="date-of-birth" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm focus:ring-green-400 focus:border-green-400 block w-full p-2.5 dark:bg-grayed dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-400 dark:focus:border-green-400" style="border-radius: 7px  7px 7px 7px;" required="">
-                        </div>
-                        <div style="width:49%;display:inline-block">
-                            <label for="gender" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left">Gender</label>
-                            <select id="gender" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm focus:ring-green-400 focus:border-green-400 block w-full p-2.5 dark:bg-grayed dark:border-gray-600 dark:text-white dark:focus:ring-green-400 dark:focus:border-green-400" style="border-radius: 7px  7px 7px 7px;" required>
-                                <option value="" selected="true">-- Select --</option>
-                                <option value="female">Female</option>
-                                <option value="male">Male</option>
-                            </select>
-                        </div>
-                        <button type="submit" id="continue1" class="w-full text-white bg-green-400 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium text-sm px-5 py-2.5 text-center dark:bg-green-400 dark:focus:ring-green-300" style="border-radius: 7px  7px 7px 7px;">Continue</button>
-                    </form>
+                    <h2 class=" leading-tight tracking-tight text-gray-900 dark:text-white" style="text-align: center;">Our Team will review your details <br>and update you withing 24 hours.<br><br> Thanks For Your Time!</h2>
                 </div>
             </div>
         </div>
