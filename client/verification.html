@@ -208,7 +208,12 @@
                             <label for="phone_number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left">Phone Number</label>
                             <input type="tel" name="phone_number" id="phone_number" placeholder="12345678" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm focus:ring-green-400 focus:border-green-400 block w-full p-2.5 dark:bg-grayed dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-400 dark:focus:border-green-400" required="" style="border-radius: 7px; ">
                         </div>
-                        <div class="place-content-center"><div style="width:45%;display:inline-block">
+                        <div class="place-content-center">
+                            <div style="width:45%;display:inline-block;">
+                                <label for="date-of-birth" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left">Date of Birth</label>
+                                <input type="date" name="date-of-birth" id="date-of-birth" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm focus:ring-green-400 focus:border-green-400 block w-full p-2.5 dark:bg-grayed dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-400 dark:focus:border-green-400" style="border-radius: 7px  7px 7px 7px;">
+                            </div>
+                            <div style="width:45%;display:inline-block; vertical-align: top;">
                                 <label for="gender" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left">Gender</label>
                                 <select id="gender" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm focus:ring-green-400 focus:border-green-400 block w-full p-2.5 dark:bg-grayed dark:border-gray-600 dark:text-white dark:focus:ring-green-400 dark:focus:border-green-400" style="border-radius: 7px  7px 7px 7px;" required>
                                     <option value="" selected="true">-- Select --</option>
@@ -216,11 +221,6 @@
                                     <option value="male">Male</option>
                                 </select>
                             </div>
-                            <div style="width:45%;display:inline-block;">
-                                <label for="date-of-birth" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left">Date of Birth</label>
-                                <input type="date" name="date-of-birth" id="date-of-birth" class="bg-gray-50 border border-green-400 text-gray-900 sm:text-sm focus:ring-green-400 focus:border-green-400 block w-full p-2.5 dark:bg-grayed dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-400 dark:focus:border-green-400" style="border-radius: 7px  7px 7px 7px;">
-                            </div>
-                            
                         </div>
                         <p class="text-gray-900 dark:text-white text-left" style="color:#ff5555;" id="error1"></p>
                         <button type="submit" id="continue1" class="w-full text-white bg-green-400 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium text-sm px-5 py-2.5 text-center dark:bg-green-400 dark:focus:ring-green-300" style="border-radius: 7px  7px 7px 7px;">Continue</button>
