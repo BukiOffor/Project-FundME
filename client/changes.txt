@@ -8,23 +8,13 @@ changes
 
 //get updates
 git fetch upstream
-git add client/verification.html
 
 // push in the following order
 
 git config user.email "alphonsus4lifensoul@gmail.com"
 git config user.name "alphieke11y"
-git add client/script/verification.js
+git add client/verification.html
 
 git commit -m "verification"
 git push origin alphieke11y-branch
 
-
-
-
-verification.html
-verification.js
-
-
-
-# Commit the changes with a commit message

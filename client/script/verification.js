@@ -134,7 +134,7 @@ function init() {
     function showVerification3(btn){
         btn.addEventListener('click', (e) => {
             e.preventDefault();
-            const country = document.getElementById("country").value;
+            /*const country = document.getElementById("country").value;
             const state = document.getElementById("state").value;
             const residentialAddress = document.getElementById("residential-address").value;
             const permanentCountry = document.getElementById("permanent-country").value;
@@ -149,11 +149,11 @@ function init() {
                     errorAlert.textContent = ''; // Clears the text after 3 seconds
                 }, 3000); // 3000 milliseconds = 3 seconds
 
-            }else{
+            }else{*/
                 // show step three of verificatioin
                 verificationContainer2.classList.add('hidden')
                 verificationContainer3.classList.remove('hidden')
-            }
+            //}
         })
     }
 
@@ -165,6 +165,7 @@ function init() {
             verificationContainer4.classList.remove('hidden')
         })
     }
+
 }
 
 init()
