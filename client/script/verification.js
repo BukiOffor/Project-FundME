@@ -28,13 +28,67 @@ fetch('CountryCodes.json')
             country1.value = item.name;
         }
     }
-
- 
 })
 .catch(error => console.error('Error loading JSON:', error));
+// Function to create the event listener and populate the state select element
+function setupCountrySelectListener(countrySelect, stateSelect, data) {
+    countrySelect.addEventListener("change", function () {
+      // Get the selected country value
+      const selectedCountry = countrySelect.value;
+  
+      // Find the corresponding states for the selected country in the fetched data
+      const selectedCountryData = data.countries.find(countryData => countryData.country === selectedCountry);
+  
+      // Populate the state select element with the states of the selected country
+      if (selectedCountryData) {
+        stateSelect.innerHTML = ""; // Clear existing options
+  
+        selectedCountryData.states.forEach(state => {
+          const option = document.createElement("option");
+          option.value = state;
+          option.text = state;
+          stateSelect.appendChild(option);
+        });
+      } else {
+        // If the selected country doesn't have data, clear the state select
+        stateSelect.innerHTML = "";
+      }
+    });
+}
+// Fetch the JSON data once
+fetch('CountryStates.json')
+.then(response => response.json())
+.then(data => {
+    // Get references to select elements
+    const countrySelect = document.getElementById("country");
+    const stateSelect = document.getElementById("state");
+    const permanent_countrySelect = document.getElementById("permanent-country");
+    const permanent_stateSelect = document.getElementById("permanent-state");
+
+    // Set default state value for both state selects
+    const defaultState = "Abia";
+
+    stateSelect.value = defaultState;
+    permanent_stateSelect.value = defaultState;
+
+    // Set up event listeners and populate state selects for both country fields
+    setupCountrySelectListener(countrySelect, stateSelect, data);
+    setupCountrySelectListener(permanent_countrySelect, permanent_stateSelect, data);
+
+    // Trigger the change event to populate the state options for the default country on page load
+    const changeEvent = new Event("change", { bubbles: true });
+    countrySelect.dispatchEvent(changeEvent);
+    permanent_countrySelect.dispatchEvent(changeEvent);
+})
+.catch(error => {
+    console.error("Error fetching data:", error);
+});
+  
+  
+
+  
 
 
-//state/province 
 
 
 
@@ -244,5 +298,3 @@ var currentYear = new Date().getFullYear();
 
 // Set the text content of the element to the current year
 element.textContent = currentYear;
-
-
