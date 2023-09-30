@@ -408,3 +408,7 @@ tml,body {
         line-height: normal;
     }
 }
+
+.text-center{
+  text-align:center;
+}
