@@ -9,7 +9,7 @@ const { MONGO_URL} = process.env;
 
 
 //Create the connection function
-
+/*
 const connectDB = () =>{
 	mongoose.connect(MONGO_URL, {
 		useNewUrlParser: true,
@@ -25,7 +25,7 @@ const connectDB = () =>{
 		console.error(err.message);
 	})
 }
-
+*/
 //Async mongoose connection
 const connectDB = async () => {
 	try{
@@ -35,10 +35,11 @@ const connectDB = async () => {
 		useUnifiedTopology: true,
 		useFindAndModify: false
 	});
-		console.log("MongoDB connected...");
-		// seed data 
+	console.log("MongoDB connected...");
+	
+	// seed data 
 
-	} catch (err){
+	} catch (err) {
 
 		console.error(err.message);
 		// exit with failure;
@@ -51,8 +52,4 @@ module.exports = connectDB;
 
  
 
-	}
-
-
-	}
-}
+	
