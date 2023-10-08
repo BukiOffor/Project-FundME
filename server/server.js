@@ -2,12 +2,12 @@ const express = require('express');
 //const path = require('path');
 
 
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 const bodyParser =require('body-parser');
-const cors = require('cor')
+const cors = require('cor');
 const campaignRoutes = require('./routes/campaignRoutes');
 const dotenv = require('dotenv');
-const connectDB = require('./db')
+const connectDB = require('./db');
 
 dotenv.config();
 
@@ -29,7 +29,7 @@ connectDB();
 app.get('/', (req, res) => {
   //const indexPath = path.join('../client','index.html');
   //res.sendFile(indexPath);
-  res.json({message: "Welcome to FundMe Platform"})
+  res.json({message: "Welcome to FundMe Platform"});
 });
 
 
@@ -38,14 +38,3 @@ app.listen(port, () => {
 });
 
  
-/*
-const express = require("express");
-const app = express();
-const port = 3000;
-
-app.use(express.static("public"));
-
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
-*/   
