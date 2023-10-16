@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script/tailwindconfig.js" type="text/javascript" charset="utf-8" async></script>
+    <style type="text/Tailwindcss" media="screen">
+      @layer utilities {
+          .max-w-90p {
+            max-width: 90%;
+          }
+          
+          .max-w-95p {
+            max-width: 90%;
+          }
+          
+          .theme-bg-blur {
+            @apply backdrop-blur-xl dark:backdrop-blur-xl bg-white bg-opacity-25 dark:bg-slate-900 dark:bg-opacity-25
+          }
+          
+          .how-it-works:hover svg {
+            @apply fill-black dark:fill-white
+          }
+          
+          .category-list > div:nth-of-type(odd) {
+            @apply bg-gray-100 bg-opacity-50 dark:bg-grayed dark:border-gray-700
+          }
+          
+          .category-list > div:nth-of-type(even) {
+            @apply bg-green-100 bg-opacity-50 dark:bg-grayed dark:border-gray-700
+          }
+         
+          .no-scrollbar::-webkit-scrollbar {
+            display: none;
+          }
+    
+          .no-scrollbar {
+            -ms-overflow-style: none; 
+            scrollbar-width: none; 
+          }
+        }
+    </style>
+ 
+    
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!--<script src="script.js" type="module"></script>-->
+
+
+    <!--Poppins font-family-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="preload">
+    <!--usage: font-family: 'Poppins', sans-serif;-->
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js" defer></script>
+    <script src="script/app.js" type="text/javascript" charset="utf-8" defer></script>
+    <title>FundMe</title>
+    
+</head>
+<body>
+    <div>
+      <form action="#" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
+        <div class="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
+          <div class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]" aria-hidden="true">
+            <div class="relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+          </div>
+          <div class="mx-auto mt-16 max-w-xl sm:mt-20">
+            <h2 class="text-2xl font-semibold text-green-500">Create Campaign</h2>
+          </div>
+                <!-- Circular image div -->
+            <div class="w-24 h-24 bg-white rounded-full mx-auto mt-4 p-4 border-2 border-green-500">
+              <!-- <img src="your-image-url.jpg" class="w-full h-full object-cover rounded-full" > -->
+              <i class="fa-solid fa-image"></i>
+            </div>
+        <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+          <div>
+            <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900">Wallet Address*</label>
+            <div class="mt-2.5">
+              <input type="text" name="first-name" id="first-name" autocomplete="given-name" placeholder="Enter your wallet address" class="block w-full rounded-md border-2 border-green-500 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6">
+            </div>
+          </div>
+          <div>
+            <label for="last-name" class="block text-sm font-semibold leading-6 text-gray-900">Project Title*</label>
+            <div class="mt-2.5">
+              <input type="text" name="last-name" id="last-name" autocomplete="family-name" placeholder="Enter your project title" class="block w-full rounded-md border-2 border-green-500 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6">
+            </div>
+          </div>
+      
+          <div class="sm:col-span-2">
+            <label for="message" class="block text-sm font-semibold leading-6 text-gray-900">Story*</label>
+            <div class="mt-2.5">
+              <textarea name="message" id="message" placeholder="Write about your project" rows="4" class="block w-full rounded-md border-2 border-green-500 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"></textarea>
+            </div>
+          </div>
+          <div>
+            <label for="goal" class="block text-sm font-semibold leading-6 text-gray-900">Your Goal*</label>
+            <div class="mt-2.5">
+              <input type="text" name="goal" id="goal" autocomplete="off" placeholder="Enter your goal" class="block w-full rounded-md border-2 border-green-500 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6">
+            </div>
+          </div>
+          <div>
+            <label for="end-date" class="block text-sm font-semibold leading-6 text-gray-900">End Date*</label>
+            <div class="mt-2.5">
+              <input type="date" name="end-date" id="end-date" autocomplete="off" placeholder="Select end date" class="block w-full rounded-md border-2 border-green-500 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6">
+            </div>
+          </div>
+          <div class="sm:col-span-2">
+            <label for="company" class="block text-sm font-semibold leading-6 text-gray-900">Project Image</label>
+            <div class="mt-2.5">
+              <input type="image" name="image" id="image" autocomplete="off" class="block w-full rounded-md border-2 border-green-500 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6">
+            </div>
+          </div>
+          
+        </div>
+        <div class="mt-10">
+          <button type="submit" class="block mx-auto w-40 rounded-md bg-green-500 px-2.5 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-green-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">Submit Campaign</button>
+        </div>
+      </form>
+    </div>
+  
+</body>
+</html>
