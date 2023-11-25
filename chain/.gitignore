@@ -10,3 +10,4 @@ cache
 artifacts
 deployments
 yarn.lock
+DS_store

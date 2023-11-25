@@ -41,4 +41,13 @@ contract FundMe {
     function getContributorCount() public view returns (uint256) {
         return contributors.length;
     }
+    function destroy() external onlyOwner{
+        if(address(this).balance > 0){
+        (bool success, ) = owner.call{value:address(this).balance}("");
+        require(success, "Failed");
+        selfdestruct(payable(address(this)));
+        }else{
+            selfdestruct(payable(address(this)));
+        }
+    }
 }
