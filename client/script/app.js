@@ -1,129 +1,3 @@
-
-// Sign 
-function init() {
-  // Get sign in button
-  const signinBtn = getDom('#signin-btn')
-  
-  // Get sign up link
-  const inFormSignupLink = getDom('#in-form-signup-link')
-  
-  // Get sign up link
-  const inFormSigninLink = getDom('#in-form-signin-link')
-  
-  // Get sign up and sign in container
-  const acctContainer = getDom('#access-acct')
-  
-  // Get sign in container
-  const signinContainer = getDom('#signin-container')
-  
-  // Get sign up container
-  const signupContainer = getDom('#signup-container')
-
-  // Get close sign in container
-  const closeSignin = getDom('#close-signin')
-  
-  // Get close sign up container
-  const closeSignup = getDom('#close-signup')
-  
-  // Get Create Campaign button
-  const startCampaignBtn = getDom('#start-campaign-btn')
-  
-  // Home Header
-  const homeHeader = getDom('#home header')
-  
-  // Home Header
-  const homeMain = getDom('#home main')
-  
-  // Home footer
-  const homeFooter = getDom('#home footer')
-  
-  
-  showSignin(signinBtn)
-  showSignin(startCampaignBtn)
-  showSignin(inFormSigninLink)
-  showSignup(inFormSignupLink)
-  closeAcctContainer(closeSignin)
-  closeAcctContainer(closeSignup)
-  
-  
-  function showSignin(btn) {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault
-      // Hide home header 
-      homeHeader.classList.add('hidden')
-      
-      // Hide home main 
-      homeMain.classList.add('hidden')
-      
-      // Hide home footer
-      homeFooter.classList.add('hidden')
-      
-      // Hide Signup Container
-      signupContainer.classList.add('hidden')
-      
-      // Show acctContainer
-      acctContainer.classList.remove('hidden')
-      
-      // Show Signin Container
-      signinContainer.classList.remove('hidden')
-    })
-  }
-  
-  function showSignup(btn) {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault
-      // Hide home header 
-      homeHeader.classList.add('hidden')
-      
-      // Hide home main 
-      homeMain.classList.add('hidden')
-      
-      // Hide home footer
-      homeFooter.classList.add('hidden')
-      
-      // Hode Signin Container
-      signinContainer.classList.add('hidden')
-      
-      // Show acctContainer
-      acctContainer.classList.remove('hidden')
-      
-      // Show Signup Container
-      signupContainer.classList.remove('hidden')
-      
-    })
-  }
-  
-  
-  function closeAcctContainer(btn) {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault
-      // Show home header 
-      homeHeader.classList.remove('hidden')
-      
-      // Show home main 
-      homeMain.classList.remove('hidden')
-      
-      // Show home footer
-      homeFooter.classList.remove('hidden')
-      
-      // Hide Signin Container
-      signinContainer.classList.add('hidden')
-      
-      // Hide acctContainer
-      acctContainer.classList.add('hidden')
-      
-      // Hide Signup Container
-      signupContainer.classList.add('hidden')
-      
-    })
-  }
-
-  
-}
-
-init()
-
-
 // Add Click event to switch between light and dark theme
 var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
 var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
@@ -188,6 +62,40 @@ themeToggleBtn.addEventListener('click', function() {
      return outterSelector.querySelector(innerSelector)
    }
  }
+
+ //toggle the input type of passwords
+ document.addEventListener('DOMContentLoaded', function() {
+    var eyeAndSlashElements = document.querySelectorAll('.eye, .slash');
+
+    eyeAndSlashElements.forEach(function(element) {
+        element.addEventListener('click', function() {
+            var inputField = this.closest('div').querySelector('input');
+            if (inputField.type === 'password') {
+                inputField.type = 'text';
+                inputField.placeholder = 'Password';
+            } else {
+                inputField.type = 'password';
+                inputField.placeholder = '••••••••';
+            }
+            
+            var siblingIcon = this.nextElementSibling;
+            if (siblingIcon) {
+                this.style.display = 'none';
+                siblingIcon.style.display = 'block';
+            } else {
+                siblingIcon = this.previousElementSibling;
+                this.style.display = 'none';
+                siblingIcon.style.display = 'block';
+            }
+        });
+    });
+});
+
+
+
+
+
+
 
 //get the copyright span element
 var element = document.querySelector('.tm-current-year');
