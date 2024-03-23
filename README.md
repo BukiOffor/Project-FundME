@@ -17,6 +17,7 @@ ___
 | 5 | Ebuka Offor | <https://github.com/BukiOffor> | <ebuka2264@yahoo.com> | project Lead |
 | 6 | Ismail Aminu Abbas  | <https://github.com/ibnabbas> | <ibnabbas1981@gmail.com> | Frontend Developer |
 | 7 | Chibuzor | <https://github.com/> | <yahoo.com> | Content Writer |
+| 8 | Alphie Kelly  | <https://github.com/alphieke11y> | <alphonsus4lifensoul@gmail.com> | Frontend Developer |
 
 
 
