@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en" class="md:scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BitFundMe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css"/>
+    <link rel="stylesheet" href="style/btn-hover.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script/tailwindconfig.js" type="text/javascript" charset="utf-8" async></script>
+    <style type="text/Tailwindcss" media="screen">
+      html, body{
+        overflow-x: hidden;
+      }
+
+      @layer utilities {
+          .max-w-90p {
+            max-width: 90%;
+          }
+          
+          .max-w-95p {
+            max-width: 90%;
+          }
+          
+          .theme-bg-blur {
+            @apply backdrop-blur-xl dark:backdrop-blur-xl bg-white bg-opacity-25 dark:bg-slate-900 dark:bg-opacity-25
+          }
+          
+          .how-it-works:hover svg {
+            @apply fill-black dark:fill-white
+          }
+          
+          .category-list > div:nth-of-type(odd) {
+            @apply bg-gray-100 bg-opacity-50 dark:bg-grayed dark:border-gray-700
+          }
+          
+          .category-list > div:nth-of-type(even) {
+            @apply bg-green-100 bg-opacity-50 dark:bg-grayed dark:border-gray-700
+          }
+         
+          .no-scrollbar::-webkit-scrollbar {
+            display: none;
+          }
+    
+          .no-scrollbar {
+            -ms-overflow-style: none; 
+            scrollbar-width: none; 
+          }
+        }
+
+
+        .cont {
+          display: flex; /* Use flexbox to align items */
+
+        }
+
+        .boq {
+          flex: 1 1 50%; /* Each .boq takes up 50% of the container's width by default */
+          margin: 0 5px; /* Add some spacing between the .boq elements */
+          box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+
+        @media (max-width: 768px) {
+          .cont {
+            display: flex; /* Use flexbox to align items */
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+          }
+          .boq {
+            flex: 1 1 100%; /* Each .boq takes up 100% of the container's width on small devices */
+          }
+          
+          #create-campaign-text{
+            font-size: 20pt;
+            margin-top:-80px;
+          }
+
+          #create-campaign-btn{
+            font-size: 16pt;
+          }
+
+        }
+
+        .example_e {
+          text-transform: uppercase;
+          border-radius: 6px;
+          transition: all 0.3s ease 0s;
+        }
+        .example_e:hover {
+          letter-spacing: 3px;
+          background: none;
+          -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+          -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+          transition: all 0.3s ease 0s;
+        }
+        
+        /* hide modal */
+        .modal {
+            display: none;
+        }
+
+        /* modal is hidden by default and positioned fixed */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black background */
+            z-index: 9999;
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+        }
+
+        .close {
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+        }
+
+        /* Center the modal content */
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 8px;
+        }
+
+        /* Style the close button */
+        .close {
+            position: absolute;
+
+            top: 30px;
+            right: 35px;
+            cursor: pointer;
+        }
+        
+    </style>
+     <!--Poppins font-family-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="preload">
+    <!--usage: font-family: 'Poppins', sans-serif;-->
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js" defer></script>
+    <script src="script/app.js" type="text/javascript" charset="utf-8" defer></script>
+
+     <!--favicon links-->
+     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+     <link rel="manifest" href="/favicon/site.webmanifest">
+     <!--End of favicon-->
+
+</head>
+<body id="home" class="font-poppins bg-white dark:bg-black">
+
+    <header class="fixed landscape:relative w-full top-0 z-10 theme-bg-blur">
+        <section class="max-w-95p  md:max-w-90 mx-auto">
+            <div class="flex flex-wrap items-center justify-between mx-auto py-4">
+            <a href="index.html" class="text-3xl">
+                <img src="images/logo.png" alt="BitFundMe logo" width="160">
+            </a>
+            <div class="flex items-center md:order-2">
+                    
+                <!-- Sign UP -->
+                <a id="signin-btn" href="sign-up.html" class="border border-solid rounded-lg dark:border-white py-2 px-2 text-black dark:text-white hover:green-400 dark:hover:bg-white dark:hover:text-black hover:bg-green-500 hover:text-white">Sign Up</a>
+                
+                <!-- Toggle theme mode --> 
+                <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 focus:outline-none rounded-lg text-sm p-2.5">
+                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                </button>
+
+                <!--user menu toggler-->
+                <button type="button" class="hidden relative flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-700" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+                <span class="sr-only">Open user menu</span>
+                
+                <!-- Default Avatar  -->
+                <div class="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                    <svg class="absolute w-10 h-10 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                </div>
+
+                <!-- Active Status -->
+                <span class="bottom-0 left-6 absolute w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+                </button>
+                
+                <!-- Dropdown user menu -->
+                <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
+                <div class="px-4 py-3">
+                    <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
+                    <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+                </div>
+                <ul class="py-2" aria-labelledby="user-menu-button">
+                    <li>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
+                    </li>
+                    <li>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
+                    </li>
+                    <li>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
+                    </li>
+                    <li>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+                    </li>
+                </ul>
+                </div>
+                
+                
+                <!-- Menu Button  -->
+                <button data-collapse-toggle="navbar-user" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden focus:outline-none dark:text-gray-400 dark:hover:bg-black " aria-controls="navbar-user" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                    </svg>
+                </button>
+            </div>
+            <nav class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user" arial-label="main" style="overflow-x: hidden;">
+                <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-300 bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent dark:bg-grayed md:dark:bg-transparent dark:border-gray-700">
+                <li>
+                    <a href="index.html" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 btns dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Home</a>
+                </li>
+                <li>
+                    <a href="campaigns.html" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Campaigns</a>
+                </li>
+                <li>
+                    <a href="categories.html" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400  md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Categories</a>
+                </li>
+                <li>
+                    <a href="index.html#testimonials" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Testimonials</a>
+                </li>
+                <li>
+                    <a href="about.html" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">About Us</a>
+                </li>
+                </ul>
+            </nav>
+            </div>
+        </section>
+    </header>
+
+    <main class="container mx-auto">      
+
+    <!-- Campaign --> 
+    <section id="campaign" class="mt-20 scroll-mt-5 pt-8 overflow-hidden">
+        
+        <h2 class="max-w-95p md:max-w-90p mx-auto ml-2 pt-10 pb-6 font-bold text-black dark:text-white text-3xl md:text-4xl">Campaigns</h2>
+        <div class="flex flex-wrap mx-4">
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+                <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                    <img class="w-full h-48 object-cover object-center" src="./images/camp1.jpg" alt="Fund Bio-Gas Factory">
+                    <div class="p-4">
+                        <h2 class="text-lg font-medium text-gray-900 dark:text-white">Fund Bio-Gas Factory</h2>
+                        <div class=" text-gray-900 dark:text-white">
+                            9 days left
+                        </div>
+                        <div class="mt-3 flex items-center" style="margin-top:-7px;">
+                            <div class="bg-gray-300 dark:bg-gray-600 rounded-full w-full h-2">
+                                <div class="rounded-full bg-green-500 dark:bg-green-500 h-full" style="width: 70%"></div>
+                            </div>
+                            <span class="ml-2 text-sm text-gray-600 dark:text-white">70%</span>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-700 dark:text-white">
+                            <div class="text-right text-gray-700 dark:text-white" style="width: 100%;">
+                                <div class="py-2" style="width:50%; float:left;text-align: left;padding-left:10px;">Target: <br><span class="dark:text-white text-black font-bold">5.0</span> ETH 
+                                </div>
+                                <div class="py-2" style="width:50%; float:right;text-align: right;padding-right: 10px;"> Raised: <br><span class="text-green-400 font-bold">3.5</span> ETH  
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="example_e block mt-3 text-center font-semibold bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 text-white text-lg rounded">View More</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+                <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                    <img class="w-full h-48 object-cover object-center" src="./images/camp2.jpg" alt="Fund Bio-Gas Factory">
+                    <div class="p-4">
+                    <h2 class="text-lg font-medium text-gray-900 dark:text-white">Help Motherless Children</h2>
+                    <div class=" text-gray-900 dark:text-white">
+                            28 days left
+                        </div>
+                    <div class="mt-3 flex items-center" style="margin-top:-7px;">
+                        <div class="bg-gray-300 rounded-full w-full h-2">
+                        <div class="rounded-full bg-green-500 h-full" style="width: 50%"></div>
+                        </div>
+                        <span class="ml-2 text-sm text-gray-600 dark:text-white">50%</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-gray-700 dark:text-white">
+                        
+                        <div class="text-right text-gray-700 dark:text-white" style="width: 100%;">
+                        <div class="py-2" style="width:50%; float:left;text-align: left;padding-left:10px;">Target: <br><span class="dark:text-white text-black font-bold">3.093407</span> ETH 
+                        </div>
+                        <div class="py-2" style="width:50%; float:right;text-align: right;padding-right: 10px;"> Raised: <span class="text-green-400 font-bold">2.86114291</span> ETH  
+                        </div>
+                        </div>
+                    </div>
+                    <a href="#" class="block mt-3 text-center example_e font-semibold bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 text-white text-lg hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 rounded">View More</a>
+            
+                    </div>
+                </div>
+            </div>
+        
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+            <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                <img class="w-full h-48 object-cover object-center" src="./images/camp3.jpg" alt="Fund Bio-Gas Factory">
+                <div class="p-4">
+                    <h2 class="text-lg font-medium text-gray-900 dark:text-white">Fund My Education</h2>
+                    <div class=" text-gray-900 dark:text-white">
+                            1 month left
+                        </div>
+                    <div class="mt-3 flex items-center" style="margin-top:-7px;">
+                    <div class="bg-gray-300 rounded-full w-full h-2">
+                        <div class="rounded-full bg-green-500 h-full" style="width: 100%"></div>
+                    </div>
+                    <span class="ml-2 text-sm text-gray-600 dark:text-white">99%</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-gray-700 dark:text-white">            
+                    <div class="text-right text-gray-700 dark:text-white" style="width: 100%;">
+                        <div class="py-2" style="width:50%; float:left;text-align: left;padding-left:10px;">Target: <br><span class="dark:text-white text-black font-bold">15.393407</span> ETH 
+                        </div>
+                        <div class="py-2" style="width:50%; float:right;text-align: right;padding-right: 10px;"> Raised: <br><span class="text-green-400 font-bold">14.96114291</span> ETH  
+                        </div>
+                    </div>
+                    </div>
+                    <a href="#" class="block mt-3 text-center example_e text-white text-lg font-semibold bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 rounded">View More</a>
+            
+                </div>
+            </div>
+            </div>
+            
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+            <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                <img class="w-full h-48 object-cover object-center" src="./images/camp4.jpg" alt="Fund Bio-Gas Factory">
+                <div class="p-4">
+                    <h2 class="text-lg font-medium text-gray-900 dark:text-white">Sponsor My Vacation</h2>
+                    <div class=" text-gray-900 dark:text-white">
+                            Completed
+                        </div>
+                    <div class="mt-3 flex items-center" style="margin-top:-7px;">
+                    <div class="bg-gray-300 dark:bg-gray-600 rounded-full w-full h-2">
+                        <div class="rounded-full bg-green-500 dark:bg-green-500 h-full" style="width: 100%"></div>
+                    </div>
+                    <span class="ml-2 text-sm text-gray-600 dark:text-white">100%</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-gray-700 dark:text-white">
+                    
+                    <div class="text-right text-gray-700 dark:text-white" style="width: 100%;">
+                        <div class="py-2" style="width:50%; float:left;text-align: left;padding-left:10px;">Target: <br><span class="dark:text-white text-black font-bold">4.66114291</span> ETH 
+                        </div>
+                        <div class="py-2" style="width:50%; float:right;text-align: right;padding-right: 10px;"> Raised: <br><span class="text-green-400 font-bold">4.66114291</span> ETH  
+                        </div>
+                    </div>
+                    </div>
+                    <a href="#" class="block mt-3 text-center example_e font-semibold text-white text-lg bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 rounded">View More</a>
+            
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="flex flex-wrap mx-4">
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+                <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                    <img class="w-full h-48 object-cover object-center" src="./images/camp1.jpg" alt="Fund Bio-Gas Factory">
+                    <div class="p-4">
+                        <h2 class="text-lg font-medium text-gray-900 dark:text-white">Fund Bio-Gas Factory</h2>
+                        <div class=" text-gray-900 dark:text-white">
+                            9 days left
+                        </div>
+                        <div class="mt-3 flex items-center" style="margin-top:-7px;">
+                            <div class="bg-gray-300 dark:bg-gray-600 rounded-full w-full h-2">
+                                <div class="rounded-full bg-green-500 dark:bg-green-500 h-full" style="width: 70%"></div>
+                            </div>
+                            <span class="ml-2 text-sm text-gray-600 dark:text-white">70%</span>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-700 dark:text-white">
+                            <div class="text-right text-gray-700 dark:text-white" style="width: 100%;">
+                                <div class="py-2" style="width:50%; float:left;text-align: left;padding-left:10px;">Target: <br><span class="dark:text-white text-black font-bold">5.0</span> ETH 
+                                </div>
+                                <div class="py-2" style="width:50%; float:right;text-align: right;padding-right: 10px;"> Raised: <br><span class="text-green-400 font-bold">3.5</span> ETH  
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="example_e block mt-3 text-center font-semibold bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 text-white text-lg rounded">View More</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+                <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                    <img class="w-full h-48 object-cover object-center" src="./images/camp2.jpg" alt="Fund Bio-Gas Factory">
+                    <div class="p-4">
+                    <h2 class="text-lg font-medium text-gray-900 dark:text-white">Help Motherless Children</h2>
+                    <div class=" text-gray-900 dark:text-white">
+                            28 days left
+                        </div>
+                    <div class="mt-3 flex items-center" style="margin-top:-7px;">
+                        <div class="bg-gray-300 rounded-full w-full h-2">
+                        <div class="rounded-full bg-green-500 h-full" style="width: 50%"></div>
+                        </div>
+                        <span class="ml-2 text-sm text-gray-600 dark:text-white">50%</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-gray-700 dark:text-white">
+                        
+                        <div class="text-right text-gray-700 dark:text-white" style="width: 100%;">
+                        <div class="py-2" style="width:50%; float:left;text-align: left;padding-left:10px;">Target: <br><span class="dark:text-white text-black font-bold">3.093407</span> ETH 
+                        </div>
+                        <div class="py-2" style="width:50%; float:right;text-align: right;padding-right: 10px;"> Raised: <span class="text-green-400 font-bold">2.86114291</span> ETH  
+                        </div>
+                        </div>
+                    </div>
+                    <a href="#" class="block mt-3 text-center example_e font-semibold bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 text-white text-lg hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 rounded">View More</a>
+            
+                    </div>
+                </div>
+            </div>
+        
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+            <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                <img class="w-full h-48 object-cover object-center" src="./images/camp3.jpg" alt="Fund Bio-Gas Factory">
+                <div class="p-4">
+                    <h2 class="text-lg font-medium text-gray-900 dark:text-white">Fund My Education</h2>
+                    <div class=" text-gray-900 dark:text-white">
+                            1 month left
+                        </div>
+                    <div class="mt-3 flex items-center" style="margin-top:-7px;">
+                    <div class="bg-gray-300 rounded-full w-full h-2">
+                        <div class="rounded-full bg-green-500 h-full" style="width: 100%"></div>
+                    </div>
+                    <span class="ml-2 text-sm text-gray-600 dark:text-white">99%</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-gray-700 dark:text-white">            
+                    <div class="text-right text-gray-700 dark:text-white" style="width: 100%;">
+                        <div class="py-2" style="width:50%; float:left;text-align: left;padding-left:10px;">Target: <br><span class="dark:text-white text-black font-bold">15.393407</span> ETH 
+                        </div>
+                        <div class="py-2" style="width:50%; float:right;text-align: right;padding-right: 10px;"> Raised: <br><span class="text-green-400 font-bold">14.96114291</span> ETH  
+                        </div>
+                    </div>
+                    </div>
+                    <a href="#" class="block mt-3 text-center example_e text-white text-lg font-semibold bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 rounded">View More</a>
+            
+                </div>
+            </div>
+            </div>
+            
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+            <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                <img class="w-full h-48 object-cover object-center" src="./images/camp4.jpg" alt="Fund Bio-Gas Factory">
+                <div class="p-4">
+                    <h2 class="text-lg font-medium text-gray-900 dark:text-white">Sponsor My Vacation</h2>
+                    <div class=" text-gray-900 dark:text-white">
+                            Completed
+                        </div>
+                    <div class="mt-3 flex items-center" style="margin-top:-7px;">
+                    <div class="bg-gray-300 dark:bg-gray-600 rounded-full w-full h-2">
+                        <div class="rounded-full bg-green-500 dark:bg-green-500 h-full" style="width: 100%"></div>
+                    </div>
+                    <span class="ml-2 text-sm text-gray-600 dark:text-white">100%</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-gray-700 dark:text-white">
+                    
+                    <div class="text-right text-gray-700 dark:text-white" style="width: 100%;">
+                        <div class="py-2" style="width:50%; float:left;text-align: left;padding-left:10px;">Target: <br><span class="dark:text-white text-black font-bold">4.66114291</span> ETH 
+                        </div>
+                        <div class="py-2" style="width:50%; float:right;text-align: right;padding-right: 10px;"> Raised: <br><span class="text-green-400 font-bold">4.66114291</span> ETH  
+                        </div>
+                    </div>
+                    </div>
+                    <a href="#" class="block mt-3 text-center example_e font-semibold text-white text-lg bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 rounded">View More</a>
+            
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="flex flex-wrap mx-4">
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+                <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                    <img class="w-full h-48 object-cover object-center" src="./images/camp1.jpg" alt="Fund Bio-Gas Factory">
+                    <div class="p-4">
+                        <h2 class="text-lg font-medium text-gray-900 dark:text-white">Fund Bio-Gas Factory</h2>
+                        <div class=" text-gray-900 dark:text-white">
+                            9 days left
+                        </div>
+                        <div class="mt-3 flex items-center" style="margin-top:-7px;">
+                            <div class="bg-gray-300 dark:bg-gray-600 rounded-full w-full h-2">
+                                <div class="rounded-full bg-green-500 dark:bg-green-500 h-full" style="width: 70%"></div>
+                            </div>
+                            <span class="ml-2 text-sm text-gray-600 dark:text-white">70%</span>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-700 dark:text-white">
+                            <div class="text-right text-gray-700 dark:text-white" style="width: 100%;">
+                                <div class="py-2" style="width:50%; float:left;text-align: left;padding-left:10px;">Target: <br><span class="dark:text-white text-black font-bold">5.0</span> ETH 
+                                </div>
+                                <div class="py-2" style="width:50%; float:right;text-align: right;padding-right: 10px;"> Raised: <br><span class="text-green-400 font-bold">3.5</span> ETH  
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="example_e block mt-3 text-center font-semibold bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 text-white text-lg rounded">View More</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+                <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                    <img class="w-full h-48 object-cover object-center" src="./images/camp2.jpg" alt="Fund Bio-Gas Factory">
+                    <div class="p-4">
+                    <h2 class="text-lg font-medium text-gray-900 dark:text-white">Help Motherless Children</h2>
+                    <div class=" text-gray-900 dark:text-white">
+                            28 days left
+                        </div>
+                    <div class="mt-3 flex items-center" style="margin-top:-7px;">
+                        <div class="bg-gray-300 rounded-full w-full h-2">
+                        <div class="rounded-full bg-green-500 h-full" style="width: 50%"></div>
+                        </div>
+                        <span class="ml-2 text-sm text-gray-600 dark:text-white">50%</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-gray-700 dark:text-white">
+                        
+                        <div class="text-right text-gray-700 dark:text-white" style="width: 100%;">
+                        <div class="py-2" style="width:50%; float:left;text-align: left;padding-left:10px;">Target: <br><span class="dark:text-white text-black font-bold">3.093407</span> ETH 
+                        </div>
+                        <div class="py-2" style="width:50%; float:right;text-align: right;padding-right: 10px;"> Raised: <span class="text-green-400 font-bold">2.86114291</span> ETH  
+                        </div>
+                        </div>
+                    </div>
+                    <a href="#" class="block mt-3 text-center example_e font-semibold bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 text-white text-lg hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 rounded">View More</a>
+            
+                    </div>
+                </div>
+            </div>
+        
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+            <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                <img class="w-full h-48 object-cover object-center" src="./images/camp3.jpg" alt="Fund Bio-Gas Factory">
+                <div class="p-4">
+                    <h2 class="text-lg font-medium text-gray-900 dark:text-white">Fund My Education</h2>
+                    <div class=" text-gray-900 dark:text-white">
+                            1 month left
+                        </div>
+                    <div class="mt-3 flex items-center" style="margin-top:-7px;">
+                    <div class="bg-gray-300 rounded-full w-full h-2">
+                        <div class="rounded-full bg-green-500 h-full" style="width: 100%"></div>
+                    </div>
+                    <span class="ml-2 text-sm text-gray-600 dark:text-white">99%</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-gray-700 dark:text-white">            
+                    <div class="text-right text-gray-700 dark:text-white" style="width: 100%;">
+                        <div class="py-2" style="width:50%; float:left;text-align: left;padding-left:10px;">Target: <br><span class="dark:text-white text-black font-bold">15.393407</span> ETH 
+                        </div>
+                        <div class="py-2" style="width:50%; float:right;text-align: right;padding-right: 10px;"> Raised: <br><span class="text-green-400 font-bold">14.96114291</span> ETH  
+                        </div>
+                    </div>
+                    </div>
+                    <a href="#" class="block mt-3 text-center example_e text-white text-lg font-semibold bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 rounded">View More</a>
+            
+                </div>
+            </div>
+            </div>
+            
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+            <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                <img class="w-full h-48 object-cover object-center" src="./images/camp4.jpg" alt="Fund Bio-Gas Factory">
+                <div class="p-4">
+                    <h2 class="text-lg font-medium text-gray-900 dark:text-white">Sponsor My Vacation</h2>
+                    <div class=" text-gray-900 dark:text-white">
+                            Completed
+                        </div>
+                    <div class="mt-3 flex items-center" style="margin-top:-7px;">
+                    <div class="bg-gray-300 dark:bg-gray-600 rounded-full w-full h-2">
+                        <div class="rounded-full bg-green-500 dark:bg-green-500 h-full" style="width: 100%"></div>
+                    </div>
+                    <span class="ml-2 text-sm text-gray-600 dark:text-white">100%</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-gray-700 dark:text-white">
+                    
+                    <div class="text-right text-gray-700 dark:text-white" style="width: 100%;">
+                        <div class="py-2" style="width:50%; float:left;text-align: left;padding-left:10px;">Target: <br><span class="dark:text-white text-black font-bold">4.66114291</span> ETH 
+                        </div>
+                        <div class="py-2" style="width:50%; float:right;text-align: right;padding-right: 10px;"> Raised: <br><span class="text-green-400 font-bold">4.66114291</span> ETH  
+                        </div>
+                    </div>
+                    </div>
+                    <a href="#" class="block mt-3 text-center example_e font-semibold text-white text-lg bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 rounded">View More</a>
+            
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="flex flex-wrap mx-4">
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+                <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                    <img class="w-full h-48 object-cover object-center" src="./images/camp1.jpg" alt="Fund Bio-Gas Factory">
+                    <div class="p-4">
+                        <h2 class="text-lg font-medium text-gray-900 dark:text-white">Fund Bio-Gas Factory</h2>
+                        <div class=" text-gray-900 dark:text-white">
+                            9 days left
+                        </div>
+                        <div class="mt-3 flex items-center" style="margin-top:-7px;">
+                            <div class="bg-gray-300 dark:bg-gray-600 rounded-full w-full h-2">
+                                <div class="rounded-full bg-green-500 dark:bg-green-500 h-full" style="width: 70%"></div>
+                            </div>
+                            <span class="ml-2 text-sm text-gray-600 dark:text-white">70%</span>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-700 dark:text-white">
+                            <div class="text-right text-gray-700 dark:text-white" style="width: 100%;">
+                                <div class="py-2" style="width:50%; float:left;text-align: left;padding-left:10px;">Target: <br><span class="dark:text-white text-black font-bold">5.0</span> ETH 
+                                </div>
+                                <div class="py-2" style="width:50%; float:right;text-align: right;padding-right: 10px;"> Raised: <br><span class="text-green-400 font-bold">3.5</span> ETH  
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="example_e block mt-3 text-center font-semibold bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 text-white text-lg rounded">View More</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+                <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                    <img class="w-full h-48 object-cover object-center" src="./images/camp2.jpg" alt="Fund Bio-Gas Factory">
+                    <div class="p-4">
+                    <h2 class="text-lg font-medium text-gray-900 dark:text-white">Help Motherless Children</h2>
+                    <div class=" text-gray-900 dark:text-white">
+                            28 days left
+                        </div>
+                    <div class="mt-3 flex items-center" style="margin-top:-7px;">
+                        <div class="bg-gray-300 rounded-full w-full h-2">
+                        <div class="rounded-full bg-green-500 h-full" style="width: 50%"></div>
+                        </div>
+                        <span class="ml-2 text-sm text-gray-600 dark:text-white">50%</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-gray-700 dark:text-white">
+                        
+                        <div class="text-right text-gray-700 dark:text-white" style="width: 100%;">
+                        <div class="py-2" style="width:50%; float:left;text-align: left;padding-left:10px;">Target: <br><span class="dark:text-white text-black font-bold">3.093407</span> ETH 
+                        </div>
+                        <div class="py-2" style="width:50%; float:right;text-align: right;padding-right: 10px;"> Raised: <span class="text-green-400 font-bold">2.86114291</span> ETH  
+                        </div>
+                        </div>
+                    </div>
+                    <a href="#" class="block mt-3 text-center example_e font-semibold bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 text-white text-lg hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 rounded">View More</a>
+            
+                    </div>
+                </div>
+            </div>
+        
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+            <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                <img class="w-full h-48 object-cover object-center" src="./images/camp3.jpg" alt="Fund Bio-Gas Factory">
+                <div class="p-4">
+                    <h2 class="text-lg font-medium text-gray-900 dark:text-white">Fund My Education</h2>
+                    <div class=" text-gray-900 dark:text-white">
+                            1 month left
+                        </div>
+                    <div class="mt-3 flex items-center" style="margin-top:-7px;">
+                    <div class="bg-gray-300 rounded-full w-full h-2">
+                        <div class="rounded-full bg-green-500 h-full" style="width: 100%"></div>
+                    </div>
+                    <span class="ml-2 text-sm text-gray-600 dark:text-white">99%</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-gray-700 dark:text-white">            
+                    <div class="text-right text-gray-700 dark:text-white" style="width: 100%;">
+                        <div class="py-2" style="width:50%; float:left;text-align: left;padding-left:10px;">Target: <br><span class="dark:text-white text-black font-bold">15.393407</span> ETH 
+                        </div>
+                        <div class="py-2" style="width:50%; float:right;text-align: right;padding-right: 10px;"> Raised: <br><span class="text-green-400 font-bold">14.96114291</span> ETH  
+                        </div>
+                    </div>
+                    </div>
+                    <a href="#" class="block mt-3 text-center example_e text-white text-lg font-semibold bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 rounded">View More</a>
+            
+                </div>
+            </div>
+            </div>
+            
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+            <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                <img class="w-full h-48 object-cover object-center" src="./images/camp4.jpg" alt="Fund Bio-Gas Factory">
+                <div class="p-4">
+                    <h2 class="text-lg font-medium text-gray-900 dark:text-white">Sponsor My Vacation</h2>
+                    <div class=" text-gray-900 dark:text-white">
+                            Completed
+                        </div>
+                    <div class="mt-3 flex items-center" style="margin-top:-7px;">
+                    <div class="bg-gray-300 dark:bg-gray-600 rounded-full w-full h-2">
+                        <div class="rounded-full bg-green-500 dark:bg-green-500 h-full" style="width: 100%"></div>
+                    </div>
+                    <span class="ml-2 text-sm text-gray-600 dark:text-white">100%</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-gray-700 dark:text-white">
+                    
+                    <div class="text-right text-gray-700 dark:text-white" style="width: 100%;">
+                        <div class="py-2" style="width:50%; float:left;text-align: left;padding-left:10px;">Target: <br><span class="dark:text-white text-black font-bold">4.66114291</span> ETH 
+                        </div>
+                        <div class="py-2" style="width:50%; float:right;text-align: right;padding-right: 10px;"> Raised: <br><span class="text-green-400 font-bold">4.66114291</span> ETH  
+                        </div>
+                    </div>
+                    </div>
+                    <a href="#" class="block mt-3 text-center example_e font-semibold text-white text-lg bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 rounded">View More</a>
+            
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="flex flex-wrap mx-4">
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+                <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                    <img class="w-full h-48 object-cover object-center" src="./images/camp1.jpg" alt="Fund Bio-Gas Factory">
+                    <div class="p-4">
+                        <h2 class="text-lg font-medium text-gray-900 dark:text-white">Fund Bio-Gas Factory</h2>
+                        <div class=" text-gray-900 dark:text-white">
+                            9 days left
+                        </div>
+                        <div class="mt-3 flex items-center" style="margin-top:-7px;">
+                            <div class="bg-gray-300 dark:bg-gray-600 rounded-full w-full h-2">
+                                <div class="rounded-full bg-green-500 dark:bg-green-500 h-full" style="width: 70%"></div>
+                            </div>
+                            <span class="ml-2 text-sm text-gray-600 dark:text-white">70%</span>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-700 dark:text-white">
+                            <div class="text-right text-gray-700 dark:text-white" style="width: 100%;">
+                                <div class="py-2" style="width:50%; float:left;text-align: left;padding-left:10px;">Target: <br><span class="dark:text-white text-black font-bold">5.0</span> ETH 
+                                </div>
+                                <div class="py-2" style="width:50%; float:right;text-align: right;padding-right: 10px;"> Raised: <br><span class="text-green-400 font-bold">3.5</span> ETH  
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="example_e block mt-3 text-center font-semibold bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 text-white text-lg rounded">View More</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+                <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                    <img class="w-full h-48 object-cover object-center" src="./images/camp2.jpg" alt="Fund Bio-Gas Factory">
+                    <div class="p-4">
+                    <h2 class="text-lg font-medium text-gray-900 dark:text-white">Help Motherless Children</h2>
+                    <div class=" text-gray-900 dark:text-white">
+                            28 days left
+                        </div>
+                    <div class="mt-3 flex items-center" style="margin-top:-7px;">
+                        <div class="bg-gray-300 rounded-full w-full h-2">
+                        <div class="rounded-full bg-green-500 h-full" style="width: 50%"></div>
+                        </div>
+                        <span class="ml-2 text-sm text-gray-600 dark:text-white">50%</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-gray-700 dark:text-white">
+                        
+                        <div class="text-right text-gray-700 dark:text-white" style="width: 100%;">
+                        <div class="py-2" style="width:50%; float:left;text-align: left;padding-left:10px;">Target: <br><span class="dark:text-white text-black font-bold">3.093407</span> ETH 
+                        </div>
+                        <div class="py-2" style="width:50%; float:right;text-align: right;padding-right: 10px;"> Raised: <span class="text-green-400 font-bold">2.86114291</span> ETH  
+                        </div>
+                        </div>
+                    </div>
+                    <a href="#" class="block mt-3 text-center example_e font-semibold bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 text-white text-lg hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 rounded">View More</a>
+            
+                    </div>
+                </div>
+            </div>
+        
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+                <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                    <img class="w-full h-48 object-cover object-center" src="./images/camp3.jpg" alt="Fund Bio-Gas Factory">
+                    <div class="p-4">
+                        <h2 class="text-lg font-medium text-gray-900 dark:text-white">Fund My Education</h2>
+                        <div class=" text-gray-900 dark:text-white">
+                        1 month left
+                        </div>
+                        <div class="mt-3 flex items-center" style="margin-top:-7px;">
+                        <div class="bg-gray-300 rounded-full w-full h-2">
+                            <div class="rounded-full bg-green-500 h-full" style="width: 100%"></div>
+                        </div>
+                        <span class="ml-2 text-sm text-gray-600 dark:text-white">99%</span>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-700 dark:text-white">            
+                        <div class="text-right text-gray-700 dark:text-white" style="width: 100%;">
+                            <div class="py-2" style="width:50%; float:left;text-align: left;padding-left:10px;">Target: <br><span class="dark:text-white text-black font-bold">15.393407</span> ETH 
+                            </div>
+                            <div class="py-2" style="width:50%; float:right;text-align: right;padding-right: 10px;"> Raised: <br><span class="text-green-400 font-bold">14.96114291</span> ETH  
+                            </div>
+                        </div>
+                        </div>
+                        <a href="#" class="block mt-3 text-center example_e text-white text-lg font-semibold bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 rounded">View More</a>
+                
+                    </div>
+                </div>
+            </div>
+            
+            <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+                <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                    <img class="w-full h-48 object-cover object-center" src="./images/camp4.jpg" alt="Fund Bio-Gas Factory">
+                    <div class="p-4">
+                        <h2 class="text-lg font-medium text-gray-900 dark:text-white">Sponsor My Vacation</h2>
+                        <div class=" text-gray-900 dark:text-white">
+                        Completed
+                        </div>
+                        <div class="mt-3 flex items-center" style="margin-top:-7px;">
+                        <div class="bg-gray-300 dark:bg-gray-600 rounded-full w-full h-2">
+                            <div class="rounded-full bg-green-500 dark:bg-green-500 h-full" style="width: 100%"></div>
+                        </div>
+                        <span class="ml-2 text-sm text-gray-600 dark:text-white">100%</span>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-700 dark:text-white">
+                        
+                        <div class="text-right text-gray-700 dark:text-white" style="width: 100%;">
+                            <div class="py-2" style="width:50%; float:left;text-align: left;padding-left:10px;">Target: <br><span class="dark:text-white text-black font-bold">4.66114291</span> ETH 
+                            </div>
+                            <div class="py-2" style="width:50%; float:right;text-align: right;padding-right: 10px;"> Raised: <br><span class="text-green-400 font-bold">4.66114291</span> ETH  
+                            </div>
+                        </div>
+                        </div>
+                        <a href="#" class="block mt-3 text-center example_e font-semibold text-white text-lg bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 rounded">View More</a>
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category --> 
+    <section id="category" class="mt-20 scroll-mt-5">
+        <div class="border-0 rounded-lg p-6 mb-20">
+        <h2 class="text-2xl font-bold mb-6 dark:text-white">Project Categories</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div class="rounded-lg box-border hover:box-content active:bg-green-300 focus:outline-none focus:ring focus:ring-green-300 flex flex-col items-center justify-center relative box-content h-40 w-45 p-4">
+            <i class="fas fa-graduation-cap text-green-500 text-5xl"></i>
+            <p class="text-xl text-black-500 mt-2 font-bold dark:text-white">Education</p>
+            </div>
+            <div class="rounded-lg box-border hover:box-content active:bg-green-300 focus:outline-none focus:ring focus:ring-green-300 flex flex-col items-center justify-center relative box-content h-40 w-45 p-4">
+            <i class="fas fa-briefcase-medical text-green-500 text-5xl"></i>
+            <p class="text-xl text-black-500 mt-2 font-bold dark:text-white">Medical</p>
+            </div>
+            <div class="rounded-lg box-border hover:box-content active:bg-green-300 focus:outline-none focus:ring focus:ring-green-300 flex flex-col items-center justify-center relative box-content h-40 w-45 p-4">
+            <i class="fas fa-users text-green-500 text-5xl"></i>
+            <p class="text-xl text-black-500 mt-2 font-bold dark:text-white">Family</p>
+            </div>
+            <div class="rounded-lg box-border hover:box-content active:bg-green-300 focus:outline-none focus:ring focus:ring-green-300 flex flex-col items-center justify-center relative box-content h-40 w-45 p-4">
+            <i class="fas fa-laptop-code text-green-500 text-5xl"></i>
+            <p class="text-xl text-black-500 mt-2 font-bold dark:text-white">Technology</p>
+            </div>
+            <div class="rounded-lg box-border hover:box-content active:bg-green-300 focus:outline-none focus:ring focus:ring-green-300 flex flex-col items-center justify-center relative box-content h-40 w-45 p-4">
+            <i class="fas fa-briefcase text-green-500 text-5xl"></i>
+            <p class="text-xl text-black-500 mt-2 font-bold dark:text-white">Business</p>
+            </div>
+            <div class="rounded-lg box-border hover:box-content active:bg-green-300 focus:outline-none focus:ring focus:ring-green-300 flex flex-col items-center justify-center relative box-content h-40 w-45 p-4">
+            <i class="fas fa-hands-helping text-green-500 text-5xl"></i>
+            <p class="text-xl text-black-500 mt-2 font-bold dark:text-white">Crisis Relief</p>
+            </div>
+            <div class="rounded-lg box-border hover:box-content active:bg-green-300 focus:outline-none focus:ring focus:ring-green-300 flex flex-col items-center justify-center relative box-content h-40 w-45 p-4">
+            <i class="fas fa-suitcase-rolling text-green-500 text-5xl"></i>
+            <p class="text-xl text-black-500 mt-2 font-bold dark:text-white">Vacation</p>
+            </div>
+            <div class="rounded-lg box-border hover:box-content active:bg-green-300 focus:outline-none focus:ring focus:ring-green-300 flex flex-col items-center justify-center relative box-content h-40 w-45 p-4">
+            <i class="fas fa-hand-holding-heart text-green-500 text-5xl"></i>
+            <p class="text-xl text-black-500 mt-2 font-bold dark:text-white">Non-profit</p>
+            </div>
+            <div class="rounded-lg box-border hover:box-content active:bg-green-300 focus:outline-none focus:ring focus:ring-green-300 flex flex-col items-center justify-center relative box-content h-40 w-45 p-4">
+            <i class="fas fa-theater-masks text-green-500 text-5xl"></i>
+            <p class="text-xl text-black-500 mt-2 font-bold dark:text-white">Talent</p>
+            </div>
+            <div class="rounded-lg box-border hover:box-content active:bg-green-300 focus:outline-none focus:ring focus:ring-green-300 flex flex-col items-center justify-center relative box-content h-40 w-45 p-4">
+            <i class="fas fa-paw text-green-500 text-5xl"></i>
+            <p class="text-xl text-black-500 mt-2 font-bold dark:text-white">Animals</p>
+            </div>
+            <div class="rounded-lg box-border hover:box-content active:bg-green-300 focus:outline-none focus:ring focus:ring-green-300 flex flex-col items-center justify-center relative box-content h-40 w-45 p-4">
+            <i class="fas fa-passport text-green-500 text-5xl"></i>
+            <p class="text-xl text-black-500 mt-2 font-bold dark:text-white">Immigration</p>
+            </div>
+            <div class="rounded-lg box-border hover:box-content active:bg-green-300 focus:outline-none focus:ring focus:ring-green-300 flex flex-col items-center justify-center relative box-content h-40 w-45 p-4">
+            <i class="fas fa-question-circle text-green-500 text-5xl"></i>
+            <p class="text-xl text-black-500 mt-2 font-bold dark:text-white">Others</p>
+            </div>
+        </div>
+        </div>
+    </section>
+    </main>
+
+    <footer class="mt-20 p-4 bg-white sm:p-6 dark:bg-grayed">
+        <div class="mx-auto max-w-95 md:max-w-90">
+            <div class="flex flex-wrap gap-15 justify-between">
+                <div class="mb-6 md:mb-0">
+                    <a href="index.html" class="text-2xl">
+                    <img src="images/logo.png" alt="BitFundMe logo" width="140">
+                    </a>
+                    <br> <br>
+                    <!-- Change Language  -->
+                    <div class="flex items-center md:order-2">
+                    <button type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-grayed dark:hover:text-white">
+                        <svg class="w-5 h-5 mr-2 rounded-full" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3900 3900"><path fill="#b22234" d="M0 0h7410v3900H0z"/><path d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0" stroke="#fff" stroke-width="300"/><path fill="#3c3b6e" d="M0 0h2964v2100H0z"/><g fill="#fff"><g id="d"><g id="c"><g id="e"><g id="b"><path id="a" d="M247 90l70.534 217.082-184.66-134.164h228.253L176.466 307.082z"/><use xlink:href="#a" y="420"/><use xlink:href="#a" y="840"/><use xlink:href="#a" y="1260"/></g><use xlink:href="#a" y="1680"/></g><use xlink:href="#b" x="247" y="210"/></g><use xlink:href="#c" x="494"/></g><use xlink:href="#d" x="988"/><use xlink:href="#c" x="1976"/><use xlink:href="#e" x="2470"/></g></svg>
+                        English (US)
+                    </button>
+                    <!-- Dropdown -->
+                    <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-grayed" id="language-dropdown-menu">
+                        <ul class="py-2 font-medium" role="none">
+                        <li>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                            <div class="inline-flex items-center">
+                                <svg aria-hidden="true" class="h-3.5 w-3.5 rounded-full mr-2" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-us" viewBox="0 0 512 512"><g fill-rule="evenodd"><g stroke-width="1pt"><path fill="#bd3d44" d="M0 0h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z" transform="scale(3.9385)"/><path fill="#fff" d="M0 10h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z" transform="scale(3.9385)"/></g><path fill="#192f5d" d="M0 0h98.8v70H0z" transform="scale(3.9385)"/><path fill="#fff" d="M8.2 3l1 2.8H12L9.7 7.5l.9 2.7-2.4-1.7L6 10.2l.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7L74 8.5l-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 7.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 24.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 21.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 38.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 35.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 52.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 49.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 66.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 63.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9z" transform="scale(3.9385)"/></g></svg>              
+                                English (US)
+                            </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                            <div class="inline-flex items-center">
+                                <svg class="h-3.5 w-3.5 rounded-full mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-de" viewBox="0 0 512 512"><path fill="#ffce00" d="M0 341.3h512V512H0z"/><path d="M0 0h512v170.7H0z"/><path fill="#d00" d="M0 170.7h512v170.6H0z"/></svg>
+                                Deutsch
+                            </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                            <div class="inline-flex items-center">
+                                <svg class="h-3.5 w-3.5 rounded-full mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-it" viewBox="0 0 512 512"><g fill-rule="evenodd" stroke-width="1pt"><path fill="#fff" d="M0 0h512v512H0z"/><path fill="#009246" d="M0 0h170.7v512H0z"/><path fill="#ce2b37" d="M341.3 0H512v512H341.3z"/></g></svg>              
+                                Italiano
+                            </div>
+                            </a>
+                        </li> 
+                        <li>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                            <div class="inline-flex items-center">
+                                <svg class="h-3.5 w-3.5 rounded-full mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icon-css-cn" viewBox="0 0 512 512"><defs><path id="a" fill="#ffde00" d="M1-.3L-.7.8 0-1 .6.8-1-.3z"/></defs><path fill="#de2910" d="M0 0h512v512H0z"/><use width="30" height="20" transform="matrix(76.8 0 0 76.8 128 128)" xlink:href="#a"/><use width="30" height="20" transform="rotate(-121 142.6 -47) scale(25.5827)" xlink:href="#a"/><use width="30" height="20" transform="rotate(-98.1 198 -82) scale(25.6)" xlink:href="#a"/><use width="30" height="20" transform="rotate(-74 272.4 -114) scale(25.6137)" xlink:href="#a"/><use width="30" height="20" transform="matrix(16 -19.968 19.968 16 256 230.4)" xlink:href="#a"/></svg>
+                                中文 (繁體)
+                            </div>
+                            </a>
+                        </li>
+                        </ul>
+                    </div>
+                    </div>
+
+
+                </div>
+                
+                <div class="hidden md:block">
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+                    <ul class="text-gray-600 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="campaigns.html" class="hover:underline">Campaigns</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="categories.html" class="hover:underline">Categories</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#testimonials" class="hover:underline">Testimonials</a>
+                        </li>
+                        <li>
+                            <a href="about.html" class="hover:underline">About Us</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Support</h2>
+                    <ul class="text-gray-600 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">F. A. Q.</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+                    <ul class="text-gray-600 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Term & Conditions</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline ">Privacy Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+            
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+
+        <div class="ftr">
+            <div class="footer-left dark:text-white">
+            &copy;<span class="tm-current-year"></span>
+            <a href="https://flowbite.com" class="hover:underline">BitFundMe™</a>.
+            All Rights Reserved.
+            </div>
+            <div class="footer-right foot">
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook-f icon w-5 h-5"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter icon w-5 h-5"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in icon w-5 h-5"></i></a></li>
+                    <li><a href="#"><i class="fab fa-github icon w-5 h-5"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+</html>
+
