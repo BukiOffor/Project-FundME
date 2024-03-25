@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en" class="md:scroll-smooth">
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BitFundMe</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css"/>
+    <link rel="stylesheet" href="style/btn-hover.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="script/tailwindconfig.js" type="text/javascript" charset="utf-8" async></script>
     <style type="text/Tailwindcss" media="screen">
@@ -43,12 +45,20 @@
             scrollbar-width: none; 
           }
         }
-    </style>
- 
-    
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <!--<script src="script.js" type="module"></script>-->
 
+        .example_e {
+          text-transform: uppercase;
+          border-radius: 6px;
+          transition: all 0.3s ease 0s;
+        }
+        .example_e:hover {
+          letter-spacing: 3px;
+          background: none;
+          -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+          -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+          transition: all 0.3s ease 0s;
+        }
+    </style>
 
     <!--Poppins font-family-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,69 +67,284 @@
     <!--usage: font-family: 'Poppins', sans-serif;-->
     <script  src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js" defer></script>
     <script src="script/app.js" type="text/javascript" charset="utf-8" defer></script>
-    <title>FundMe</title>
-    
+
+     <!--favicon links-->
+     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+     <link rel="manifest" href="/favicon/site.webmanifest">
+     <!--End of favicon-->
+
 </head>
-<body>
-    <div>
-      <form action="#" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
-        <div class="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
-          <div class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]" aria-hidden="true">
-            <div class="relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
-          </div>
-          <div class="mx-auto mt-16 max-w-xl sm:mt-20">
-            <h2 class="text-2xl font-semibold text-green-500">Create Campaign</h2>
-          </div>
-                <!-- Circular image div -->
-            <div class="w-24 h-24 bg-white rounded-full mx-auto mt-4 p-4 border-2 border-green-500">
-              <!-- <img src="your-image-url.jpg" class="w-full h-full object-cover rounded-full" > -->
-              <i class="fa-solid fa-image"></i>
+<body id="home" class="font-poppins bg-white dark:bg-black">
+
+  <header class="fixed landscape:relative w-full top-0 z-10 theme-bg-blur">
+    <section class="max-w-95p  md:max-w-90 mx-auto">
+    <div class="flex flex-wrap items-center justify-between mx-auto py-4">
+    <a href="index.html" class="text-3xl">
+      <img src="images/logo.png" alt="BitFundMe logo" width="160">
+    </a>
+    <div class="flex items-center md:order-2">
+          
+        <!-- Sign UP -->
+        <a id="signin-btn" href="sign-up.html" class="border border-solid rounded-lg dark:border-white py-2 px-2 text-black dark:text-white hover:green-400 dark:hover:bg-white dark:hover:text-black hover:bg-green-500 hover:text-white">Sign Up</a>
+        
+        <!-- Toggle theme mode --> 
+      <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 focus:outline-none rounded-lg text-sm p-2.5">
+        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+      </button>
+  
+      <!--user menu toggler-->
+      <button type="button" class="relative flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-700" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+        <span class="sr-only">Open user menu</span>
+        
+        <!-- Default Avatar  -->
+        <div class="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+          <svg class="absolute w-10 h-10 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+        </div>
+  
+        <!-- Active Status -->
+        <span class="bottom-0 left-6 absolute w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+      </button>
+        
+      <!-- Dropdown user menu -->
+      <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
+        <div class="px-4 py-3">
+          <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
+          <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+        </div>
+        <ul class="py-2" aria-labelledby="user-menu-button">
+          <li>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+          </li>
+        </ul>
+      </div>
+        
+        
+        <!-- Menu Button  -->
+        <button data-collapse-toggle="navbar-user" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden focus:outline-none dark:text-gray-400 dark:hover:bg-black " aria-controls="navbar-user" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
+    </div>
+    <nav class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user" arial-label="main" style="overflow-x: hidden;">
+      <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-300 bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent dark:bg-grayed md:dark:bg-transparent dark:border-gray-700">
+        <li>
+          <a href="index.html" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 btns dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Home</a>
+        </li>
+        <li>
+          <a href="campaigns.html" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Campaigns</a>
+        </li>
+        <li>
+          <a href="#categories" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400  md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Categories</a>
+        </li>
+        <li>
+          <a href="index.html#testimonials" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Testimonials</a>
+        </li>
+        <li>
+          <a href="about.html" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">About Us</a>
+        </li>
+      </ul>
+    </nav> 
+    </div>
+  </section>
+  </header>
+
+<main class="container mx-auto">
+    <!-- Sign In and Sign up -->
+<section id="access-acct" class="bg-gray-50 dark:bg-black mx-auto min-h-screen grid place-content-center">
+    <div class="flex flex-col items-center justify-start px-6 py-8 mx-auto">
+      <!-- create campaign in -->
+      <div class="min-w-[240px] md:min-w-[400px] bg-white shadow dark:border dark:bg-grayed m-auto dark:border-gray-700 rounded-lg relative">
+        <div class="p-2 space-y-2 dark:bg-black">
+          <form action="#" method="POST" class="mx-auto max-w-xl">
+            <div class="isolate bg-white px-6 py-4 lg:px-8 dark:bg-black">
+              <div class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]" aria-hidden="true">
+                <div class="relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+              </div>
+              <div class="mx-auto max-w-xl mt-8">
+                <h2 class="text-2xl font-semibold text-green-500">Create Campaign</h2>
+              </div>
+            <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+              <div>
+                <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900">Wallet Address*</label>
+                <div class="mt-2.5">
+                  <input type="text" name="first-name" id="first-name" autocomplete="given-name" placeholder="Enter your wallet address" class="block w-full rounded-md border-2 border-green-500 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6">
+                </div>
+              </div>
+              <div>
+                <label for="last-name" class="block text-sm font-semibold leading-6 text-gray-900">Project Title*</label>
+                <div class="mt-2.5">
+                  <input type="text" name="last-name" id="last-name" autocomplete="family-name" placeholder="Enter your project title" class="block w-full rounded-md border-2 border-green-500 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6">
+                </div>
+              </div>
+          
+              <div class="sm:col-span-2">
+                <label for="message" class="block text-sm font-semibold leading-6 text-gray-900">Story*</label>
+                <div class="mt-2.5">
+                  <textarea name="message" id="message" placeholder="Write about your project" rows="4" class="block w-full rounded-md border-2 border-green-500 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"></textarea>
+                </div>
+              </div>
+              <div>
+                <label for="goal" class="block text-sm font-semibold leading-6 text-gray-900">Your Goal*</label>
+                <div class="mt-2.5">
+                  <input type="text" name="goal" id="goal" autocomplete="off" placeholder="Enter your goal" class="block w-full rounded-md border-2 border-green-500 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6">
+                </div>
+              </div>
+              <div>
+                <label for="end-date" class="block text-sm font-semibold leading-6 text-gray-900">End Date*</label>
+                <div class="mt-2.5">
+                  <input type="date" name="end-date" id="end-date" autocomplete="off" placeholder="Select end date" class="block w-full rounded-md border-2 border-green-500 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6">
+                </div>
+              </div>
+              <div class="sm:col-span-2">
+                <label for="company" class="block text-sm font-semibold leading-6 text-gray-900">Project Image</label>
+                <div class="mt-2.5">
+                  <input type="image" name="image" id="image" autocomplete="off" class="block w-full rounded-md border-2 border-green-500 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6">
+                </div>
+              </div>
+              
             </div>
-        <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-          <div>
-            <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900">Wallet Address*</label>
-            <div class="mt-2.5">
-              <input type="text" name="first-name" id="first-name" autocomplete="given-name" placeholder="Enter your wallet address" class="block w-full rounded-md border-2 border-green-500 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6">
+            <div class="mt-10">
+              <button type="submit" class="block mx-auto w-40 rounded-md bg-green-500 px-2.5 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-green-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">Submit Campaign</button>
             </div>
-          </div>
-          <div>
-            <label for="last-name" class="block text-sm font-semibold leading-6 text-gray-900">Project Title*</label>
-            <div class="mt-2.5">
-              <input type="text" name="last-name" id="last-name" autocomplete="family-name" placeholder="Enter your project title" class="block w-full rounded-md border-2 border-green-500 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6">
-            </div>
-          </div>
-      
-          <div class="sm:col-span-2">
-            <label for="message" class="block text-sm font-semibold leading-6 text-gray-900">Story*</label>
-            <div class="mt-2.5">
-              <textarea name="message" id="message" placeholder="Write about your project" rows="4" class="block w-full rounded-md border-2 border-green-500 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"></textarea>
-            </div>
-          </div>
-          <div>
-            <label for="goal" class="block text-sm font-semibold leading-6 text-gray-900">Your Goal*</label>
-            <div class="mt-2.5">
-              <input type="text" name="goal" id="goal" autocomplete="off" placeholder="Enter your goal" class="block w-full rounded-md border-2 border-green-500 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6">
-            </div>
-          </div>
-          <div>
-            <label for="end-date" class="block text-sm font-semibold leading-6 text-gray-900">End Date*</label>
-            <div class="mt-2.5">
-              <input type="date" name="end-date" id="end-date" autocomplete="off" placeholder="Select end date" class="block w-full rounded-md border-2 border-green-500 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6">
-            </div>
-          </div>
-          <div class="sm:col-span-2">
-            <label for="company" class="block text-sm font-semibold leading-6 text-gray-900">Project Image</label>
-            <div class="mt-2.5">
-              <input type="image" name="image" id="image" autocomplete="off" class="block w-full rounded-md border-2 border-green-500 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6">
-            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="mt-20 p-4 bg-white sm:p-6 dark:bg-grayed">
+  <div class="mx-auto max-w-95 md:max-w-90">
+      <div class="flex flex-wrap gap-15 justify-between">
+          <div class="mb-6 md:mb-0">
+              <a href="index.html" class="text-2xl">
+              <img src="images/logo.png" alt="BitFundMe logo" width="140">
+              </a>
+              <br> <br>
+              <!-- Change Language  -->
+              <div class="flex items-center md:order-2">
+              <button type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-grayed dark:hover:text-white">
+                  <svg class="w-5 h-5 mr-2 rounded-full" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3900 3900"><path fill="#b22234" d="M0 0h7410v3900H0z"/><path d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0" stroke="#fff" stroke-width="300"/><path fill="#3c3b6e" d="M0 0h2964v2100H0z"/><g fill="#fff"><g id="d"><g id="c"><g id="e"><g id="b"><path id="a" d="M247 90l70.534 217.082-184.66-134.164h228.253L176.466 307.082z"/><use xlink:href="#a" y="420"/><use xlink:href="#a" y="840"/><use xlink:href="#a" y="1260"/></g><use xlink:href="#a" y="1680"/></g><use xlink:href="#b" x="247" y="210"/></g><use xlink:href="#c" x="494"/></g><use xlink:href="#d" x="988"/><use xlink:href="#c" x="1976"/><use xlink:href="#e" x="2470"/></g></svg>
+                  English (US)
+              </button>
+              <!-- Dropdown -->
+              <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-grayed" id="language-dropdown-menu">
+                  <ul class="py-2 font-medium" role="none">
+                  <li>
+                      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                      <div class="inline-flex items-center">
+                          <svg aria-hidden="true" class="h-3.5 w-3.5 rounded-full mr-2" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-us" viewBox="0 0 512 512"><g fill-rule="evenodd"><g stroke-width="1pt"><path fill="#bd3d44" d="M0 0h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z" transform="scale(3.9385)"/><path fill="#fff" d="M0 10h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z" transform="scale(3.9385)"/></g><path fill="#192f5d" d="M0 0h98.8v70H0z" transform="scale(3.9385)"/><path fill="#fff" d="M8.2 3l1 2.8H12L9.7 7.5l.9 2.7-2.4-1.7L6 10.2l.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7L74 8.5l-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 7.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 24.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 21.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 38.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 35.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 52.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 49.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 66.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 63.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9z" transform="scale(3.9385)"/></g></svg>              
+                          English (US)
+                      </div>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                      <div class="inline-flex items-center">
+                          <svg class="h-3.5 w-3.5 rounded-full mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-de" viewBox="0 0 512 512"><path fill="#ffce00" d="M0 341.3h512V512H0z"/><path d="M0 0h512v170.7H0z"/><path fill="#d00" d="M0 170.7h512v170.6H0z"/></svg>
+                          Deutsch
+                      </div>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                      <div class="inline-flex items-center">
+                          <svg class="h-3.5 w-3.5 rounded-full mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-it" viewBox="0 0 512 512"><g fill-rule="evenodd" stroke-width="1pt"><path fill="#fff" d="M0 0h512v512H0z"/><path fill="#009246" d="M0 0h170.7v512H0z"/><path fill="#ce2b37" d="M341.3 0H512v512H341.3z"/></g></svg>              
+                          Italiano
+                      </div>
+                      </a>
+                  </li> 
+                  <li>
+                      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                      <div class="inline-flex items-center">
+                          <svg class="h-3.5 w-3.5 rounded-full mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icon-css-cn" viewBox="0 0 512 512"><defs><path id="a" fill="#ffde00" d="M1-.3L-.7.8 0-1 .6.8-1-.3z"/></defs><path fill="#de2910" d="M0 0h512v512H0z"/><use width="30" height="20" transform="matrix(76.8 0 0 76.8 128 128)" xlink:href="#a"/><use width="30" height="20" transform="rotate(-121 142.6 -47) scale(25.5827)" xlink:href="#a"/><use width="30" height="20" transform="rotate(-98.1 198 -82) scale(25.6)" xlink:href="#a"/><use width="30" height="20" transform="rotate(-74 272.4 -114) scale(25.6137)" xlink:href="#a"/><use width="30" height="20" transform="matrix(16 -19.968 19.968 16 256 230.4)" xlink:href="#a"/></svg>
+                          中文 (繁體)
+                      </div>
+                      </a>
+                  </li>
+                  </ul>
+              </div>
+              </div>
+
+
           </div>
           
-        </div>
-        <div class="mt-10">
-          <button type="submit" class="block mx-auto w-40 rounded-md bg-green-500 px-2.5 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-green-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">Submit Campaign</button>
-        </div>
-      </form>
-    </div>
-  
+          <div class="hidden md:block">
+              <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+              <ul class="text-gray-600 dark:text-gray-400">
+                  <li class="mb-4">
+                      <a href="campaigns.html" class="hover:underline">Campaigns</a>
+                  </li>
+                  <li class="mb-4">
+                      <a href="index.html#categories" class="hover:underline">Categories</a>
+                  </li>
+                  <li class="mb-4">
+                      <a href="index.html#testimonials" class="hover:underline">Testimonials</a>
+                  </li>
+                  <li>
+                      <a href="about.html" class="hover:underline">About Us</a>
+                  </li>
+              </ul>
+          </div>
+          
+          <div>
+              <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Support</h2>
+              <ul class="text-gray-600 dark:text-gray-400">
+                  <li class="mb-4">
+                      <a href="#" class="hover:underline">F. A. Q.</a>
+                  </li>
+                  <li>
+                      <a href="#" class="hover:underline">Contact Us</a>
+                  </li>
+              </ul>
+          </div>
+          
+          <div>
+              <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+              <ul class="text-gray-600 dark:text-gray-400">
+                  <li class="mb-4">
+                      <a href="#" class="hover:underline">Term & Conditions</a>
+                  </li>
+                  <li>
+                      <a href="#" class="hover:underline ">Privacy Policy</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+      
+  <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+
+  <div class="ftr">
+      <div class="footer-left dark:text-white">
+      &copy;<span class="tm-current-year"></span>
+      <a href="https://flowbite.com" class="hover:underline">BitFundMe™</a>.
+      All Rights Reserved.
+      </div>
+      <div class="footer-right foot">
+          <ul>
+              <li><a href="#"><i class="fab fa-facebook-f icon w-5 h-5"></i></a></li>
+              <li><a href="#"><i class="fab fa-twitter icon w-5 h-5"></i></a></li>
+              <li><a href="#"><i class="fab fa-linkedin-in icon w-5 h-5"></i></a></li>
+              <li><a href="#"><i class="fab fa-github icon w-5 h-5"></i></a></li>
+          </ul>
+      </div>
+  </div>
+</footer>
+
 </body>
 </html>

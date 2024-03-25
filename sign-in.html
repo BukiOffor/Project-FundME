@@ -45,6 +45,19 @@
             scrollbar-width: none; 
           }
         }
+
+        .example_e {
+          text-transform: uppercase;
+          border-radius: 6px;
+          transition: all 0.3s ease 0s;
+        }
+        .example_e:hover {
+          letter-spacing: 3px;
+          background: none;
+          -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+          -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+          transition: all 0.3s ease 0s;
+        }
     </style>
 
     <!--Poppins font-family-->
@@ -68,89 +81,83 @@
   <header class="fixed landscape:relative w-full top-0 z-10 theme-bg-blur">
     <section class="max-w-95p  md:max-w-90 mx-auto">
     <div class="flex flex-wrap items-center justify-between mx-auto py-4">
-      <a href="index.html" class="text-3xl">
-        <img src="images/logo.png" alt="BitFundMe logo" width="160">
-      </a>
-      <div class="flex items-center md:order-2">
-          <button type="button" class="hidden relative flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-700" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
-            <span class="sr-only">Open user menu</span>
-            
-            <!-- Default Avatar  -->
-            <div class="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
-              <svg class="absolute w-10 h-10 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
-            </div>
-
-            <!--Uploaded Image-->
-            <!-- <img class="w-8 h-8 rounded-full" src="/docs/images/profile-picture-3.jpg" alt="user photo"> -->
-            
-            <!-- Active Status -->
-            <span class="bottom-0 left-6 absolute w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
-          </button>
+    <a href="index.html" class="text-3xl">
+      <img src="images/logo.png" alt="BitFundMe logo" width="160">
+    </a>
+    <div class="flex items-center md:order-2">
           
-          <!-- Sign UP -->
-          <a id="signin-btn" href="sign-up.html" class="border border-solid rounded-lg dark:border-white py-2 px-2 text-black dark:text-white hover:green-400 dark:hover:bg-white dark:hover:text-black hover:bg-green-500 hover:text-white">Sign Up</a>
-          
-          <!-- Toggle theme mode --> 
-        <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 focus:outline-none rounded-lg text-sm p-2.5">
-          <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-          <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-        </button>
-          
-          
-          <!-- Dropdown menu -->
-          <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
-            <div class="px-4 py-3">
-              <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
-              <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
-            </div>
-            <ul class="py-2" aria-labelledby="user-menu-button">
-              <li>
-                <a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Home</a>
-              </li>
-              <li>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
-              </li>
-              <li>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
-              </li>
-              <li>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
-              </li>
-              <li>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
-              </li>
-            </ul>
-          </div>
-          
-          
-          <!-- Menu Button  -->
-          <button data-collapse-toggle="navbar-user" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden focus:outline-none dark:text-gray-400 dark:hover:bg-black " aria-controls="navbar-user" aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-            </svg>
-          </button>
-      </div>
-    
-      <nav class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user" arial-label="main" style="overflow-x: hidden;">
-        <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-300 bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent dark:bg-grayed md:dark:bg-transparent dark:border-gray-700">
+        <!-- Sign UP -->
+        <a id="signin-btn" href="sign-up.html" class="border border-solid rounded-lg dark:border-white py-2 px-2 text-black dark:text-white hover:green-400 dark:hover:bg-white dark:hover:text-black hover:bg-green-500 hover:text-white">Sign Up</a>
+        
+        <!-- Toggle theme mode --> 
+      <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 focus:outline-none rounded-lg text-sm p-2.5">
+        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+      </button>
+  
+      <!--user menu toggler-->
+      <button type="button" class="relative flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-700" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+        <span class="sr-only">Open user menu</span>
+        
+        <!-- Default Avatar  -->
+        <div class="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+          <svg class="absolute w-10 h-10 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+        </div>
+  
+        <!-- Active Status -->
+        <span class="bottom-0 left-6 absolute w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+      </button>
+        
+      <!-- Dropdown user menu -->
+      <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
+        <div class="px-4 py-3">
+          <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
+          <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+        </div>
+        <ul class="py-2" aria-labelledby="user-menu-button">
           <li>
-            <a href="index.html" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 btns dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Home</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
           </li>
           <li>
-            <a href="campaigns.html" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Campaigns</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
           </li>
           <li>
-            <a href="#categories" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400  md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Categories</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
           </li>
           <li>
-            <a href="index.html#testimonials" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Testimonials</a>
-          </li>
-          <li>
-            <a href="about.html" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">About Us</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
           </li>
         </ul>
-      </nav>
+      </div>
+        
+        
+        <!-- Menu Button  -->
+        <button data-collapse-toggle="navbar-user" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden focus:outline-none dark:text-gray-400 dark:hover:bg-black " aria-controls="navbar-user" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
+    </div>
+    <nav class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user" arial-label="main" style="overflow-x: hidden;">
+      <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-300 bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent dark:bg-grayed md:dark:bg-transparent dark:border-gray-700">
+        <li>
+          <a href="index.html" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 btns dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Home</a>
+        </li>
+        <li>
+          <a href="campaigns.html" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Campaigns</a>
+        </li>
+        <li>
+          <a href="#categories" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400  md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Categories</a>
+        </li>
+        <li>
+          <a href="index.html#testimonials" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Testimonials</a>
+        </li>
+        <li>
+          <a href="about.html" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">About Us</a>
+        </li>
+      </ul>
+    </nav> 
     </div>
   </section>
   </header>
@@ -165,7 +172,6 @@
         </a>
        <!-- Sign in -->
       <div id="signin-container" class="min-w-[240px] md:min-w-[400px] bg-white shadow dark:border dark:bg-grayed m-auto dark:border-gray-700 rounded-lg relative">
-        <button id="close-signin" class="text-red-500 dark:text-red-400 hover:text-red-400 dark:hover:text-red-500 absolute top-1 right-3 text-4xl p-2">&times;</button>
         <div class="p-6 space-y-4 rounded-lg">
           <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
             Sign in
@@ -211,7 +217,7 @@
                             <a href="#" class="text-sm font-medium text-black hover:underline dark:text-white">Forgot password?</a>
                         </div>
                         <br>
-                        <button type="submit" class="w-full text-white bg-green-400 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium text-lg px-5 py-2.5 text-center dark:bg-green-400 rounded-lg dark:focus:ring-green-300" style="font-weight: 1000;">Log In</button>
+                        <button type="submit" class="example_e w-full text-white bg-green-400 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium text-lg px-5 py-2.5 text-center dark:bg-green-400 rounded-lg dark:focus:ring-green-300" style="font-weight: 1000;">Log In</button>
                         <p class="text-sm font-dark text-gray-500 dark:text-gray-400 text-center">
                             Don’t have an account yet? <a id="in-form-signup-link" href="sign-up.html" class="font-medium text-green-600 hover:underline dark:text-green-400">Sign up</a>
                         </p>
