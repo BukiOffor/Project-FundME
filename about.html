@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BitFundMe - Latest News</title>
+    <title>BitFundMe - About Us</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css"/>
+    <link rel="stylesheet" href="style/btn-hover.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="script/tailwindconfig.js" type="text/javascript" charset="utf-8" async></script>
     <style type="text/Tailwindcss" media="screen">
+      html, body{
+        overflow-x: hidden;
+      }
       @layer utilities {
           .max-w-90p {
             max-width: 90%;
@@ -44,6 +48,52 @@
             scrollbar-width: none; 
           }
         }
+
+
+        .cont {
+          display: flex; /* Use flexbox to align items */
+
+        }
+
+        .boq {
+          flex: 1 1 50%; /* Each .boq takes up 50% of the container's width by default */
+          margin: 0 5px; /* Add some spacing between the .boq elements */
+          box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+
+        @media (max-width: 768px) {
+          .cont {
+            display: flex; /* Use flexbox to align items */
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+          }
+          .boq {
+            flex: 1 1 100%; /* Each .boq takes up 100% of the container's width on small devices */
+          }
+          
+          #create-campaign-text{
+            font-size: 20pt;
+            margin-top:-80px;
+          }
+
+          #create-campaign-btn{
+            font-size: 16pt;
+          }
+
+        }
+
+        .example_e {
+          text-transform: uppercase;
+          border-radius: 6px;
+          transition: all 0.3s ease 0s;
+        }
+        .example_e:hover {
+          letter-spacing: 3px;
+          background: none;
+          -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+          -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+          transition: all 0.3s ease 0s;
+        }
+        
     </style>
 
     <!--Poppins font-family-->
@@ -63,739 +113,655 @@
 
 </head>
 <body id="home" class="font-poppins bg-white dark:bg-black">
-<!--<nav class="container-fluid navBar font-mono" id="navBar">-->
-<!--    <div class="logo fund">-->
-<!--      <a href="base.html"><span><img class="fundlogo" src="images/fundmelogo.jpg" alt=""></span></a>-->
-<!--    </div>-->
-<!--    <div id="nav-search" class="d-none d-md-block rounded-full">-->
-<!--      <i class="fas fa-search justify-start"></i>-->
-<!--        <input  type="text" placeholder="Search" id="inp-search">-->
-<!--    </div>-->
-<!--    <div class="description d-none d-md-block ">-->
-<!--      <h2>English  <select name="" id=""><option value=""></option></select></h2>-->
-<!--    </div>-->
-<!--    <div>-->
-<!--      <button class="signin" style="height: 50px;">Sign In</button>-->
-<!--    </div>-->
-    
-<!--    <div class="nbt d-none d-md-block">-->
-<!--        <button id="conetBtn" class="connet">-->
-<!--          <span>C</span>-->
-<!--          <span>o</span>-->
-<!--          <span>n</span>-->
-<!--          <span>n</span>-->
-<!--          <span>e</span>-->
-<!--          <span>c</span>-->
-<!--          <span>t</span>-->
-<!--          <span></span>-->
-<!--          <span>W</span>-->
-<!--          <span>a</span>-->
-<!--          <span>l</span>-->
-<!--          <span>l</span>-->
-<!--          <span>e</span>-->
-<!--          <span>t</span>-->
-<!--        </button>-->
-<!--    </div>-->
-    
-<!--    <div id="ha" class="d-block d-md-none">-->
-<!--        <button id="hamburger" type="button" data-bs-toggle="dropdown" aria-expanded="false" ><i class="fa-solid fa-bars hambr"></i><span class="cancel-sign"><i class="fa-solid fa-xmark"></i></span></button>-->
-<!--         <div class="dropdown-menu dropdown-ul">-->
-<!--           <button id="conetBtn" class="connet">-->
-<!--              <span>C</span>-->
-<!--              <span>o</span>-->
-<!--              <span>n</span>-->
-<!--              <span>n</span>-->
-<!--              <span>e</span>-->
-<!--              <span>c</span>-->
-<!--              <span>t</span>-->
-<!--              <span></span>-->
-<!--              <span>W</span>-->
-<!--              <span>a</span>-->
-<!--              <span>l</span>-->
-<!--              <span>l</span>-->
-<!--              <span>e</span>-->
-<!--              <span>t</span>-->
-<!--           </button>-->
-<!--            <button><h2>English <select name="" id=""><option value=""></option></select></h2></button>-->
-<!--            <button class="signin">Sign In</button>-->
-<!--      </div> -->
-<!--    </div>-->
-<!--</nav>-->
 
-
-<!--<div> -->
-<!-- Carousel-->
-<!--<section id="heroSection" class="pt-2 container-fluid">-->
-<!--  <div id="default-carousel" class="relative w-full" data-carousel="slide">-->
-    <!-- Carousel wrapper -->
-<!--    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">-->
-         <!-- Item 1 -->
-<!--        <div class="hidden duration-700 ease-in-out" data-carousel-item>-->
-<!--            <img src="images/lucas-hoang-BzU8qF6coIY-unsplash.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">-->
-<!--        </div>-->
-        <!-- Item 2 -->
-<!--        <div class="hidden duration-700 ease-in-out" data-carousel-item>-->
-<!--            <img src="images/craig-manner.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--</section>-->
-
-<!--<div class="footer1 py-2">-->
-<!--  <h1 style="text-align: start;" class="font-mono text-3xl font-awesome hover:font-bold text-center">CALL TO ACTION</h1> -->
-<!--</div>-->
-
-
-<header class="fixed landscape:relative w-full top-0 z-10 theme-bg-blur">
-  <section class="max-w-95p  md:max-w-90 mx-auto">
-  <div class="flex flex-wrap items-center justify-between mx-auto py-4">
-  <a href="index.html" class="text-3xl">
-    <img src="images/logo.png" alt="BitFundMe logo" width="160">
-  </a>
-  <div class="flex items-center md:order-2">
-      <button type="button" class="hidden relative flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-700" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
-        <span class="sr-only">Open user menu</span>
-        
-        <!-- Default Avatar  -->
-        <div class="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
-          <svg class="absolute w-10 h-10 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
-        </div>
-
-        <!--Uploaded Image-->
-        <!-- <img class="w-8 h-8 rounded-full" src="/docs/images/profile-picture-3.jpg" alt="user photo"> -->
-        
-        <!-- Active Status -->
-        <span class="bottom-0 left-6 absolute w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
-      </button>
-      
-      <!-- Sign UP -->
-      <a id="signin-btn" href="#" class="border border-solid rounded-lg dark:border-white py-2 px-2 text-black dark:text-white hover:green-400 dark:hover:bg-white dark:hover:text-black hover:bg-green-500 hover:text-white">Sign Up</a>
-      
-      <!-- Toggle theme mode --> 
-    <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 focus:outline-none rounded-lg text-sm p-2.5">
-    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-    </button>
-      
-      
-      <!-- Dropdown menu -->
-      <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
-        <div class="px-4 py-3">
-          <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
-          <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
-        </div>
-        <ul class="py-2" aria-labelledby="user-menu-button">
-          <li>
-            <a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Home</a>
-          </li>
-          <li>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
-          </li>
-          <li>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
-          </li>
-          <li>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
-          </li>
-          <li>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
-          </li>
-        </ul>
-      </div>
-      
-      
-      <!-- Menu Button  -->
-      <button data-collapse-toggle="navbar-user" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden focus:outline-none dark:text-gray-400 dark:hover:bg-black " aria-controls="navbar-user" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-        </svg>
-    </button>
-  </div>
-  
-  <nav class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user" arial-label="main" style="overflow-x: hidden;">
-    <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-300 bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent dark:bg-grayed md:dark:bg-transparent dark:border-gray-700">
-    <li>
-        <a href="index.html" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 btns dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Home</a>
-    </li>
-    <li>
-        <a href="campaigns.html" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Campaigns</a>
-    </li>
-    <li>
-        <a href="index.html#categories" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400  md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Categories</a>
-    </li>
-    <li>
-        <a href="index.html#testimonials" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Testimonials</a>
-    </li>
-    <li>
-        <a href="about.html" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">About Us</a>
-    </li>
-    </ul>
-</nav>
-  </div>
-</section>
-</header>
-
-
-
- <!-- Hero -->
- <section id="hero" class="bg-white dark:bg-black text-black dark:text-white dark:text-white scroll-mt-1 hidden">
-  <div class="tall:py-44 wide:min-h-screen py-2 bg-center bg-[url(./images/bg.png)] bg-cover bg-fixed flex items-center bg-no-repeat bg-right-bottom md:bg-center">
-    <div class="max-w-95p md:max-w-90 md:grid md:grid-cols-2 mx-auto my-auto items-center justify-center">
-      <div class="grid py-44 mx-">
-        <div class="mr-auto">
-          <h1 class="mb-4 text-5xl font-extrabold tracking-tight xl:text-6xl leading-tight xl:leading-tight text-center md:text-left dark:text-white">Helping Each other Create Happiness</h1>
-          <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:justify-start whitespace-nowrap">
-            <a id='start-campaign-btn' href="#" class="w-fit block px-5 py-3 mt-4 text-base text-center text-black dark:text-white border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-white hover:text-white dark:hover:text-black focus:outline-0">Start Campaign</a> 
-            <a href="#category" class="how-it-works block w-fit text-black dark:text-white px-5 py-3 border-2 border-transparent md:translate-y-2">
-              <svg class="w-6 h-6 inline-flex items-center justify-center" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 16">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m2.707 14.293 5.586-5.586a1 1 0 0 0 0-1.414L2.707 1.707A1 1 0 0 0 1 2.414v11.172a1 1 0 0 0 1.707.707Z"/>
-              </svg> How it works
-            </a>
+  <header class="fixed landscape:relative w-full top-0 z-10 theme-bg-blur">
+    <section class="max-w-95p  md:max-w-90 mx-auto">
+    <div class="flex flex-wrap items-center justify-between mx-auto py-4">
+    <a href="index.html" class="text-3xl">
+      <img src="images/logo.png" alt="BitFundMe logo" width="160">
+    </a>
+    <div class="flex items-center md:order-2">
+        <button type="button" class="hidden relative flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-700" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+          <span class="sr-only">Open user menu</span>
+          
+          <!-- Default Avatar  -->
+          <div class="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+            <svg class="absolute w-10 h-10 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
           </div>
+
+          <!--Uploaded Image-->
+          <!-- <img class="w-8 h-8 rounded-full" src="/docs/images/profile-picture-3.jpg" alt="user photo"> -->
+          
+          <!-- Active Status -->
+          <span class="bottom-0 left-6 absolute w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+        </button>
+        
+        <!-- Sign UP -->
+        <a id="signin-btn" href="sign-up.html" class="border border-solid rounded-lg dark:border-white py-2 px-2 text-black dark:text-white hover:green-400 dark:hover:bg-white dark:hover:text-black hover:bg-green-500 hover:text-white">Sign Up</a>
+        
+        <!-- Toggle theme mode --> 
+      <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 focus:outline-none rounded-lg text-sm p-2.5">
+      <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+      <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+      </button>
+        
+        
+        <!-- Dropdown menu -->
+        <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
+          <div class="px-4 py-3">
+            <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
+            <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+          </div>
+          <ul class="py-2" aria-labelledby="user-menu-button">
+            <li>
+              <a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Home</a>
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+            </li>
+          </ul>
         </div>
-      </div>
-      <div class="hidden md:block"></div>
+        
+        
+        <!-- Menu Button  -->
+        <button data-collapse-toggle="navbar-user" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden focus:outline-none dark:text-gray-400 dark:hover:bg-black " aria-controls="navbar-user" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
     </div>
-  </div>
-</section>
-
-<section class="bg-green-400 hidden">
-      <div class="p-3 max-w-95 md:max-w-90">
-        <dl class="mx-auto flex flex-wrap md:flex-nowrap flex-1 text-white dark:text-black justify-around items-center">
-          <div class="p-3 flex flex-col items-center justify-center">
-            <dt class="mb-2 text-4xl font-extrabold">100K+</dt>
-            <dd class="text-center">Campaigns</dd>
-          </div>
-          <div class="p-3 flex flex-col items-center justify-center">
-            <dt class="mb-2 text-4xl font-extrabold">$800M+</dt>
-            <dd class="text-center">Funds Raised</dd>
-          </div>
-          <div class="p-3 flex flex-col items-center justify-center">
-            <dt class="mb-2 text-4xl font-extrabold">$200M+</dt>
-            <dd class="text-center">Donations</dd>
-          </div>
-         </dl>
-        </div>
+    
+    <nav class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user" arial-label="main" style="overflow-x: hidden;">
+      <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-300 bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent dark:bg-grayed md:dark:bg-transparent dark:border-gray-700">
+        <li>
+          <a href="index.html" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 btns dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Home</a>
+        </li>
+        <li>
+          <a href="campaigns.html" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Campaigns</a>
+        </li>
+        <li>
+          <a href="#categories" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400  md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Categories</a>
+        </li>
+        <li>
+          <a href="index.html#testimonials" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Testimonials</a>
+        </li>
+        <li>
+          <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">About Us</a>
+        </li>
+      </ul>
+    </nav>
+    </div>
   </section>
- 
+  </header>
 
-<main class="container mx-auto">
- 
-    <section id="hero" class="bg-white dark:bg-black text-black dark:text-white dark:text-white scroll-mt-1">
+
+
+  <!-- Hero -->
+  <section id="hero" class="bg-white dark:bg-black text-black dark:text-white dark:text-white scroll-mt-1 hidden">
+    <div class="tall:py-44 wide:min-h-screen py-2 bg-center bg-[url(./images/bg.png)] bg-cover bg-fixed flex items-center bg-no-repeat bg-right-bottom md:bg-center">
+      <div class="max-w-95p md:max-w-90 md:grid md:grid-cols-2 mx-auto my-auto items-center justify-center">
         <div class="grid py-44 mx-">
-          <div class="mr-auto about" style="padding-left:10%; padding-right: 10%;">
-              <h1 class="mb-4 text-5xl font-extrabold tracking-tight xl:text-6xl leading-tight xl:leading-tight md:text-left dark:text-white" style="text-align: center;">About Us</h1>
-              <p style="font-size:18px;" class="text-gray-700 dark:text-gray-300 relative z-[2]">Welcome to BitFundMe, a Blockchain decentralized platform and
-              premier destination for passionate individuals, entrepreneurs, start-ups, charity organizations and businesses looking to bring their ideas to life using cryptocurrency.</p>
-              <img src="./images/first.jpg" alt="" style="margin: 50px 0;">
-              <p style="font-size:18px;" class="text-gray-700 dark:text-gray-300 relative z-[2]">Our mission as a crowdfunding platform is to:
-                  <ul style="list-style-type:disc;">
-                      <li style="font-size:18px;margin-left:35px;">Promote transparency,</li>
-                      <li style="font-size:18px;margin-left:35px;">Increase trust,</li>
-                      <li style="font-size:18px;margin-left:35px;">Minimize transaction fees,</li>
-                      <li style="font-size:18px;margin-left:35px;">Promote inclusivity,</li>
-                      <li style="font-size:18px;margin-left:35px;">Create decentralization and</li>
-                      <li style="font-size:18px;margin-left:35px;">Enhance Integrity.</li>
-                  </ul>
-              </p>
-              <p style="font-size:18px;" class="text-gray-700 dark:text-gray-300 relative z-[2]">We believe in creating a level playing ground where anyone can share
-                  their vision and gain support from a global community by eliminating intermediaries through the use of Smart Contracts.</p>
-              <img src="./images/second.png" alt="" style="width:80%; margin:50px 10%;">
-              <p style="font-size:18px;" class="text-gray-700 dark:text-gray-300 relative z-[2]">BitFundMe is poised to solve the major challenges inherent in other
-                  crowdfunding platforms such as:
-                  <ul style="list-style-type: disc;">
-                      <li style="font-size:18px;margin-left:35px;">Restriction access to selected regions/countries of the world.</li>
-                      <li style="font-size:18px;margin-left:35px;">Reduce high transaction charges</li>
-                      <li style="font-size:18px;margin-left:35px;">Mitigate risk</li>
-                      <li style="font-size:18px;margin-left:35px;">Technological drawbacks in developing countries</li>
-                      <li style="font-size:18px;margin-left:35px;">Encourages acceptance/spread of cryptocurrency in developing
-                          countries.</li>
-                  </ul>
-              </p>
+          <div class="mr-auto">
+            <h1 class="mb-4 text-5xl font-extrabold tracking-tight xl:text-6xl leading-tight xl:leading-tight text-center md:text-left dark:text-white">Helping Each other Create Happiness</h1>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:justify-start whitespace-nowrap">
+              <a id='start-campaign-btn' href="#" class="w-fit block px-5 py-3 mt-4 text-base text-center text-black dark:text-white border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-white hover:text-white dark:hover:text-black focus:outline-0">Start Campaign</a> 
+              <a href="#category" class="how-it-works block w-fit text-black dark:text-white px-5 py-3 border-2 border-transparent md:translate-y-2">
+                <svg class="w-6 h-6 inline-flex items-center justify-center" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 16">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m2.707 14.293 5.586-5.586a1 1 0 0 0 0-1.414L2.707 1.707A1 1 0 0 0 1 2.414v11.172a1 1 0 0 0 1.707.707Z"/>
+                </svg> How it works
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="hidden md:block"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-green-400 hidden">
+        <div class="p-3 max-w-95 md:max-w-90">
+          <dl class="mx-auto flex flex-wrap md:flex-nowrap flex-1 text-white dark:text-black justify-around items-center">
+            <div class="p-3 flex flex-col items-center justify-center">
+              <dt class="mb-2 text-4xl font-extrabold">100K+</dt>
+              <dd class="text-center">Campaigns</dd>
+            </div>
+            <div class="p-3 flex flex-col items-center justify-center">
+              <dt class="mb-2 text-4xl font-extrabold">$800M+</dt>
+              <dd class="text-center">Funds Raised</dd>
+            </div>
+            <div class="p-3 flex flex-col items-center justify-center">
+              <dt class="mb-2 text-4xl font-extrabold">$200M+</dt>
+              <dd class="text-center">Donations</dd>
+            </div>
+          </dl>
+          </div>
+    </section>
+  
+
+  <main class="container mx-auto">
+  
+      <section id="hero" class="bg-white dark:bg-black text-black dark:text-white dark:text-white scroll-mt-1">
+          <div class="grid py-44 mx-">
+            <div class="mr-auto about" style="padding-left:10%; padding-right: 10%;">
+                <h1 class="mb-4 text-5xl font-extrabold tracking-tight xl:text-6xl leading-tight xl:leading-tight md:text-left dark:text-white" style="text-align: center;">About Us</h1>
+                <p style="font-size:18px;" class="text-gray-700 dark:text-gray-300 relative z-[2]">Welcome to BitFundMe, a Blockchain decentralized platform and
+                premier destination for passionate individuals, entrepreneurs, start-ups, charity organizations and businesses looking to bring their ideas to life using cryptocurrency.</p>
+                <img src="./images/first.jpg" alt="" style="margin: 50px 0;">
+                <p style="font-size:18px;" class="text-gray-700 dark:text-gray-300 relative z-[2]">Our mission as a crowdfunding platform is to:
+                    <ul style="list-style-type:disc;">
+                        <li style="font-size:18px;margin-left:35px;">Promote transparency,</li>
+                        <li style="font-size:18px;margin-left:35px;">Increase trust,</li>
+                        <li style="font-size:18px;margin-left:35px;">Minimize transaction fees,</li>
+                        <li style="font-size:18px;margin-left:35px;">Promote inclusivity,</li>
+                        <li style="font-size:18px;margin-left:35px;">Create decentralization and</li>
+                        <li style="font-size:18px;margin-left:35px;">Enhance Integrity.</li>
+                    </ul>
+                </p>
+                <p style="font-size:18px;" class="text-gray-700 dark:text-gray-300 relative z-[2]">We believe in creating a level playing ground where anyone can share
+                    their vision and gain support from a global community by eliminating intermediaries through the use of Smart Contracts.</p>
+                <img src="./images/second.png" alt="" style="width:80%; margin:50px 10%;">
+                <p style="font-size:18px;" class="text-gray-700 dark:text-gray-300 relative z-[2]">BitFundMe is poised to solve the major challenges inherent in other
+                    crowdfunding platforms such as:
+                    <ul style="list-style-type: disc;">
+                        <li style="font-size:18px;margin-left:35px;">Restriction access to selected regions/countries of the world.</li>
+                        <li style="font-size:18px;margin-left:35px;">Reduce high transaction charges</li>
+                        <li style="font-size:18px;margin-left:35px;">Mitigate risk</li>
+                        <li style="font-size:18px;margin-left:35px;">Technological drawbacks in developing countries</li>
+                        <li style="font-size:18px;margin-left:35px;">Encourages acceptance/spread of cryptocurrency in developing
+                            countries.</li>
+                    </ul>
+                </p>
 
 
-              <h2 style="font-size:xx-large;font-weight: bold;margin-top: 50px;">About Our Company</h2>
-              <p style="font-size:18px;" class="text-gray-700 dark:text-gray-300 relative z-[2]">We started as a learning group formed by graduates of the Blockchain
-                  scholarship programme organized by the National Information Technology Development
-                  Agency (NITDA).</p>
-              <img src="./images/third.png" alt="" style="margin: 50px 2%; width: 96%;">
-              <p style="font-size:18px;" class="text-gray-700 dark:text-gray-300 relative z-[2]">As a quest to put into practice knowledge acquired during the
-                  programme, this project was conceived and as
-                  the saying goes, the rest is history.</p>
+                <h2 style="font-size:xx-large;font-weight: bold;margin-top: 50px;">About Our Company</h2>
+                <p style="font-size:18px;" class="text-gray-700 dark:text-gray-300 relative z-[2]">We started as a learning group formed by graduates of the Blockchain
+                    scholarship programme organized by the National Information Technology Development
+                    Agency (NITDA).</p>
+                <img src="./images/third.png" alt="" style="margin: 50px 2%; width: 96%;">
+                <p style="font-size:18px;" class="text-gray-700 dark:text-gray-300 relative z-[2]">As a quest to put into practice knowledge acquired during the
+                    programme, this project was conceived and as
+                    the saying goes, the rest is history.</p>
 
 
-              <h2 style="font-size:xx-large;font-weight: bold;margin-top: 50px;">Team Members</h2>
-              <p style="font-size:18px;" class="text-gray-700 dark:text-gray-300 relative z-[2]">BitFundMe as a company comprises of talented individuals from
-                  virtually every walk of life. <br>Full stack Developers, Frontend and Backend Developers, UX UI
-                  Designers, graphics artists, Cyber Security Expert Engineers, Entrepreneurs, lawyers etc make up this novel organization. The idea of a company is fall out of a unanimous decision of a few number of the original learning group.</p>
-              <img src="./images/fourth.png" alt="" style="margin: 50px 2%; width: 96%;">
-              <p style="font-size:18px;" class="text-gray-700 dark:text-gray-300 relative z-[2]">BitFundMe is different from other platforms because it has integrated
-                  the power of Blockchain Technology and Crowdfunding, thereby setting is apart from its competitions.</p>
-              <p style="font-size:18px;" class="text-gray-700 dark:text-gray-300 relative z-[2]">Blockchain enables transparency, trust and integrity that is why we
-                  have specifically chosen to build our platform on it.</p>
-              <p style="font-size:18px;" class="text-gray-700 dark:text-gray-300 relative z-[2]">Join our platform today and become part of our novel, vibrant and
-                  innovative community.</p>
-              <img src="./images/fifth.png" alt="" style="margin: 50px 2%; width: 96%;">
-              <p style="font-size:18px;" class="text-gray-700 dark:text-gray-300 relative z-[2]">Here you will experience the joy of bringing your ideas to life, discover
-                  extraordinary projects and be an active participant in shaping a brighter future. Bitfundme is a platform
-                  where dreams become reality and passion funds it's purpose.</p>
-              <h2 style="font-size:xx-large;font-weight: bold; margin:20px 0; padding-bottom: 100px;">Meet Our Team Members</h2>  
+                <h2 style="font-size:xx-large;font-weight: bold;margin-top: 50px;">Team Members</h2>
+                <p style="font-size:18px;" class="text-gray-700 dark:text-gray-300 relative z-[2]">BitFundMe as a company comprises of talented individuals from
+                    virtually every walk of life. <br>Full stack Developers, Frontend and Backend Developers, UX UI
+                    Designers, graphics artists, Cyber Security Expert Engineers, Entrepreneurs, lawyers etc make up this novel organization. The idea of a company is fall out of a unanimous decision of a few number of the original learning group.</p>
+                <img src="./images/fourth.png" alt="" style="margin: 50px 2%; width: 96%;">
+                <p style="font-size:18px;" class="text-gray-700 dark:text-gray-300 relative z-[2]">BitFundMe is different from other platforms because it has integrated
+                    the power of Blockchain Technology and Crowdfunding, thereby setting is apart from its competitions.</p>
+                <p style="font-size:18px;" class="text-gray-700 dark:text-gray-300 relative z-[2]">Blockchain enables transparency, trust and integrity that is why we
+                    have specifically chosen to build our platform on it.</p>
+                <p style="font-size:18px;" class="text-gray-700 dark:text-gray-300 relative z-[2]">Join our platform today and become part of our novel, vibrant and
+                    innovative community.</p>
+                <img src="./images/fifth.png" alt="" style="margin: 50px 2%; width: 96%;">
+                <p style="font-size:18px;" class="text-gray-700 dark:text-gray-300 relative z-[2]">Here you will experience the joy of bringing your ideas to life, discover
+                    extraordinary projects and be an active participant in shaping a brighter future. Bitfundme is a platform
+                    where dreams become reality and passion funds it's purpose.</p>
+                <h2 style="font-size:xx-large;font-weight: bold; margin:20px 0; padding-bottom: 100px;">Meet Our Team Members</h2>  
+                
+                <div class="items-center md:order-2 row" id="flex">
+                  <!--Fatimah-->
+                  <div class="mb-6 col-md-3 w-full">
+                    <div class="team-member">
+                      <img src="./images/team/fatimah.jpg" alt="Fatimah Olugbenga" class="rounded-img">
+                      <div class="team-member-info">
+                        <div class="details">
+                          <h3>Fatimah Olugbenga</h3>
+                          <p>Project Manager</p><br>
+                          <h4>Other Skills</h4>
+                          <p style="color:#000; text-align:left;font-weight:bold;font-size:11pt; margin-bottom:40px">A certified Blockchain Professional, Data Analyst, Strategic Project Manager.</p>
+                        </div>
+                        <div class="social-icons">
+                          <i class="fab fa-linkedin fa-2x"></i>
+                          <i class="fab fa-instagram fa-2x"></i>
+                          <i class="fab fa-facebook fa-2x"></i>
+                          <i class="fab fa-twitter fa-2x"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Lucky-->
+                  <div class="mb-6 col-md-3 w-full">
+                    <div class="team-member">
+                      <img src="./images/team/lucky.png" alt="Fatimah Olugbenga" class="rounded-img">
+                      <div class="team-member-info">
+                        <div class="details">
+                          <h3>Lucky Kiine Esq.</h3>
+                          <p>Legal & Compliance</p><br>
+                          <h4>Other Skills</h4>
+                          <p style="color:#000; text-align:left;font-weight:bold;font-size:11pt; margin-bottom:40px">A certified Blockchain Professional, Legal Practitioner, Blockchain Forensics Expert.</p>
+                        </div>
+                        <div class="social-icons">
+                          <i class="fab fa-linkedin fa-2x"></i>
+                          <i class="fab fa-instagram fa-2x"></i>
+                          <i class="fab fa-facebook fa-2x"></i>
+                          <i class="fab fa-twitter fa-2x"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Gladys-->
+                  <div class="mb-6 col-md-3 w-full">
+                    <div class="team-member">
+                      <img src="./images/team/gladys.png" alt="Fatimah Olugbenga" class="rounded-img">
+                      <div class="team-member-info">
+                        <div class="details">
+                          <h3>Gladys Okeke</h3>
+                          <p>UX/UI Designer</p><br>
+                          <h4>Other Skills</h4>
+                          <p style="color:#000; text-align:left;font-weight:bold;font-size:11pt; margin-bottom:40px">A certified Blockchain Professional, Financial Analyst, Product Designer.</p>
+                        </div>
+                        <div class="social-icons">
+                          <i class="fab fa-linkedin fa-2x"></i>
+                          <i class="fab fa-instagram fa-2x"></i>
+                          <i class="fab fa-facebook fa-2x"></i>
+                          <i class="fab fa-twitter fa-2x"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--James-->
+                  <div class="mb-6 col-md-3 w-full">
+                    <div class="team-member">
+                      <img src="./images/team/james.png" alt="Fatimah Olugbenga" class="rounded-img">
+                      <div class="team-member-info">
+                        <div class="details">
+                          <h3>James Ufoma</h3>
+                          <p>Cyber Security Expert</p><br>
+                          <h4>Other Skills</h4>
+                          <p style="color:#000; text-align:left;font-weight:bold;font-size:11pt; margin-bottom:40px">A certified Blockchain Professional, Cyber Security Expert, Data Analyst, Network Marketer.</p>
+                        </div>
+                        <div class="social-icons">
+                          <i class="fab fa-linkedin fa-2x"></i>
+                          <i class="fab fa-instagram fa-2x"></i>
+                          <i class="fab fa-facebook fa-2x"></i>
+                          <i class="fab fa-twitter fa-2x"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div> 
+
+                <div class="items-center md:order-2 row" id="flex">
+                  <!--Stephen-->
+                  <div class="mb-6 col-md-3 w-full">
+                    <div class="team-member">
+                      <img src="./images/team/stephen.png" alt="Fatimah Olugbenga" class="rounded-img">
+                      <div class="team-member-info">
+                        <div class="details">
+                          <h3>Stephen Peter</h3>
+                          <p>Smart Contract</p><br>
+                          <h4>Other Skills</h4>
+                          <p style="color:#000; text-align:left;font-weight:bold;font-size:11pt; margin-bottom:40px">A certified Blockchain Professional, Frontend Developer, Graphic Designer.</p>
+                        </div>
+                        <div class="social-icons">
+                          <i class="fab fa-linkedin fa-2x"></i>
+                          <i class="fab fa-instagram fa-2x"></i>
+                          <i class="fab fa-facebook fa-2x"></i>
+                          <i class="fab fa-twitter fa-2x"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Gabriel-->
+                  <div class="mb-6 col-md-3 w-full">
+                    <div class="team-member">
+                      <img src="./images/team/gabriel.png" alt="Fatimah Olugbenga" class="rounded-img">
+                      <div class="team-member-info">
+                        <div class="details">
+                          <h3>Gabriel Ameh</h3>
+                          <p>Frontend Developer</p><br>
+                          <h4>Other Skills</h4>
+                          <p style="color:#000; text-align:left;font-weight:bold;font-size:11pt; margin-bottom:40px">A certified Blockchain Professional, Frontend Developer, Crypto Expert, Web3.0 Promoter.</p>
+                        </div>
+                        <div class="social-icons">
+                          <i class="fab fa-linkedin fa-2x"></i>
+                          <i class="fab fa-instagram fa-2x"></i>
+                          <i class="fab fa-facebook fa-2x"></i>
+                          <i class="fab fa-twitter fa-2x"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Salisu-->
+                  <div class="mb-6 col-md-3 w-full">
+                    <div class="team-member">
+                      <img src="./images/team/salisu.png" alt="Fatimah Olugbenga" class="rounded-img">
+                      <div class="team-member-info">
+                        <div class="details">
+                          <h3>Salisu Rafui</h3>
+                          <p>Frontend Developer</p><br>
+                          <h4>Other Skills</h4>
+                          <p style="color:#000; text-align:left;font-weight:bold;font-size:11pt; margin-bottom:40px">A certified Blockchain Professional, Frontend Developer, Backend Developer, Web3.0 Dapp.</p>
+                        </div>
+                        <div class="social-icons">
+                          <i class="fab fa-linkedin fa-2x"></i>
+                          <i class="fab fa-instagram fa-2x"></i>
+                          <i class="fab fa-facebook fa-2x"></i>
+                          <i class="fab fa-twitter fa-2x"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Olarewaju-->
+                  <div class="mb-6 col-md-3 w-full">
+                    <div class="team-member">
+                      <img src="./images/team/olarewaju.png" alt="Olarewaju Olaakande" class="rounded-img">
+                      <div class="team-member-info">
+                        <div class="details">
+                          <h3>Olarewaju Olaakande</h3>
+                          <p>Media & Content Strategist</p><br>
+                          <h4>Other Skills</h4>
+                          <p style="color:#000; text-align:left;font-weight:bold;font-size:11pt; margin-bottom:40px">A certified Blockchain Professional, Financial Analyst, Product Designer.</p>
+                        </div>
+                        <div class="social-icons">
+                          <i class="fab fa-linkedin fa-2x"></i>
+                          <i class="fab fa-instagram fa-2x"></i>
+                          <i class="fab fa-facebook fa-2x"></i>
+                          <i class="fab fa-twitter fa-2x"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div> 
+
+                <div class="items-center md:order-2 row" id="flex">
+                  <!--Ismail-->
+                  <div class="mb-6 col-md-3 w-full">
+                    <div class="team-member">
+                      <img src="./images/team/ismail.png" alt="Ismail Aminu Abbas" class="rounded-img">
+                      <div class="team-member-info">
+                        <div class="details">
+                          <h3>Ismail Aminu Abbas</h3>
+                          <p>Backend Engineer</p><br>
+                          <h4>Other Skills</h4>
+                          <p style="color:#000; text-align:left;font-weight:bold;font-size:11pt; margin-bottom:40px">A certified Blockchain Professional, Python, django, mysql, AWS, AZURE, JavaScript, PostgreSQL, Nodejs, Web3.</p>
+                        </div>
+                        <div class="social-icons">
+                          <i class="fab fa-linkedin fa-2x"></i>
+                          <i class="fab fa-instagram fa-2x"></i>
+                          <i class="fab fa-facebook fa-2x"></i>
+                          <i class="fab fa-twitter fa-2x"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Ebuka Offor-->
+                  <div class="mb-6 col-md-3 w-full">
+                    <div class="team-member">
+                      <img src="./images/team/ebuka.png" alt="Ebuka Offor " class="rounded-img">
+                      <div class="team-member-info">
+                        <div class="details">
+                          <h3>Ebuka Offor </h3>
+                          <p>Blockchain Developer</p><br>
+                          <h4>Other Skills</h4>
+                          <p style="color:#000; text-align:left;font-weight:bold;font-size:11pt; margin-bottom:40px">A certified Blockchain Professional, Fullstack Developer, Web3.0, Dapp.</p>
+                        </div>
+                        <div class="social-icons">
+                          <i class="fab fa-linkedin fa-2x"></i>
+                          <i class="fab fa-instagram fa-2x"></i>
+                          <i class="fab fa-facebook fa-2x"></i>
+                          <i class="fab fa-twitter fa-2x"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Alphonsus-->
+                  <div class="mb-6 col-md-3 w-full">
+                    <div class="team-member">
+                      <img src="./images/team/alphonsus.png" alt="Alphonsus Ikhoyameh" class="rounded-img">
+                      <div class="team-member-info">
+                        <div class="details">
+                          <h3>Alphonsus Ikhoyameh</h3>
+                          <p>Frontend Developer</p><br>
+                          <h4>Other Skills</h4>
+                          <p style="color:#000; text-align:left;font-weight:bold;font-size:11pt; margin-bottom:40px">A certified Blockchain Professional, Full Developer, Video Editor, Graphic Designer, UI/UX Designer.</p>
+                        </div>
+                        <div class="social-icons">
+                          <i class="fab fa-linkedin fa-2x"></i>
+                          <i class="fab fa-instagram fa-2x"></i>
+                          <i class="fab fa-facebook fa-2x"></i>
+                          <i class="fab fa-twitter fa-2x"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Ikechukwu-->
+                  <div class="mb-6 col-md-3 w-full">
+                    <div class="team-member">
+                      <img src="./images/team/ikechukwu.png" alt="Ikechukwu Chibuzo" class="rounded-img">
+                      <div class="team-member-info">
+                        <div class="details">
+                          <h3>Ikechukwu Chibuzo</h3>
+                          <p>Content Writer</p><br>
+                          <h4>Other Skills</h4>
+                          <p style="color:#000; text-align:left;font-weight:bold;font-size:11pt; margin-bottom:40px">A certified Blockchain Professional, Project Manager, Content Writer.</p>
+                        </div>
+                        <div class="social-icons">
+                          <i class="fab fa-linkedin fa-2x"></i>
+                          <i class="fab fa-instagram fa-2x"></i>
+                          <i class="fab fa-facebook fa-2x"></i>
+                          <i class="fab fa-twitter fa-2x"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div> 
+            </div>
+        </div>
+    </section>
+  </main>
+  <style>
+    /* Add this CSS in your stylesheet or within a <style> tag in your HTML */
+    #flex {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .col-md-3 {
+      flex: 1;
+      margin: 0.5rem;
+    }
+
+    .team-member {
+      position: relative;
+      border: solid 2px #0a0;
+      border-radius: 60px 60px 0 0;
+      padding-top: 120px;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 150px;
+    }
+
+    .details{
+      padding: 0 30px 0;
+      height:250px;
+    }
+
+    .rounded-img {
+      border-radius: 80px;
+      height: 160px;
+      width: 160px;
+      border: solid 5px #070;
+      margin: -210px auto 20px;
+      background-color: #ffffff;
+    }
+
+    .team-member-info h3 {
+      font-size: 14pt;
+      font-weight: bold;
+    }
+
+    .team-member-info p {
+      color: #0a0;
+    }
+
+    .team-member-info h4 {
+      font-size: 14pt;
+      font-weight: bold;
+    }
+    .social-icons{
+      background-color: #0a0;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding:20px;
+    }
+
+    .social-icons i{
+      color: white;
+      font-size: 30px; 
+      margin: 0 10px;
+    }
+
+    /* Add media queries for responsiveness */
+    @media (min-width: 768px) {
+      .col-md-3 {
+        flex-basis: calc(25% - 1rem);
+      }
+    }
+
+  </style>
+    <footer class="mt-20 p-4 bg-white sm:p-6 dark:bg-grayed">
+      <div class="mx-auto max-w-95 md:max-w-90">
+          <div class="flex flex-wrap gap-15 justify-between">
+              <div class="mb-6 md:mb-0">
+                  <a href="index.html" class="text-2xl">
+                  <img src="images/logo.png" alt="BitFundMe logo" width="140">
+                  </a>
+                  <br> <br>
+                  <!-- Change Language  -->
+                  <div class="flex items-center md:order-2">
+                  <button type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-grayed dark:hover:text-white">
+                      <svg class="w-5 h-5 mr-2 rounded-full" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3900 3900"><path fill="#b22234" d="M0 0h7410v3900H0z"/><path d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0" stroke="#fff" stroke-width="300"/><path fill="#3c3b6e" d="M0 0h2964v2100H0z"/><g fill="#fff"><g id="d"><g id="c"><g id="e"><g id="b"><path id="a" d="M247 90l70.534 217.082-184.66-134.164h228.253L176.466 307.082z"/><use xlink:href="#a" y="420"/><use xlink:href="#a" y="840"/><use xlink:href="#a" y="1260"/></g><use xlink:href="#a" y="1680"/></g><use xlink:href="#b" x="247" y="210"/></g><use xlink:href="#c" x="494"/></g><use xlink:href="#d" x="988"/><use xlink:href="#c" x="1976"/><use xlink:href="#e" x="2470"/></g></svg>
+                      English (US)
+                  </button>
+                  <!-- Dropdown -->
+                  <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-grayed" id="language-dropdown-menu">
+                      <ul class="py-2 font-medium" role="none">
+                      <li>
+                          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                          <div class="inline-flex items-center">
+                              <svg aria-hidden="true" class="h-3.5 w-3.5 rounded-full mr-2" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-us" viewBox="0 0 512 512"><g fill-rule="evenodd"><g stroke-width="1pt"><path fill="#bd3d44" d="M0 0h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z" transform="scale(3.9385)"/><path fill="#fff" d="M0 10h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z" transform="scale(3.9385)"/></g><path fill="#192f5d" d="M0 0h98.8v70H0z" transform="scale(3.9385)"/><path fill="#fff" d="M8.2 3l1 2.8H12L9.7 7.5l.9 2.7-2.4-1.7L6 10.2l.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7L74 8.5l-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 7.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 24.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 21.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 38.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 35.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 52.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 49.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 66.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 63.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9z" transform="scale(3.9385)"/></g></svg>              
+                              English (US)
+                          </div>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                          <div class="inline-flex items-center">
+                              <svg class="h-3.5 w-3.5 rounded-full mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-de" viewBox="0 0 512 512"><path fill="#ffce00" d="M0 341.3h512V512H0z"/><path d="M0 0h512v170.7H0z"/><path fill="#d00" d="M0 170.7h512v170.6H0z"/></svg>
+                              Deutsch
+                          </div>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                          <div class="inline-flex items-center">
+                              <svg class="h-3.5 w-3.5 rounded-full mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-it" viewBox="0 0 512 512"><g fill-rule="evenodd" stroke-width="1pt"><path fill="#fff" d="M0 0h512v512H0z"/><path fill="#009246" d="M0 0h170.7v512H0z"/><path fill="#ce2b37" d="M341.3 0H512v512H341.3z"/></g></svg>              
+                              Italiano
+                          </div>
+                          </a>
+                      </li> 
+                      <li>
+                          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                          <div class="inline-flex items-center">
+                              <svg class="h-3.5 w-3.5 rounded-full mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icon-css-cn" viewBox="0 0 512 512"><defs><path id="a" fill="#ffde00" d="M1-.3L-.7.8 0-1 .6.8-1-.3z"/></defs><path fill="#de2910" d="M0 0h512v512H0z"/><use width="30" height="20" transform="matrix(76.8 0 0 76.8 128 128)" xlink:href="#a"/><use width="30" height="20" transform="rotate(-121 142.6 -47) scale(25.5827)" xlink:href="#a"/><use width="30" height="20" transform="rotate(-98.1 198 -82) scale(25.6)" xlink:href="#a"/><use width="30" height="20" transform="rotate(-74 272.4 -114) scale(25.6137)" xlink:href="#a"/><use width="30" height="20" transform="matrix(16 -19.968 19.968 16 256 230.4)" xlink:href="#a"/></svg>
+                              中文 (繁體)
+                          </div>
+                          </a>
+                      </li>
+                      </ul>
+                  </div>
+                  </div>
+
+
+              </div>
               
-              <div class="items-center md:order-2 row" id="flex">
-                <!--Fatimah-->
-                <div class="mb-6 col-md-3 w-full">
-                  <div class="team-member">
-                    <img src="./images/team/fatimah.jpg" alt="Fatimah Olugbenga" class="rounded-img">
-                    <div class="team-member-info">
-                      <div class="details">
-                        <h3>Fatimah Olugbenga</h3>
-                        <p>Project Manager</p><br>
-                        <h4>Other Skills</h4>
-                        <p style="color:#000; text-align:left;font-weight:bold;font-size:11pt; margin-bottom:40px">A certified Blockchain Professional, Data Analyst, Strategic Project Manager.</p>
-                      </div>
-                      <div class="social-icons">
-                        <i class="fab fa-linkedin fa-2x"></i>
-                        <i class="fab fa-instagram fa-2x"></i>
-                        <i class="fab fa-facebook fa-2x"></i>
-                        <i class="fab fa-twitter fa-2x"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!--Lucky-->
-                <div class="mb-6 col-md-3 w-full">
-                  <div class="team-member">
-                    <img src="./images/team/lucky.png" alt="Fatimah Olugbenga" class="rounded-img">
-                    <div class="team-member-info">
-                      <div class="details">
-                        <h3>Lucky Kiine Esq.</h3>
-                        <p>Legal & Compliance</p><br>
-                        <h4>Other Skills</h4>
-                        <p style="color:#000; text-align:left;font-weight:bold;font-size:11pt; margin-bottom:40px">A certified Blockchain Professional, Legal Practitioner, Blockchain Forensics Expert.</p>
-                      </div>
-                      <div class="social-icons">
-                        <i class="fab fa-linkedin fa-2x"></i>
-                        <i class="fab fa-instagram fa-2x"></i>
-                        <i class="fab fa-facebook fa-2x"></i>
-                        <i class="fab fa-twitter fa-2x"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!--Gladys-->
-                <div class="mb-6 col-md-3 w-full">
-                  <div class="team-member">
-                    <img src="./images/team/gladys.png" alt="Fatimah Olugbenga" class="rounded-img">
-                    <div class="team-member-info">
-                      <div class="details">
-                        <h3>Gladys Okeke</h3>
-                        <p>UX/UI Designer</p><br>
-                        <h4>Other Skills</h4>
-                        <p style="color:#000; text-align:left;font-weight:bold;font-size:11pt; margin-bottom:40px">A certified Blockchain Professional, Financial Analyst, Product Designer.</p>
-                      </div>
-                      <div class="social-icons">
-                        <i class="fab fa-linkedin fa-2x"></i>
-                        <i class="fab fa-instagram fa-2x"></i>
-                        <i class="fab fa-facebook fa-2x"></i>
-                        <i class="fab fa-twitter fa-2x"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!--James-->
-                <div class="mb-6 col-md-3 w-full">
-                  <div class="team-member">
-                    <img src="./images/team/james.png" alt="Fatimah Olugbenga" class="rounded-img">
-                    <div class="team-member-info">
-                      <div class="details">
-                        <h3>James Ufoma</h3>
-                        <p>Cyber Security Expert</p><br>
-                        <h4>Other Skills</h4>
-                        <p style="color:#000; text-align:left;font-weight:bold;font-size:11pt; margin-bottom:40px">A certified Blockchain Professional, Cyber Security Expert, Data Analyst, Network Marketer.</p>
-                      </div>
-                      <div class="social-icons">
-                        <i class="fab fa-linkedin fa-2x"></i>
-                        <i class="fab fa-instagram fa-2x"></i>
-                        <i class="fab fa-facebook fa-2x"></i>
-                        <i class="fab fa-twitter fa-2x"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div> 
-
-              <div class="items-center md:order-2 row" id="flex">
-                <!--Stephen-->
-                <div class="mb-6 col-md-3 w-full">
-                  <div class="team-member">
-                    <img src="./images/team/stephen.png" alt="Fatimah Olugbenga" class="rounded-img">
-                    <div class="team-member-info">
-                      <div class="details">
-                        <h3>Stephen Peter</h3>
-                        <p>Smart Contract</p><br>
-                        <h4>Other Skills</h4>
-                        <p style="color:#000; text-align:left;font-weight:bold;font-size:11pt; margin-bottom:40px">A certified Blockchain Professional, Frontend Developer, Graphic Designer.</p>
-                      </div>
-                      <div class="social-icons">
-                        <i class="fab fa-linkedin fa-2x"></i>
-                        <i class="fab fa-instagram fa-2x"></i>
-                        <i class="fab fa-facebook fa-2x"></i>
-                        <i class="fab fa-twitter fa-2x"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!--Gabriel-->
-                <div class="mb-6 col-md-3 w-full">
-                  <div class="team-member">
-                    <img src="./images/team/gabriel.png" alt="Fatimah Olugbenga" class="rounded-img">
-                    <div class="team-member-info">
-                      <div class="details">
-                        <h3>Gabriel Ameh</h3>
-                        <p>Frontend Developer</p><br>
-                        <h4>Other Skills</h4>
-                        <p style="color:#000; text-align:left;font-weight:bold;font-size:11pt; margin-bottom:40px">A certified Blockchain Professional, Frontend Developer, Crypto Expert, Web3.0 Promoter.</p>
-                      </div>
-                      <div class="social-icons">
-                        <i class="fab fa-linkedin fa-2x"></i>
-                        <i class="fab fa-instagram fa-2x"></i>
-                        <i class="fab fa-facebook fa-2x"></i>
-                        <i class="fab fa-twitter fa-2x"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!--Salisu-->
-                <div class="mb-6 col-md-3 w-full">
-                  <div class="team-member">
-                    <img src="./images/team/salisu.png" alt="Fatimah Olugbenga" class="rounded-img">
-                    <div class="team-member-info">
-                      <div class="details">
-                        <h3>Salisu Rafui</h3>
-                        <p>Frontend Developer</p><br>
-                        <h4>Other Skills</h4>
-                        <p style="color:#000; text-align:left;font-weight:bold;font-size:11pt; margin-bottom:40px">A certified Blockchain Professional, Frontend Developer, Backend Developer, Web3.0 Dapp.</p>
-                      </div>
-                      <div class="social-icons">
-                        <i class="fab fa-linkedin fa-2x"></i>
-                        <i class="fab fa-instagram fa-2x"></i>
-                        <i class="fab fa-facebook fa-2x"></i>
-                        <i class="fab fa-twitter fa-2x"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!--Olarewaju-->
-                <div class="mb-6 col-md-3 w-full">
-                  <div class="team-member">
-                    <img src="./images/team/olarewaju.png" alt="Olarewaju Olaakande" class="rounded-img">
-                    <div class="team-member-info">
-                      <div class="details">
-                        <h3>Olarewaju Olaakande</h3>
-                        <p>Media & Content Strategist</p><br>
-                        <h4>Other Skills</h4>
-                        <p style="color:#000; text-align:left;font-weight:bold;font-size:11pt; margin-bottom:40px">A certified Blockchain Professional, Financial Analyst, Product Designer.</p>
-                      </div>
-                      <div class="social-icons">
-                        <i class="fab fa-linkedin fa-2x"></i>
-                        <i class="fab fa-instagram fa-2x"></i>
-                        <i class="fab fa-facebook fa-2x"></i>
-                        <i class="fab fa-twitter fa-2x"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div> 
-
-              <div class="items-center md:order-2 row" id="flex">
-                <!--Ismail-->
-                <div class="mb-6 col-md-3 w-full">
-                  <div class="team-member">
-                    <img src="./images/team/ismail.png" alt="Ismail Aminu Abbas" class="rounded-img">
-                    <div class="team-member-info">
-                      <div class="details">
-                        <h3>Ismail Aminu Abbas</h3>
-                        <p>Backend Engineer</p><br>
-                        <h4>Other Skills</h4>
-                        <p style="color:#000; text-align:left;font-weight:bold;font-size:11pt; margin-bottom:40px">A certified Blockchain Professional, Python, django, mysql, AWS, AZURE, JavaScript, PostgreSQL, Nodejs, Web3.</p>
-                      </div>
-                      <div class="social-icons">
-                        <i class="fab fa-linkedin fa-2x"></i>
-                        <i class="fab fa-instagram fa-2x"></i>
-                        <i class="fab fa-facebook fa-2x"></i>
-                        <i class="fab fa-twitter fa-2x"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!--Ebuka Offor-->
-                <div class="mb-6 col-md-3 w-full">
-                  <div class="team-member">
-                    <img src="./images/team/ebuka.png" alt="Ebuka Offor " class="rounded-img">
-                    <div class="team-member-info">
-                      <div class="details">
-                        <h3>Ebuka Offor </h3>
-                        <p>Blockchain Developer</p><br>
-                        <h4>Other Skills</h4>
-                        <p style="color:#000; text-align:left;font-weight:bold;font-size:11pt; margin-bottom:40px">A certified Blockchain Professional, Fullstack Developer, Web3.0, Dapp.</p>
-                      </div>
-                      <div class="social-icons">
-                        <i class="fab fa-linkedin fa-2x"></i>
-                        <i class="fab fa-instagram fa-2x"></i>
-                        <i class="fab fa-facebook fa-2x"></i>
-                        <i class="fab fa-twitter fa-2x"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!--Alphonsus-->
-                <div class="mb-6 col-md-3 w-full">
-                  <div class="team-member">
-                    <img src="./images/team/alphonsus.png" alt="Alphonsus Ikhoyameh" class="rounded-img">
-                    <div class="team-member-info">
-                      <div class="details">
-                        <h3>Alphonsus Ikhoyameh</h3>
-                        <p>Frontend Developer</p><br>
-                        <h4>Other Skills</h4>
-                        <p style="color:#000; text-align:left;font-weight:bold;font-size:11pt; margin-bottom:40px">A certified Blockchain Professional, Full Developer, Video Editor, Graphic Designer, UI/UX Designer.</p>
-                      </div>
-                      <div class="social-icons">
-                        <i class="fab fa-linkedin fa-2x"></i>
-                        <i class="fab fa-instagram fa-2x"></i>
-                        <i class="fab fa-facebook fa-2x"></i>
-                        <i class="fab fa-twitter fa-2x"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!--Ikechukwu-->
-                <div class="mb-6 col-md-3 w-full">
-                  <div class="team-member">
-                    <img src="./images/team/ikechukwu.png" alt="Ikechukwu Chibuzo" class="rounded-img">
-                    <div class="team-member-info">
-                      <div class="details">
-                        <h3>Ikechukwu Chibuzo</h3>
-                        <p>Content Writer</p><br>
-                        <h4>Other Skills</h4>
-                        <p style="color:#000; text-align:left;font-weight:bold;font-size:11pt; margin-bottom:40px">A certified Blockchain Professional, Project Manager, Content Writer.</p>
-                      </div>
-                      <div class="social-icons">
-                        <i class="fab fa-linkedin fa-2x"></i>
-                        <i class="fab fa-instagram fa-2x"></i>
-                        <i class="fab fa-facebook fa-2x"></i>
-                        <i class="fab fa-twitter fa-2x"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div> 
+              <div class="hidden md:block">
+                  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+                  <ul class="text-gray-600 dark:text-gray-400">
+                      <li class="mb-4">
+                          <a href="campaigns.html" class="hover:underline">Campaigns</a>
+                      </li>
+                      <li class="mb-4">
+                          <a href="index.html#categories" class="hover:underline">Categories</a>
+                      </li>
+                      <li class="mb-4">
+                          <a href="index.html#testimonials" class="hover:underline">Testimonials</a>
+                      </li>
+                      <li>
+                          <a href="about.html" class="hover:underline">About Us</a>
+                      </li>
+                  </ul>
+              </div>
+              
+              <div>
+                  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Support</h2>
+                  <ul class="text-gray-600 dark:text-gray-400">
+                      <li class="mb-4">
+                          <a href="#" class="hover:underline">F. A. Q.</a>
+                      </li>
+                      <li>
+                          <a href="#" class="hover:underline">Contact Us</a>
+                      </li>
+                  </ul>
+              </div>
+              
+              <div>
+                  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+                  <ul class="text-gray-600 dark:text-gray-400">
+                      <li class="mb-4">
+                          <a href="#" class="hover:underline">Term & Conditions</a>
+                      </li>
+                      <li>
+                          <a href="#" class="hover:underline ">Privacy Policy</a>
+                      </li>
+                  </ul>
+              </div>
           </div>
       </div>
-  </section>
-</main>
-<style>
-  /* Add this CSS in your stylesheet or within a <style> tag in your HTML */
-  #flex {
-    display: flex;
-    flex-wrap: wrap;
-  }
+          
+      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
 
-  .col-md-3 {
-    flex: 1;
-    margin: 0.5rem;
-  }
-
-  .team-member {
-    position: relative;
-    border: solid 2px #0a0;
-    border-radius: 60px 60px 0 0;
-    padding-top: 120px;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 150px;
-  }
-
-  .details{
-    padding: 0 30px 0;
-    height:250px;
-  }
-
-  .rounded-img {
-    border-radius: 80px;
-    height: 160px;
-    width: 160px;
-    border: solid 5px #070;
-    margin: -210px auto 20px;
-    background-color: #ffffff;
-  }
-
-  .team-member-info h3 {
-    font-size: 14pt;
-    font-weight: bold;
-  }
-
-  .team-member-info p {
-    color: #0a0;
-  }
-
-  .team-member-info h4 {
-    font-size: 14pt;
-    font-weight: bold;
-  }
-  .social-icons{
-    background-color: #0a0;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding:20px;
-  }
-
-  .social-icons i{
-    color: white;
-    font-size: 30px; 
-    margin: 0 10px;
-  }
-
-  /* Add media queries for responsiveness */
-  @media (min-width: 768px) {
-    .col-md-3 {
-      flex-basis: calc(25% - 1rem);
-    }
-  }
-
-</style>
-<footer class="mt-20 p-4 bg-white sm:p-6 dark:bg-grayed">
-    <div class="mx-auto max-w-95 md:max-w-90">
-        <div class="flex flex-wrap gap-15 justify-between">
-            <div class="mb-6 md:mb-0">
-            <a href="index.html" class="text-2xl">
-              <img src="images/logo.png" alt="BitFundMe logo" width="140">
-            </a>
-            <br> <br>
-<!-- Change Language  -->
-<div class="flex items-center md:order-2">
-      <button type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-grayed dark:hover:text-white">
-        <svg class="w-5 h-5 mr-2 rounded-full" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3900 3900"><path fill="#b22234" d="M0 0h7410v3900H0z"/><path d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0" stroke="#fff" stroke-width="300"/><path fill="#3c3b6e" d="M0 0h2964v2100H0z"/><g fill="#fff"><g id="d"><g id="c"><g id="e"><g id="b"><path id="a" d="M247 90l70.534 217.082-184.66-134.164h228.253L176.466 307.082z"/><use xlink:href="#a" y="420"/><use xlink:href="#a" y="840"/><use xlink:href="#a" y="1260"/></g><use xlink:href="#a" y="1680"/></g><use xlink:href="#b" x="247" y="210"/></g><use xlink:href="#c" x="494"/></g><use xlink:href="#d" x="988"/><use xlink:href="#c" x="1976"/><use xlink:href="#e" x="2470"/></g></svg>
-        English (US)
-      </button>
-      <!-- Dropdown -->
-      <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-grayed" id="language-dropdown-menu">
-        <ul class="py-2 font-medium" role="none">
-          <li>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
-              <div class="inline-flex items-center">
-                <svg aria-hidden="true" class="h-3.5 w-3.5 rounded-full mr-2" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-us" viewBox="0 0 512 512"><g fill-rule="evenodd"><g stroke-width="1pt"><path fill="#bd3d44" d="M0 0h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z" transform="scale(3.9385)"/><path fill="#fff" d="M0 10h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z" transform="scale(3.9385)"/></g><path fill="#192f5d" d="M0 0h98.8v70H0z" transform="scale(3.9385)"/><path fill="#fff" d="M8.2 3l1 2.8H12L9.7 7.5l.9 2.7-2.4-1.7L6 10.2l.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7L74 8.5l-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 7.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 24.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 21.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 38.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 35.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 52.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 49.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 66.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 63.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9z" transform="scale(3.9385)"/></g></svg>              
-                English (US)
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
-              <div class="inline-flex items-center">
-                <svg class="h-3.5 w-3.5 rounded-full mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-de" viewBox="0 0 512 512"><path fill="#ffce00" d="M0 341.3h512V512H0z"/><path d="M0 0h512v170.7H0z"/><path fill="#d00" d="M0 170.7h512v170.6H0z"/></svg>
-                Deutsch
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
-              <div class="inline-flex items-center">
-                <svg class="h-3.5 w-3.5 rounded-full mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-it" viewBox="0 0 512 512"><g fill-rule="evenodd" stroke-width="1pt"><path fill="#fff" d="M0 0h512v512H0z"/><path fill="#009246" d="M0 0h170.7v512H0z"/><path fill="#ce2b37" d="M341.3 0H512v512H341.3z"/></g></svg>              
-                Italiano
-              </div>
-            </a>
-          </li> 
-          <li>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
-              <div class="inline-flex items-center">
-                <svg class="h-3.5 w-3.5 rounded-full mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icon-css-cn" viewBox="0 0 512 512"><defs><path id="a" fill="#ffde00" d="M1-.3L-.7.8 0-1 .6.8-1-.3z"/></defs><path fill="#de2910" d="M0 0h512v512H0z"/><use width="30" height="20" transform="matrix(76.8 0 0 76.8 128 128)" xlink:href="#a"/><use width="30" height="20" transform="rotate(-121 142.6 -47) scale(25.5827)" xlink:href="#a"/><use width="30" height="20" transform="rotate(-98.1 198 -82) scale(25.6)" xlink:href="#a"/><use width="30" height="20" transform="rotate(-74 272.4 -114) scale(25.6137)" xlink:href="#a"/><use width="30" height="20" transform="matrix(16 -19.968 19.968 16 256 230.4)" xlink:href="#a"/></svg>
-                中文 (繁體)
-              </div>
-            </a>
-          </li>
-        </ul>
+      <div class="ftr">
+          <div class="footer-left dark:text-white">
+          &copy;<span class="tm-current-year"></span>
+          <a href="https://flowbite.com" class="hover:underline">BitFundMe™</a>.
+          All Rights Reserved.
+          </div>
+          <div class="footer-right foot">
+              <ul>
+                  <li><a href="#"><i class="fab fa-facebook-f icon w-5 h-5"></i></a></li>
+                  <li><a href="#"><i class="fab fa-twitter icon w-5 h-5"></i></a></li>
+                  <li><a href="#"><i class="fab fa-linkedin-in icon w-5 h-5"></i></a></li>
+                  <li><a href="#"><i class="fab fa-github icon w-5 h-5"></i></a></li>
+              </ul>
+          </div>
       </div>
-  </div>
-  
-  
-            </div>
-            
-                <div class="hidden md:block">
-                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
-                    <ul class="text-gray-600 dark:text-gray-400">
-                        <li class="mb-4">
-                            <a href="campaigns.html" class="hover:underline">Campaign</a>
-                        </li>
-                        <li class="mb-4">
-                            <a href="index.html#categories" class="hover:underline">Categories</a>
-                        </li>
-                        <li class="mb-4">
-                            <a href="index.html#testimonials" class="hover:underline">Testimonials</a>
-                        </li>
-                        <li>
-                            <a href="#" class="hover:underline">About Us</a>
-                        </li>
-                    </ul>
-                </div>
-               
-                <div>
-                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Support</h2>
-                    <ul class="text-gray-600 dark:text-gray-400">
-                        <li class="mb-4">
-                            <a href="#" class="hover:underline">F.A.Q</a>
-                        </li>
-                        <li>
-                            <a href="#" class="hover:underline">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
-                    <ul class="text-gray-600 dark:text-gray-400">
-                        <li class="mb-4">
-                            <a href="#" class="hover:underline">Term & Conditions</a>
-                        </li>
-                        <li>
-                            <a href="#" class="hover:underline ">Privacy Policy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <div class="sm:flex sm:items-center sm:justify-between">
-            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">&copy; <span class="tm-current-year"></span> <a href="https://flowbite.com" class="hover:underline">FundMe™</a>. All Rights Reserved.
-            </span>
-            <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
-                <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
-                </a>
-                <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
-                </a>
-                <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
-                </a>
-                <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
-                </a>
-            </div>
-        </div>
-</footer>
+    </footer>
 </body>
 </html>
