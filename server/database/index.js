@@ -4,7 +4,7 @@
 
 // import the mongose package
 const mongoose = require('mongoose');
-require('dotenv').config()
+require('dotenv').config();
 const { MONGO_URL} = process.env;
 
 
@@ -31,11 +31,11 @@ const connectDB = async () => {
 	try{
 		await mongoose.connect(MONGO_URL, {
 		useNewUrlParser: true,
-		useCreateIndex: true,
+		// useCreateIndex: true,
 		useUnifiedTopology: true,
-		useFindAndModify: false
+		//useFindAndModify: false
 	});
-	console.log("MongoDB connected...");
+	console.log(" the MongoDB is connected...");
 	
 	// seed data 
 
@@ -45,7 +45,7 @@ const connectDB = async () => {
 		// exit with failure;
 		process.exit(1);
 	}
-}
+};
 
 module.exports = connectDB; 
 

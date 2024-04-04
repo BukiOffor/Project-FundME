@@ -1,13 +1,36 @@
-const User = require('../models/User');
-const {validationResult} = require('express.validator');
+const User = require('../models/users');
+const {validationResult} = require('express-validator');
 const jwt = require('jsonwebtoken');
 const bcrypt = require("bcryptjs");
 require('dotenv').config();
 const { SECRET } = process.env; 
 
 
+//@route PoST api/auth/
+//@desc Authenticate User { creator,admin} and get token
+//@access Public 
+exports.getLoggedInUser = async(req,res) => {
+    try {
+        //Get user from db
+        const user = await User.findById(req.user.id).select("password");
+
+        // return user 
+        res.json({
+            statusCode: 200,
+            message: "User gotten successfully",
+            user : user
+        });
+    } catch(err){
+        console.error(err.mesasge);
+        res.status(500)
+        .send("Server Error");
+    }
+
+};
+
+
 //@route PoST api/auth/login
-//@desc Authenticate User and get token
+//@desc Authenticate User{ creator, admin} and get token
 //@access Public 
 
 exports.loginUser = async(req, res) => {
@@ -68,7 +91,7 @@ exports.loginUser = async(req, res) => {
                 isAdmin : user.isAdmin
             },
             token//token comes from  line64
-        })
+        });
     }
     );
         
