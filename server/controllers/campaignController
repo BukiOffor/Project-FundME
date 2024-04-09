@@ -1,0 +1,170 @@
+/*exports.createCampaign = async (req, res) => {
+  try {
+    // Create a new campaign
+    // Save the new campaign to the database
+    // Send response
+  } catch (error) {
+    // Handle error
+  }
+};
+
+exports.getCampaigns = async (req, res) => {
+  try {
+    // Retrieve all campaigns
+    // Send response
+  } catch (error) {
+    // Handle error
+  }
+};
+
+exports.getCampaignById = async (req, res) => {
+  try {
+    // Retrieve campaign by ID
+    // Send response
+  } catch (error) {
+    // Handle error
+  }
+};
+
+exports.updateCampaignById = async (req, res) => {
+  try {
+    // Update campaign by ID
+    // Send response
+  } catch (error) {
+    // Handle error
+  }
+};
+
+exports.deleteCampaignById = async (req, res) => {
+  try {
+    // Delete campaign by ID
+    // Send response
+  } catch (error) {
+    // Handle error
+  }
+};
+*/
+
+
+const { validationResult } = require('express-validator');
+const sanitizeHtml = require('sanitize-html');
+const Campaign = require('../models/Campaign');
+const authMiddleware = require('../middleware/authMiddleware');
+
+exports.createCampaign = async (req, res) => {
+  try {
+    // Check if user is authenticated
+    if (!req.user) {
+      return res.status(401).json({ success: false, message: 'Unauthorized' });
+    }
+
+    // Validate input data
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ success: false, errors: errors.array() });
+    }
+
+    // Sanitize input data
+    const { title, description, goalAmount, endDate } = req.body;
+    const sanitizedDescription = sanitizeHtml(description); // Sanitize HTML
+
+    // Create a new campaign instance
+    const newCampaign = new Campaign({
+      title,
+      description: sanitizedDescription,
+      goalAmount,
+      endDate,
+      createdBy: req.user._id
+    });
+
+    // Save the new campaign to the database
+    await newCampaign.save();
+
+    // Send response
+    res.status(201).json({ success: true, message: 'Campaign created successfully', data: newCampaign });
+  } catch (error) {
+    // Handle error
+    console.error('Error creating campaign:', error);
+    res.status(500).json({ success: false, message: 'Internal server error' });
+  }
+};
+
+exports.getCampaigns = async (req, res) => {
+  try {
+    // Retrieve all campaigns
+    const campaigns = await Campaign.find();
+
+    // Send response
+    res.status(200).json({ success: true, data: campaigns });
+  } catch (error) {
+    // Handle error
+    console.error('Error retrieving campaigns:', error);
+    res.status(500).json({ success: false, message: 'Internal server error' });
+  }
+};
+
+exports.getCampaignById = async (req, res) => {
+  try {
+    // Retrieve campaign by ID
+    const campaign = await Campaign.findById(req.params.id);
+
+    // Check if campaign exists
+    if (!campaign) {
+      return res.status(404).json({ success: false, message: 'Campaign not found' });
+    }
+
+    // Send response
+    res.status(200).json({ success: true, data: campaign });
+  } catch (error) {
+    // Handle error
+    console.error('Error retrieving campaign by ID:', error);
+    res.status(500).json({ success: false, message: 'Internal server error' });
+  }
+};
+
+exports.updateCampaignById = async (req, res) => {
+  try {
+    // Update campaign by ID
+    const updatedCampaign = await Campaign.findByIdAndUpdate(req.params.id, req.body, { new: true });
+
+    // Check if campaign exists
+    if (!updatedCampaign) {
+      return res.status(404).json({ success: false, message: 'Campaign not found' });
+    }
+
+    // Send response
+    res.status(200).json({ success: true, message: 'Campaign updated successfully', data: updatedCampaign });
+  } catch (error) {
+    // Handle error
+    console.error('Error updating campaign by ID:', error);
+    res.status(500).json({ success: false, message: 'Internal server error' });
+  }
+};
+
+exports.deleteCampaignById = async (req, res) => {
+  try {
+    // Delete campaign by ID
+    const deletedCampaign = await Campaign.findByIdAndDelete(req.params.id);
+
+    // Check if campaign exists
+    if (!deletedCampaign) {
+      return res.status(404).json({ success: false, message: 'Campaign not found' });
+    }
+
+    // Send response
+    res.status(200).json({ success: true, message: 'Campaign deleted successfully' });
+    console.log("correct")
+  
+} catch (error) {
+    // Handle error
+    console.error('Error deleting campaign by ID:', error);
+    res.status(500).json({ success: false, message: 'Internal server error' });
+  }
+};
+
+// Apply authMiddleware to protected routes
+exports.createCampaign = authMiddleware;
+exports.getCampaigns = authMiddleware;
+exports.getCampaignById = authMiddleware;
+exports.updateCampaignById = authMiddleware;
+exports.deleteCampaignById = authMiddleware;

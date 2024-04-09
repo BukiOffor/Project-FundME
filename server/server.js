@@ -5,6 +5,8 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDB = require('./database'); // Import the database connection function
 const authRoutes = require('./routes/authRoutes'); // Import authentication routes
+const authMiddleware = require('./middleware/authMiddleware'); // Import authentication middleware
+const campaignRoutes = require('./routes/campaignRoutes'); // Import campaign routes
 //const usersRoutes = require('./routes/usersRoutes'); // Import user routes
 
 dotenv.config(); // Load environment variables from .env file
@@ -16,10 +18,13 @@ const app = express(); // Create an Express application
 app.use(cors()); // Enable Cross-Origin Resource Sharing (CORS)
 app.use(bodyParser.json()); // Parse JSON bodies
 app.use(bodyParser.urlencoded({ extended: true })); // Parse URL-encoded bodies
+// Apply authMiddleware globally to all routes
+app.use(authMiddleware);
 
 // Routes
 app.use('/api/auth', authRoutes); // Set up authentication routes
 //app.use('/api/users', usersRoutes); // Set up user routes
+app.use('/api', campaignRoutes); // Set up campaign routes
 
 // Default route
 app.get('/', (req, res) => {
