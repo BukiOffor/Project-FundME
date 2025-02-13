@@ -113,92 +113,89 @@
 </head>
 <body id="home" class="font-poppins bg-white dark:bg-black">
 
-<header class="fixed landscape:relative w-full top-0 z-10 theme-bg-blur">
-  <section class="max-w-95p  md:max-w-90 mx-auto">
-  <div class="flex flex-wrap items-center justify-between mx-auto py-4">
-  <a href="index.html" class="text-3xl">
-    <img src="images/logo.png" alt="BitFundMe logo" width="160">
-  </a>
-  <div class="flex items-center md:order-2">
+  <header class="fixed landscape:relative w-full top-0 z-10 theme-bg-blur">
+    <section class="max-w-95p  md:max-w-90 mx-auto">
+    <div class="flex flex-wrap items-center justify-between mx-auto py-4">
+    <a href="index.html" class="text-3xl">
+      <img src="images/logo.png" alt="BitFundMe logo" width="160">
+    </a>
+    <div class="flex items-center md:order-2">
+          
+        <!-- Sign UP -->
+        <a id="signin-btn" href="sign-up.html" class="border border-solid rounded-lg dark:border-white py-2 px-2 text-black dark:text-white hover:green-400 dark:hover:bg-white dark:hover:text-black hover:bg-green-500 hover:text-white">Sign Up</a>
         
-      <!-- Sign UP -->
-      <a id="signin-btn" href="sign-up.html" class="border border-solid rounded-lg dark:border-white py-2 px-2 text-black dark:text-white hover:green-400 dark:hover:bg-white dark:hover:text-black hover:bg-green-500 hover:text-white">Sign Up</a>
-      
-      <!-- Toggle theme mode --> 
-    <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 focus:outline-none rounded-lg text-sm p-2.5">
-      <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-      <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-    </button>
-
-    <!--user menu toggler-->
-    <button type="button" class="hidden relative flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-700" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
-      <span class="sr-only">Open user menu</span>
-      
-      <!-- Default Avatar  -->
-      <div class="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
-        <svg class="absolute w-10 h-10 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+        <!-- Toggle theme mode --> 
+      <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 focus:outline-none rounded-lg text-sm p-2.5">
+        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+      </button>
+  
+      <!--user menu toggler-->
+      <button type="button" class="relative flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-700" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+        <span class="sr-only">Open user menu</span>
+        
+        <!-- Default Avatar  -->
+        <div class="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+          <svg class="absolute w-10 h-10 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+        </div>
+  
+        <!-- Active Status -->
+        <span class="bottom-0 left-6 absolute w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+      </button>
+        
+      <!-- Dropdown user menu -->
+      <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
+        <div class="px-4 py-3">
+          <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
+          <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+        </div>
+        <ul class="py-2" aria-labelledby="user-menu-button">
+          <li>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+          </li>
+        </ul>
       </div>
-
-      <!-- Active Status -->
-      <span class="bottom-0 left-6 absolute w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
-    </button>
-      
-    <!-- Dropdown user menu -->
-    <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
-      <div class="px-4 py-3">
-        <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
-        <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
-      </div>
-      <ul class="py-2" aria-labelledby="user-menu-button">
+        
+        
+        <!-- Menu Button  -->
+        <button data-collapse-toggle="navbar-user" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden focus:outline-none dark:text-gray-400 dark:hover:bg-black " aria-controls="navbar-user" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
+    </div>
+    <nav class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user" arial-label="main" style="overflow-x: hidden;">
+      <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-300 bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent dark:bg-grayed md:dark:bg-transparent dark:border-gray-700">
         <li>
-          <a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Home</a>
+          <a href="index.html" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 btns dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Home</a>
         </li>
         <li>
-          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
+          <a href="campaigns.html" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Campaigns</a>
         </li>
         <li>
-          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
+          <a href="#categories" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400  md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Categories</a>
         </li>
         <li>
-          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
+          <a href="index.html#testimonials" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Testimonials</a>
         </li>
         <li>
-          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+          <a href="about.html" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">About Us</a>
         </li>
       </ul>
+    </nav> 
     </div>
-      
-      
-      <!-- Menu Button  -->
-      <button data-collapse-toggle="navbar-user" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden focus:outline-none dark:text-gray-400 dark:hover:bg-black " aria-controls="navbar-user" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-        </svg>
-    </button>
-  </div>
-  <nav class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user" arial-label="main" style="overflow-x: hidden;">
-    <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-300 bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent dark:bg-grayed md:dark:bg-transparent dark:border-gray-700">
-      <li>
-        <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 btns dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Home</a>
-      </li>
-      <li>
-        <a href="campaigns.html" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Campaigns</a>
-      </li>
-      <li>
-        <a href="categories.html" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400  md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Categories</a>
-      </li>
-      <li>
-        <a href="index.html#testimonials" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">Testimonials</a>
-      </li>
-      <li>
-        <a href="about.html" class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-green-400 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-green-400 dark:hover:bg-green-400 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="padding:5px 15px;">About Us</a>
-      </li>
-    </ul>
-  </nav>
-  </div>
-</section>
-</header>
+  </section>
+  </header>
 
  <!-- Hero -->
  <section id="hero" class="bg-white dark:bg-black text-black dark:text-white dark:text-white scroll-mt-1">
@@ -208,7 +205,7 @@
         <div class="mr-auto">
           <h1 class="mb-4 text-5xl font-extrabold tracking-tight xl:text-6xl leading-tight xl:leading-tight text-center md:text-left dark:text-white">Helping Each other Create Happiness</h1>
           <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:justify-start whitespace-nowrap">
-            <a id='start-campaign-btn' href="#" class="example_e w-fit block px-5 py-3 mt-4 text-base text-center text-white bg-green-600 dark:text-white border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-white hover:text-white dark:hover:text-black focus:outline-0">Start Campaign</a> 
+            <a id='start-campaign-btn' href="createcamp.html" class="example_e w-fit block px-5 py-3 mt-4 text-base text-center text-white bg-green-600 dark:text-white border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-white hover:text-white dark:hover:text-black focus:outline-0">Start Campaign</a> 
             <a href="#category" class="example_e how-it-works block w-fit text-black dark:text-white px-5 py-3 border-2 border-transparent md:translate-y-2">
               <svg class="w-6 h-6 inline-flex items-center justify-center" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 16">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m2.707 14.293 5.586-5.586a1 1 0 0 0 0-1.414L2.707 1.707A1 1 0 0 0 1 2.414v11.172a1 1 0 0 0 1.707.707Z"/>
@@ -254,7 +251,7 @@
               <img class="w-full h-48 object-cover object-center" src="./images/camp1.jpg" alt="Fund Bio-Gas Factory">
               <div class="p-4">
                 <h2 class="text-lg font-medium text-gray-900 dark:text-white">Fund Bio-Gas Factory</h2>
-                <div>
+                <div class="dark:text-green-200">
                   9 days left
                 </div>
                 <div class="mt-3 flex items-center" style="margin-top:-7px;">
@@ -271,7 +268,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#" class="example_e block mt-3 text-center font-semibold bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 text-white text-lg rounded">View More</a>
+                <a href="campaign.html" class="example_e block mt-3 text-center font-semibold bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 text-white text-lg rounded">View More</a>
               </div>
           </div>
       </div>
@@ -281,7 +278,7 @@
             <img class="w-full h-48 object-cover object-center" src="./images/camp2.jpg" alt="Fund Bio-Gas Factory">
             <div class="p-4">
               <h2 class="text-lg font-medium text-gray-900 dark:text-white">Help Motherless Children</h2>
-              <div>
+              <div class="dark:text-green-200">
                 28 days left
               </div>
               <div class="mt-3 flex items-center" style="margin-top:-7px;">
@@ -299,7 +296,7 @@
                   </div>
                 </div>
               </div>
-              <a href="#" class="block mt-3 text-center example_e font-semibold bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 text-white text-lg hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 rounded">View More</a>
+              <a href="campaign.html" class="block mt-3 text-center example_e font-semibold bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 text-white text-lg hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 rounded">View More</a>
     
             </div>
         </div>
@@ -310,7 +307,7 @@
           <img class="w-full h-48 object-cover object-center" src="./images/camp3.jpg" alt="Fund Bio-Gas Factory">
           <div class="p-4">
             <h2 class="text-lg font-medium text-gray-900 dark:text-white">Fund My Education</h2>
-            <div>
+            <div class="dark:text-green-200">
               1 month left
             </div>
             <div class="mt-3 flex items-center" style="margin-top:-7px;">
@@ -327,7 +324,7 @@
                 </div>
               </div>
             </div>
-            <a href="#" class="block mt-3 text-center example_e text-white text-lg font-semibold bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 rounded">View More</a>
+            <a href="campaign.html" class="block mt-3 text-center example_e text-white text-lg font-semibold bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 rounded">View More</a>
     
           </div>
       </div>
@@ -338,7 +335,7 @@
           <img class="w-full h-48 object-cover object-center" src="./images/camp4.jpg" alt="Fund Bio-Gas Factory">
           <div class="p-4">
             <h2 class="text-lg font-medium text-gray-900 dark:text-white">Sponsor My Vacation</h2>
-            <div>
+            <div class="dark:text-green-200">
               Completed
             </div>
             <div class="mt-3 flex items-center" style="margin-top:-7px;">
@@ -356,7 +353,7 @@
                 </div>
               </div>
             </div>
-            <a href="#" class="block mt-3 text-center example_e font-semibold text-white text-lg bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 rounded">View More</a>
+            <a href="campaign.html" class="block mt-3 text-center example_e font-semibold text-white text-lg bg-green-400 dark:bg-green-400 border-2 border-solid dark:border-white rounded-lg hover:bg-green-500 dark:hover:bg-green-800 hover:text-white text-white-400 dark:text-white dark:hover:text-black-400 dark:text-green-400 focus:outline-0 py-2 px-4 rounded">View More</a>
     
           </div>
       </div>
@@ -365,7 +362,7 @@
   </section>
 
   <!-- Category --> 
-  <section id="category" class="mt-20 scroll-mt-5">
+  <section id="categories" class="mt-20 scroll-mt-5">
     <div class="border-0 rounded-lg p-6 mb-20">
       <h2 class="text-2xl font-bold mb-6 dark:text-white">Project Categories</h2>
       <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -436,132 +433,38 @@
   <section id="testimonials" class="mt-20 scroll-mt-5">
     <h2 class="max-w-95p md:max-w-90 mx-auto pt-16 pb-10 md:pb-6 font-bold text-black dark:text-white text-3xl md:text-4xl">Testimonials</h2>
     <div class="flex overflow-x-scroll no-scrollbar">
-      <div class="flex-shrink-0 w-full md:w-[33.33%] md:min-w-[360px] mx-2 md:mx-0">
-        <div class="testimonial-slide">
-          <div class="max-w-95p md:max-w-max mx-auto md:px-[5%] md:flex md:items-center md:gap-10 md:overflow-x-scroll no-scrollbar">
-            <div class="testimonial-slide max-w-sm md:min-w-[360px] my-5 md:my-0 active">
-              <figure class="flex flex-col items-start px-6 py-8 bg-gray-50 border rounded-lg border-gray-200 dark:bg-grayed dark:border-gray-700">
-                <figcaption class="flex justify-center items-center space-x-3" style="margin-bottom: 10px;">
-                  <img class="aspect-square object-cover rounded-full" width="60" src="images/ppic-1.jpg" alt="profile picture">
-                  <div class="dark:text-white text-left font-bold">
-                    <div>Daniella Alex</div>
-                    <div class="text-sm font-light text-gray-500 dark:text-gray-400">Philanthropist</div>
-                  </div>
-                </figcaption>
-                <blockquote class="mx-auto mb-4 text-gray-500 dark:text-gray-400">
-                  <p class="mb-2 break-words">amet laboris proident cupidatat excepteur non cillum ut laborum laboris sunt ullamco eiusmod anim ex eu deserunt esse ipsum Lorem consequat nostrud pariatur qui excepteur nisi aliquip commodo laborum minim enim ea anim Lorem qui velit
-                  </p>
-                </blockquote>
-              </figure>
+      <div class="flex-shrink-0 w-full md:w-1/2 md:min-w-[360px] mx-2 md:mx-0">
+        <div class="flex flex-col md:flex-row items-start">
+          <img class="aspect-square object-cover md:w-1/4" src="images/ppic-1.jpg" alt="profile picture">
+          <blockquote class="md:w-2/4 md:ml-4 mb-4 text-gray-500 dark:text-gray-400">
+            <div class="dark:text-white text-left font-bold">
+              <div>Daniella Alex</div>
             </div>
-          </div>
+            <p class="mb-2 break-words">
+              "amet laboris proident cupidatat excepteur non cillum ut laborum laboris sunt ullamco eiusmod anim ex eu deserunt esse ipsum Lorem consequat nostrud pariatur qui excepteur nisi aliquip commodo laborum minim enim ea anim Lorem qui velit"
+            </p>
+          <h6 class="max-w-95p md:max-w-90 mauto pt-1 pb-10 md:pb-6 font-bold text-black dark:text-white text-sm">Funded on 20th November, 2023.</h6>
+          </blockquote>
         </div>
       </div>
-      <div class="flex-shrink-0 w-full md:w-[33.33%] md:min-w-[360px] mx-2 md:mx-0">
-        <div class="testimonial-slide">
-          <div class="max-w-95p md:max-w-max mx-auto md:px-[5%] md:flex md:items-center md:gap-10 md:overflow-x-scroll no-scrollbar">
-            <div class="testimonial-slide max-w-sm md:min-w-[360px] my-5 md:my-0 active">
-              <figure class="flex flex-col items-start px-6 py-8 bg-gray-50 border rounded-lg border-gray-200 dark:bg-grayed dark:border-gray-700">
-                <figcaption class="flex justify-center items-center space-x-3" style="margin-bottom: 10px;">
-                  <img class="aspect-square object-cover rounded-full" width="60" src="images/ppic-1.jpg" alt="profile picture">
-                  <div class="dark:text-white text-left font-bold">
-                    <div>Daniella Alex</div>
-                    <div class="text-sm font-light text-gray-500 dark:text-gray-400">Philanthropist</div>
-                  </div>
-                </figcaption>
-                <blockquote class="mx-auto mb-4 text-gray-500 dark:text-gray-400">
-                  <p class="mb-2 break-words">amet laboris proident cupidatat excepteur non cillum ut laborum laboris sunt ullamco eiusmod anim ex eu deserunt esse ipsum Lorem consequat nostrud pariatur qui excepteur nisi aliquip commodo laborum minim enim ea anim Lorem qui velit
-                  </p>
-                </blockquote>
-              </figure>
+      <div class="flex-shrink-0 w-full md:w-1/2 md:min-w-[360px] mx-2 md:mx-0">
+        <div class="flex flex-col md:flex-row items-start">
+          <div class="flex justify-center sm:w-full md:w-1/4 md:justify-start">
+            <img src="images/ppic-1.jpg" alt="profile picture" class="mx-auto md:mx-0">
+          </div>          
+          <blockquote class="md:w-2/4 sm:w-full md:ml-4 mb-4 text-gray-500 dark:text-gray-400">
+            <div class="dark:text-white text-left font-bold">
+              <div>Daniella Alex</div>
             </div>
-          </div>
+            <p class="mb-2 break-words">
+              "amet laboris proident cupidatat excepteur non cillum ut laborum laboris sunt ullamco eiusmod anim ex eu deserunt esse ipsum Lorem consequat nostrud pariatur qui excepteur nisi aliquip commodo laborum minim enim ea anim Lorem qui velit"
+            </p>
+            <h6 class="max-w-95p md:max-w-90 mauto pt-1 pb-10 md:pb-6 font-bold text-black dark:text-white text-sm">Funded on 20th November, 2023.</h6>
+          </blockquote>
         </div>
+        
       </div>
-      <div class="flex-shrink-0 w-full md:w-[33.33%] md:min-w-[360px] mx-2 md:mx-0">
-        <div class="testimonial-slide">
-          <div class="max-w-95p md:max-w-max mx-auto md:px-[5%] md:flex md:items-center md:gap-10 md:overflow-x-scroll no-scrollbar">
-            <div class="testimonial-slide max-w-sm md:min-w-[360px] my-5 md:my-0 active">
-              <figure class="flex flex-col items-start px-6 py-8 bg-gray-50 border rounded-lg border-gray-200 dark:bg-grayed dark:border-gray-700">
-                <figcaption class="flex justify-center items-center space-x-3" style="margin-bottom: 10px;">
-                  <img class="aspect-square object-cover rounded-full" width="60" src="images/ppic-1.jpg" alt="profile picture">
-                  <div class="dark:text-white text-left font-bold">
-                    <div>Daniella Alex</div>
-                    <div class="text-sm font-light text-gray-500 dark:text-gray-400">Philanthropist</div>
-                  </div>
-                </figcaption>
-                <blockquote class="mx-auto mb-4 text-gray-500 dark:text-gray-400">
-                  <p class="mb-2 break-words">amet laboris proident cupidatat excepteur non cillum ut laborum laboris sunt ullamco eiusmod anim ex eu deserunt esse ipsum Lorem consequat nostrud pariatur qui excepteur nisi aliquip commodo laborum minim enim ea anim Lorem qui velit
-                  </p>
-                </blockquote>
-              </figure>
-            </div>
-          </div>
-        </div>
-      </div>
-    <div class="flex-shrink-0 w-full md:w-[33.33%] md:min-w-[360px] mx-2 md:mx-0">
-        <div class="testimonial-slide">
-          <div class="max-w-95p md:max-w-max mx-auto md:px-[5%] md:flex md:items-center md:gap-10 md:overflow-x-scroll no-scrollbar">
-            <div class="testimonial-slide max-w-sm md:min-w-[360px] my-5 md:my-0 active">
-              <figure class="flex flex-col items-start px-6 py-8 bg-gray-50 border rounded-lg border-gray-200 dark:bg-grayed dark:border-gray-700">
-                <blockquote class="mx-auto mb-4 text-gray-500 dark:text-gray-400">
-                  <p class="mb-2 break-words">amet laboris proident cupidatat excepteur non cillum ut laborum laboris sunt ullamco eiusmod anim ex eu deserunt esse ipsum Lorem consequat nostrud pariatur qui excepteur nisi aliquip commodo laborum minim enim ea anim Lorem qui velit
-                  </p>
-                </blockquote>
-                <figcaption class="flex justify-center items-center space-x-3">
-                  <img class="aspect-square object-cover w-9 h-9 rounded-full" src="images/ppic-1.jpg" alt="profile picture">
-                  <div class="dark:text-white text-left font-bold">
-                    <div>Daniella Alex</div>
-                    <div class="text-sm font-light text-gray-500 dark:text-gray-400">Philanthropist</div>
-                  </div>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-        </div>
-      </div>
-  <div class="flex-shrink-0 w-full md:w-[33.33%] md:min-w-[360px] mx-2 md:mx-0">
-        <div class="testimonial-slide">
-          <div class="max-w-95p md:max-w-max mx-auto md:px-[5%] md:flex md:items-center md:gap-10 md:overflow-x-scroll no-scrollbar">
-            <div class="testimonial-slide max-w-sm md:min-w-[360px] my-5 md:my-0 active">
-              <figure class="flex flex-col items-start px-6 py-8 bg-gray-50 border rounded-lg border-gray-200 dark:bg-grayed dark:border-gray-700">
-                <blockquote class="mx-auto mb-4 text-gray-500 dark:text-gray-400">
-                  <p class="mb-2 break-words">amet laboris proident cupidatat excepteur non cillum ut laborum laboris sunt ullamco eiusmod anim ex eu deserunt esse ipsum Lorem consequat nostrud pariatur qui excepteur nisi aliquip commodo laborum minim enim ea anim Lorem qui velit
-                  </p>
-                </blockquote>
-                <figcaption class="flex justify-center items-center space-x-3">
-                  <img class="aspect-square object-cover w-9 h-9 rounded-full" src="images/ppic-1.jpg" alt="profile picture">
-                  <div class="dark:text-white text-left font-bold">
-                    <div>Daniella Alex</div>
-                    <div class="text-sm font-light text-gray-500 dark:text-gray-400">Philanthropist</div>
-                  </div>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-        </div>
-      </div>
-  <div class="flex-shrink-0 w-full md:w-[33.33%] md:min-w-[360px] mx-2 md:mx-0">
-        <div class="testimonial-slide">
-          <div class="max-w-95p md:max-w-max mx-auto md:px-[5%] md:flex md:items-center md:gap-10 md:overflow-x-scroll no-scrollbar">
-            <div class="testimonial-slide max-w-sm md:min-w-[360px] my-5 md:my-0 active">
-              <figure class="flex flex-col items-start px-6 py-8 bg-gray-50 border rounded-lg border-gray-200 dark:bg-grayed dark:border-gray-700">
-                <blockquote class="mx-auto mb-4 text-gray-500 dark:text-gray-400">
-                  <p class="mb-2 break-words">amet laboris proident cupidatat excepteur non cillum ut laborum laboris sunt ullamco eiusmod anim ex eu deserunt esse ipsum Lorem consequat nostrud pariatur qui excepteur nisi aliquip commodo laborum minim enim ea anim Lorem qui velit
-                  </p>
-                </blockquote>
-                <figcaption class="flex justify-center items-center space-x-3">
-                  <img class="aspect-square object-cover w-9 h-9 rounded-full" src="images/ppic-1.jpg" alt="profile picture">
-                  <div class="dark:text-white text-left font-bold">
-                    <div>Daniella Alex</div>
-                    <div class="text-sm font-light text-gray-500 dark:text-gray-400">Philanthropist</div>
-                  </div>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-        </div>
-      </div>
+      
     </div>
     <!-- Pagination Bullets -->
     <div class="pagination mt-4 flex justify-center space-x-2">
@@ -659,7 +562,7 @@
                         <a href="campaigns.html" class="hover:underline">Campaigns</a>
                     </li>
                     <li class="mb-4">
-                        <a href="categories.html" class="hover:underline">Categories</a>
+                        <a href="#categories" class="hover:underline">Categories</a>
                     </li>
                     <li class="mb-4">
                         <a href="#testimonials" class="hover:underline">Testimonials</a>
